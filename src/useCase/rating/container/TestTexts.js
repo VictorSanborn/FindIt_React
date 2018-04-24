@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import TestText from '../component/TestText';
 
 class MainText extends Component {
