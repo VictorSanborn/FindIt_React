@@ -8,6 +8,7 @@ import './App.css';
 import Index from './useCase/index/screen/Index';
 import Reklam from './useCase/reklam/screen/Reklam';
 import Footer from './useCase/footer/screen/Footer';
+import Event from './useCase/event/screen/Event';
 
 class App extends Component {
   render() {
@@ -28,6 +29,9 @@ class App extends Component {
                   </li>
                   <li class="nav-item">
                     <a class="nav-link linkColor" href="/reklam">Reklam</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link linkColor" href="/event">Event</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -52,6 +56,7 @@ class App extends Component {
             { /*Lägg till alla sidor som skall kunna navigeras ifrån!*/ }
             <Route exact path="/" component={Index}/>
             <Route path="/reklam" component={Reklam}/>
+            <Route path="/event" component={Event}/>
           </div> 
 
           <Footer/>
