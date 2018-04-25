@@ -1,0 +1,36 @@
+.SearchBox {
+    background: rgba(232, 210, 160, 0.377);
+}
+
+.InputItem {
+    border-radius:0;
+}
+
+.SearchField {
+    margin:5px;
+}
+
+.BorderLeft {
+    border-left: 1px solid #E9C458;
+    border-top: 1px solid #E9C458;
+    border-bottom: 1px solid #E9C458;
+    margin:0;
+}
+
+.BorderMiddle {
+    border-top: 1px solid #E9C458;
+    border-bottom: 1px solid #E9C458;
+    margin:0;
+}
+
+.BorderRight{
+    border-right: 1px solid #E9C458;
+    border-top: 1px solid #E9C458;
+    border-bottom: 1px solid #E9C458;
+    margin:0;
+}
+
+.noSpace {
+    padding:0;
+    margin:0;
+}
