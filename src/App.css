@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  height: 100%;
 }
 
 .App-logo {
@@ -8,7 +9,7 @@
 }
 
 .App-header {
-  background-color: rgb(15, 15, 15);
+  background-color: #6A0002;
   padding: 20px;
   padding-top: 70px;
   padding-bottom: 0;
@@ -18,11 +19,15 @@
 .App-title {
   font-size: 4em;
   font-family: 'Lobster', cursive;
-  color: rgb(230, 197, 14);
+  color: #E9C458;
 }
 
 .App-intro {
   font-size: large;
+}
+
+.linkColor {
+  color: #E8D2A0;
 }
 
 @keyframes App-logo-spin {
