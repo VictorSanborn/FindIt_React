@@ -8,14 +8,17 @@
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: rgb(15, 15, 15);
   padding: 20px;
+  padding-top: 70px;
+  padding-bottom: 0;
   color: white;
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 4em;
+  font-family: 'Lobster', cursive;
+  color: rgb(230, 197, 14);
 }
 
 .App-intro {
