@@ -7,9 +7,10 @@ import {
 import './App.css';
 import './common/style/CommonStyle.css';
 import Index from './useCase/index/screen/Index';
-import Reklam from './useCase/reklam/screen/Reklam';
-import Footer from './useCase/footer/screen/Footer';
+import Reklam from './common/reklam/screen/Reklam';
+import Footer from './common/footer/screen/Footer';
 import LogIn from './useCase/logIn/screen/LogIn';
+import Search from './useCase/search/screen/Search'
 
 class App extends Component {
   render() {
