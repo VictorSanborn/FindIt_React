@@ -5,6 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 import './App.css';
+import './common/style/CommonStyle.css';
 import Index from './useCase/index/screen/Index';
 import Reklam from './useCase/reklam/screen/Reklam';
 import Footer from './useCase/footer/screen/Footer';
@@ -55,6 +56,7 @@ class App extends Component {
           <div class="col-sm-8 offset-sm-2" style={{backgroundColor: 'white', minHeight: '80vh'}}>
             { /*Lägg till alla sidor som skall kunna navigeras ifrån!*/ }
             <Route exact path="/" component={Index}/>
+            <Route path="/search" component={Search}/>
             <Route path="/reklam" component={Reklam}/>
             <Route path="/logIn" component={LogIn}/>
           </div> 
