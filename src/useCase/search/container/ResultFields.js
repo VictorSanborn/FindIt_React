@@ -1,5 +1,5 @@
 import React, { Component } from 'react'; 
-import ResultField from './ResultField'
+import ResultField from './ResultField';
 
 class ResultFields extends Component {
   GetValues = () => {
