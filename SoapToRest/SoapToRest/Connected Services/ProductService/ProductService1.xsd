@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/WcfProduct.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/WcfProduct.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Product" nillable="true" type="tns:Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProduct" nillable="true" type="tns:ArrayOfProduct" />
+  <xs:complexType name="Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="attributeList" nillable="true" type="tns:ArrayOfProductHasAttribute" />
+      <xs:element minOccurs="0" name="category" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="categoryId" type="xs:int" />
+      <xs:element minOccurs="0" name="group" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="groupId" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="typeId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Product" nillable="true" type="tns:Product" />
+  <xs:complexType name="ArrayOfProductHasAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductHasAttribute" nillable="true" type="tns:ProductHasAttribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductHasAttribute" nillable="true" type="tns:ArrayOfProductHasAttribute" />
+  <xs:complexType name="ProductHasAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="attributeId" type="xs:int" />
+      <xs:element minOccurs="0" name="productId" type="xs:int" />
+      <xs:element minOccurs="0" name="value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductHasAttribute" nillable="true" type="tns:ProductHasAttribute" />
+  <xs:complexType name="ArrayOfPriceReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PriceReport" nillable="true" type="tns:PriceReport" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPriceReport" nillable="true" type="tns:ArrayOfPriceReport" />
+  <xs:complexType name="PriceReport">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="OccurrenceDT" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="businessId" type="xs:int" />
+      <xs:element minOccurs="0" name="price" type="xs:decimal" />
+      <xs:element minOccurs="0" name="productId" type="xs:int" />
+      <xs:element minOccurs="0" name="userId" type="xs:int" />
+      <xs:element minOccurs="0" name="userType" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PriceReport" nillable="true" type="tns:PriceReport" />
+  <xs:complexType name="ArrayOfGroup">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Group" nillable="true" type="tns:Group" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroup" nillable="true" type="tns:ArrayOfGroup" />
+  <xs:complexType name="Group">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Group" nillable="true" type="tns:Group" />
+  <xs:complexType name="ArrayOfCategory">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Category" nillable="true" type="tns:Category" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCategory" nillable="true" type="tns:ArrayOfCategory" />
+  <xs:complexType name="Category">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="productGroupId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Category" nillable="true" type="tns:Category" />
+  <xs:complexType name="ArrayOfType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Type" nillable="true" type="tns:Type" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfType" nillable="true" type="tns:ArrayOfType" />
+  <xs:complexType name="Type">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="productCategoryId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Type" nillable="true" type="tns:Type" />
+  <xs:complexType name="ArrayOfAttribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Attribute" nillable="true" type="tns:Attribute" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAttribute" nillable="true" type="tns:ArrayOfAttribute" />
+  <xs:complexType name="Attribute">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Attribute" nillable="true" type="tns:Attribute" />
+</xs:schema>
