@@ -1,12 +1,22 @@
 import React, { Component } from 'react';
-import TestTexts from '../container/TestTexts';
+import Card from '../container/Card';
 
 
 class Event extends Component {
   render() {
     return (
       <div className="App">
-        <TestTexts />
+       <div class="row">
+       <div class="col">  
+       <Card/>
+       </div>
+       <div class="col">  
+       <Card/>
+       </div>
+       <div class="col">  
+       <Card/>
+       </div>
+       </div>
       </div>
     );
   }
