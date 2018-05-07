@@ -6,7 +6,6 @@ class LogInBox extends Component {
     return (
         <div className = "App">
           <input type={this.props.logInType}/>
-        
       </div>
     );
   }

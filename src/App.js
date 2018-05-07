@@ -11,6 +11,7 @@ import Reklam from './common/reklam/screen/Reklam';
 import Footer from './common/footer/screen/Footer';
 import LogIn from './useCase/logIn/screen/LogIn';
 import Search from './useCase/search/screen/Search'
+import SignUp from './useCase/logIn/screen/SignUp';
 
 class App extends Component {
   render() {
@@ -60,6 +61,7 @@ class App extends Component {
             <Route path="/search" component={Search}/>
             <Route path="/reklam" component={Reklam}/>
             <Route path="/logIn" component={LogIn}/>
+            <Route path="/SignUp" component={SignUp}/>
           </div> 
 
           <Footer/>
