@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessWcf.Data" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessWcf.Data" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfBusiness">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Business" nillable="true" type="tns:Business" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusiness" nillable="true" type="tns:ArrayOfBusiness" />
+  <xs:complexType name="Business">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="adress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="imageLink" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telephone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="verified" type="xs:boolean" />
+      <xs:element minOccurs="0" name="zipcode" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Business" nillable="true" type="tns:Business" />
+  <xs:complexType name="BusinessUser">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="businessId" type="xs:int" />
+      <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="userPassword" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessUser" nillable="true" type="tns:BusinessUser" />
+</xs:schema>

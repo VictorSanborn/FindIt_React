@@ -11,6 +11,7 @@ namespace SoapToRest.Controllers
     {
 
         ProductService.ProductServiceClient client = new ProductService.ProductServiceClient();
+        
 
         // GET: /ProductService/GetAllProducts?showDiscounted=false
         public ProductService.Product[] GetAllProducts(bool showDiscounted)
