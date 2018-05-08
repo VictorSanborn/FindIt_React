@@ -19,11 +19,11 @@
   <wsdl:message name="IProductService_GetProductDetails_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductDetailsResponse" />
   </wsdl:message>
-  <wsdl:message name="IProductService_GetProductsFromCompany_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetProductsFromCompany" />
+  <wsdl:message name="IProductService_GetProductsFromBusiness_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsFromBusiness" />
   </wsdl:message>
-  <wsdl:message name="IProductService_GetProductsFromCompany_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetProductsFromCompanyResponse" />
+  <wsdl:message name="IProductService_GetProductsFromBusiness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductsFromBusinessResponse" />
   </wsdl:message>
   <wsdl:message name="IProductService_GetPricesFromProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPricesFromProduct" />
@@ -31,11 +31,11 @@
   <wsdl:message name="IProductService_GetPricesFromProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetPricesFromProductResponse" />
   </wsdl:message>
-  <wsdl:message name="IProductService_GetPricesFromProductAtCompany_InputMessage">
-    <wsdl:part name="parameters" element="tns:GetPricesFromProductAtCompany" />
+  <wsdl:message name="IProductService_GetPricesFromProductAtBusiness_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPricesFromProductAtBusiness" />
   </wsdl:message>
-  <wsdl:message name="IProductService_GetPricesFromProductAtCompany_OutputMessage">
-    <wsdl:part name="parameters" element="tns:GetPricesFromProductAtCompanyResponse" />
+  <wsdl:message name="IProductService_GetPricesFromProductAtBusiness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPricesFromProductAtBusinessResponse" />
   </wsdl:message>
   <wsdl:message name="IProductService_GetProductGroups_InputMessage">
     <wsdl:part name="parameters" element="tns:GetProductGroups" />
@@ -91,11 +91,29 @@
   <wsdl:message name="IProductService_GetAttributeName_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAttributeNameResponse" />
   </wsdl:message>
-  <wsdl:message name="IProductService_ToggleDiscountOnProduct_InputMessage">
-    <wsdl:part name="parameters" element="tns:ToggleDiscountOnProduct" />
+  <wsdl:message name="IProductService_GetAttributeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttributeDetails" />
   </wsdl:message>
-  <wsdl:message name="IProductService_ToggleDiscountOnProduct_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ToggleDiscountOnProductResponse" />
+  <wsdl:message name="IProductService_GetAttributeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttributeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateAttribute_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAttribute" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateAttribute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteAttribute_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttribute" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteAttribute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_CreateAttribute_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAttribute" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_CreateAttribute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAttributeResponse" />
   </wsdl:message>
   <wsdl:portType name="IProductService">
     <wsdl:operation name="GetAllProducts">
@@ -106,17 +124,17 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductDetails" message="tns:IProductService_GetProductDetails_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductDetailsResponse" message="tns:IProductService_GetProductDetails_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetProductsFromCompany">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductsFromCompany" message="tns:IProductService_GetProductsFromCompany_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductsFromCompanyResponse" message="tns:IProductService_GetProductsFromCompany_OutputMessage" />
+    <wsdl:operation name="GetProductsFromBusiness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductsFromBusiness" message="tns:IProductService_GetProductsFromBusiness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetProductsFromBusinessResponse" message="tns:IProductService_GetProductsFromBusiness_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetPricesFromProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetPricesFromProduct" message="tns:IProductService_GetPricesFromProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetPricesFromProductResponse" message="tns:IProductService_GetPricesFromProduct_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="GetPricesFromProductAtCompany">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetPricesFromProductAtCompany" message="tns:IProductService_GetPricesFromProductAtCompany_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetPricesFromProductAtCompanyResponse" message="tns:IProductService_GetPricesFromProductAtCompany_OutputMessage" />
+    <wsdl:operation name="GetPricesFromProductAtBusiness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetPricesFromProductAtBusiness" message="tns:IProductService_GetPricesFromProductAtBusiness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetPricesFromProductAtBusinessResponse" message="tns:IProductService_GetPricesFromProductAtBusiness_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="GetProductGroups">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetProductGroups" message="tns:IProductService_GetProductGroups_InputMessage" />
@@ -154,9 +172,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetAttributeName" message="tns:IProductService_GetAttributeName_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetAttributeNameResponse" message="tns:IProductService_GetAttributeName_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ToggleDiscountOnProduct">
-      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/ToggleDiscountOnProduct" message="tns:IProductService_ToggleDiscountOnProduct_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/ToggleDiscountOnProductResponse" message="tns:IProductService_ToggleDiscountOnProduct_OutputMessage" />
+    <wsdl:operation name="GetAttributeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetAttributeDetails" message="tns:IProductService_GetAttributeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetAttributeDetailsResponse" message="tns:IProductService_GetAttributeDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAttribute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateAttribute" message="tns:IProductService_UpdateAttribute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateAttributeResponse" message="tns:IProductService_UpdateAttribute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttribute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeleteAttribute" message="tns:IProductService_DeleteAttribute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DeleteAttributeResponse" message="tns:IProductService_DeleteAttribute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAttribute">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/CreateAttribute" message="tns:IProductService_CreateAttribute_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/CreateAttributeResponse" message="tns:IProductService_CreateAttribute_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProductService" type="tns:IProductService">
@@ -179,8 +209,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetProductsFromCompany">
-      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductsFromCompany" style="document" />
+    <wsdl:operation name="GetProductsFromBusiness">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetProductsFromBusiness" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -197,8 +227,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="GetPricesFromProductAtCompany">
-      <soap:operation soapAction="http://tempuri.org/IProductService/GetPricesFromProductAtCompany" style="document" />
+    <wsdl:operation name="GetPricesFromProductAtBusiness">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetPricesFromProductAtBusiness" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -287,8 +317,35 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ToggleDiscountOnProduct">
-      <soap:operation soapAction="http://tempuri.org/IProductService/ToggleDiscountOnProduct" style="document" />
+    <wsdl:operation name="GetAttributeDetails">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetAttributeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAttribute">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAttribute">
+      <soap:operation soapAction="http://tempuri.org/IProductService/DeleteAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAttribute">
+      <soap:operation soapAction="http://tempuri.org/IProductService/CreateAttribute" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

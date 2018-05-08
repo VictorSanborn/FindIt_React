@@ -462,10 +462,10 @@ namespace SoapToRest.ProductService {
         private string descriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
+        private int groupIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int productGroupIdField;
+        private int idField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -491,6 +491,19 @@ namespace SoapToRest.ProductService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int groupId {
+            get {
+                return this.groupIdField;
+            }
+            set {
+                if ((this.groupIdField.Equals(value) != true)) {
+                    this.groupIdField = value;
+                    this.RaisePropertyChanged("groupId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int id {
             get {
                 return this.idField;
@@ -499,19 +512,6 @@ namespace SoapToRest.ProductService {
                 if ((this.idField.Equals(value) != true)) {
                     this.idField = value;
                     this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int productGroupId {
-            get {
-                return this.productGroupIdField;
-            }
-            set {
-                if ((this.productGroupIdField.Equals(value) != true)) {
-                    this.productGroupIdField = value;
-                    this.RaisePropertyChanged("productGroupId");
                 }
             }
         }
@@ -536,13 +536,13 @@ namespace SoapToRest.ProductService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int categoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string descriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int productCategoryIdField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -551,6 +551,19 @@ namespace SoapToRest.ProductService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int categoryId {
+            get {
+                return this.categoryIdField;
+            }
+            set {
+                if ((this.categoryIdField.Equals(value) != true)) {
+                    this.categoryIdField = value;
+                    this.RaisePropertyChanged("categoryId");
+                }
             }
         }
         
@@ -576,19 +589,6 @@ namespace SoapToRest.ProductService {
                 if ((this.idField.Equals(value) != true)) {
                     this.idField = value;
                     this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int productCategoryId {
-            get {
-                return this.productCategoryIdField;
-            }
-            set {
-                if ((this.productCategoryIdField.Equals(value) != true)) {
-                    this.productCategoryIdField = value;
-                    this.RaisePropertyChanged("productCategoryId");
                 }
             }
         }
@@ -669,10 +669,10 @@ namespace SoapToRest.ProductService {
     public interface IProductService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProducts", ReplyAction="http://tempuri.org/IProductService/GetAllProductsResponse")]
-        SoapToRest.ProductService.Product[] GetAllProducts(bool showDiscounted);
+        SoapToRest.ProductService.Product[] GetAllProducts();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllProducts", ReplyAction="http://tempuri.org/IProductService/GetAllProductsResponse")]
-        System.Threading.Tasks.Task<SoapToRest.ProductService.Product[]> GetAllProductsAsync(bool showDiscounted);
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Product[]> GetAllProductsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductDetails", ReplyAction="http://tempuri.org/IProductService/GetProductDetailsResponse")]
         SoapToRest.ProductService.Product GetProductDetails(int productId);
@@ -680,11 +680,11 @@ namespace SoapToRest.ProductService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductDetails", ReplyAction="http://tempuri.org/IProductService/GetProductDetailsResponse")]
         System.Threading.Tasks.Task<SoapToRest.ProductService.Product> GetProductDetailsAsync(int productId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsFromCompany", ReplyAction="http://tempuri.org/IProductService/GetProductsFromCompanyResponse")]
-        SoapToRest.ProductService.Product[] GetProductsFromCompany(int businessId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsFromBusiness", ReplyAction="http://tempuri.org/IProductService/GetProductsFromBusinessResponse")]
+        SoapToRest.ProductService.Product[] GetProductsFromBusiness(int businessId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsFromCompany", ReplyAction="http://tempuri.org/IProductService/GetProductsFromCompanyResponse")]
-        System.Threading.Tasks.Task<SoapToRest.ProductService.Product[]> GetProductsFromCompanyAsync(int businessId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsFromBusiness", ReplyAction="http://tempuri.org/IProductService/GetProductsFromBusinessResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Product[]> GetProductsFromBusinessAsync(int businessId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetPricesFromProduct", ReplyAction="http://tempuri.org/IProductService/GetPricesFromProductResponse")]
         SoapToRest.ProductService.PriceReport[] GetPricesFromProduct(int productId);
@@ -692,11 +692,11 @@ namespace SoapToRest.ProductService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetPricesFromProduct", ReplyAction="http://tempuri.org/IProductService/GetPricesFromProductResponse")]
         System.Threading.Tasks.Task<SoapToRest.ProductService.PriceReport[]> GetPricesFromProductAsync(int productId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetPricesFromProductAtCompany", ReplyAction="http://tempuri.org/IProductService/GetPricesFromProductAtCompanyResponse")]
-        SoapToRest.ProductService.PriceReport[] GetPricesFromProductAtCompany(int productId, int businessId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetPricesFromProductAtBusiness", ReplyAction="http://tempuri.org/IProductService/GetPricesFromProductAtBusinessResponse")]
+        SoapToRest.ProductService.PriceReport[] GetPricesFromProductAtBusiness(int productId, int businessId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetPricesFromProductAtCompany", ReplyAction="http://tempuri.org/IProductService/GetPricesFromProductAtCompanyResponse")]
-        System.Threading.Tasks.Task<SoapToRest.ProductService.PriceReport[]> GetPricesFromProductAtCompanyAsync(int productId, int businessId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetPricesFromProductAtBusiness", ReplyAction="http://tempuri.org/IProductService/GetPricesFromProductAtBusinessResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.PriceReport[]> GetPricesFromProductAtBusinessAsync(int productId, int businessId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductGroups", ReplyAction="http://tempuri.org/IProductService/GetProductGroupsResponse")]
         SoapToRest.ProductService.Group[] GetProductGroups();
@@ -752,11 +752,29 @@ namespace SoapToRest.ProductService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAttributeName", ReplyAction="http://tempuri.org/IProductService/GetAttributeNameResponse")]
         System.Threading.Tasks.Task<string> GetAttributeNameAsync(int attributeId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/ToggleDiscountOnProduct", ReplyAction="http://tempuri.org/IProductService/ToggleDiscountOnProductResponse")]
-        bool ToggleDiscountOnProduct(int productId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAttributeDetails", ReplyAction="http://tempuri.org/IProductService/GetAttributeDetailsResponse")]
+        SoapToRest.ProductService.Attribute GetAttributeDetails(int attributeId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/ToggleDiscountOnProduct", ReplyAction="http://tempuri.org/IProductService/ToggleDiscountOnProductResponse")]
-        System.Threading.Tasks.Task<bool> ToggleDiscountOnProductAsync(int productId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAttributeDetails", ReplyAction="http://tempuri.org/IProductService/GetAttributeDetailsResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Attribute> GetAttributeDetailsAsync(int attributeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateAttribute", ReplyAction="http://tempuri.org/IProductService/UpdateAttributeResponse")]
+        void UpdateAttribute(SoapToRest.ProductService.Attribute attribute);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateAttribute", ReplyAction="http://tempuri.org/IProductService/UpdateAttributeResponse")]
+        System.Threading.Tasks.Task UpdateAttributeAsync(SoapToRest.ProductService.Attribute attribute);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteAttribute", ReplyAction="http://tempuri.org/IProductService/DeleteAttributeResponse")]
+        void DeleteAttribute(int attributeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteAttribute", ReplyAction="http://tempuri.org/IProductService/DeleteAttributeResponse")]
+        System.Threading.Tasks.Task DeleteAttributeAsync(int attributeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateAttribute", ReplyAction="http://tempuri.org/IProductService/CreateAttributeResponse")]
+        int CreateAttribute(SoapToRest.ProductService.Attribute attribute);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateAttribute", ReplyAction="http://tempuri.org/IProductService/CreateAttributeResponse")]
+        System.Threading.Tasks.Task<int> CreateAttributeAsync(SoapToRest.ProductService.Attribute attribute);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -786,12 +804,12 @@ namespace SoapToRest.ProductService {
                 base(binding, remoteAddress) {
         }
         
-        public SoapToRest.ProductService.Product[] GetAllProducts(bool showDiscounted) {
-            return base.Channel.GetAllProducts(showDiscounted);
+        public SoapToRest.ProductService.Product[] GetAllProducts() {
+            return base.Channel.GetAllProducts();
         }
         
-        public System.Threading.Tasks.Task<SoapToRest.ProductService.Product[]> GetAllProductsAsync(bool showDiscounted) {
-            return base.Channel.GetAllProductsAsync(showDiscounted);
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Product[]> GetAllProductsAsync() {
+            return base.Channel.GetAllProductsAsync();
         }
         
         public SoapToRest.ProductService.Product GetProductDetails(int productId) {
@@ -802,12 +820,12 @@ namespace SoapToRest.ProductService {
             return base.Channel.GetProductDetailsAsync(productId);
         }
         
-        public SoapToRest.ProductService.Product[] GetProductsFromCompany(int businessId) {
-            return base.Channel.GetProductsFromCompany(businessId);
+        public SoapToRest.ProductService.Product[] GetProductsFromBusiness(int businessId) {
+            return base.Channel.GetProductsFromBusiness(businessId);
         }
         
-        public System.Threading.Tasks.Task<SoapToRest.ProductService.Product[]> GetProductsFromCompanyAsync(int businessId) {
-            return base.Channel.GetProductsFromCompanyAsync(businessId);
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Product[]> GetProductsFromBusinessAsync(int businessId) {
+            return base.Channel.GetProductsFromBusinessAsync(businessId);
         }
         
         public SoapToRest.ProductService.PriceReport[] GetPricesFromProduct(int productId) {
@@ -818,12 +836,12 @@ namespace SoapToRest.ProductService {
             return base.Channel.GetPricesFromProductAsync(productId);
         }
         
-        public SoapToRest.ProductService.PriceReport[] GetPricesFromProductAtCompany(int productId, int businessId) {
-            return base.Channel.GetPricesFromProductAtCompany(productId, businessId);
+        public SoapToRest.ProductService.PriceReport[] GetPricesFromProductAtBusiness(int productId, int businessId) {
+            return base.Channel.GetPricesFromProductAtBusiness(productId, businessId);
         }
         
-        public System.Threading.Tasks.Task<SoapToRest.ProductService.PriceReport[]> GetPricesFromProductAtCompanyAsync(int productId, int businessId) {
-            return base.Channel.GetPricesFromProductAtCompanyAsync(productId, businessId);
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.PriceReport[]> GetPricesFromProductAtBusinessAsync(int productId, int businessId) {
+            return base.Channel.GetPricesFromProductAtBusinessAsync(productId, businessId);
         }
         
         public SoapToRest.ProductService.Group[] GetProductGroups() {
@@ -898,12 +916,36 @@ namespace SoapToRest.ProductService {
             return base.Channel.GetAttributeNameAsync(attributeId);
         }
         
-        public bool ToggleDiscountOnProduct(int productId) {
-            return base.Channel.ToggleDiscountOnProduct(productId);
+        public SoapToRest.ProductService.Attribute GetAttributeDetails(int attributeId) {
+            return base.Channel.GetAttributeDetails(attributeId);
         }
         
-        public System.Threading.Tasks.Task<bool> ToggleDiscountOnProductAsync(int productId) {
-            return base.Channel.ToggleDiscountOnProductAsync(productId);
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Attribute> GetAttributeDetailsAsync(int attributeId) {
+            return base.Channel.GetAttributeDetailsAsync(attributeId);
+        }
+        
+        public void UpdateAttribute(SoapToRest.ProductService.Attribute attribute) {
+            base.Channel.UpdateAttribute(attribute);
+        }
+        
+        public System.Threading.Tasks.Task UpdateAttributeAsync(SoapToRest.ProductService.Attribute attribute) {
+            return base.Channel.UpdateAttributeAsync(attribute);
+        }
+        
+        public void DeleteAttribute(int attributeId) {
+            base.Channel.DeleteAttribute(attributeId);
+        }
+        
+        public System.Threading.Tasks.Task DeleteAttributeAsync(int attributeId) {
+            return base.Channel.DeleteAttributeAsync(attributeId);
+        }
+        
+        public int CreateAttribute(SoapToRest.ProductService.Attribute attribute) {
+            return base.Channel.CreateAttribute(attribute);
+        }
+        
+        public System.Threading.Tasks.Task<int> CreateAttributeAsync(SoapToRest.ProductService.Attribute attribute) {
+            return base.Channel.CreateAttributeAsync(attribute);
         }
     }
 }
