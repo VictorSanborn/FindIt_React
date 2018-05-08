@@ -40,14 +40,16 @@ namespace SoapToRest.Controllers
             return HttpStatusCode.OK;
         }
 
-        public int[] GetUserID(string username, string password)
+        public KeyValuePair<string, int> GetUserID(string username, string password)
         {
-            int[] result = new int[1];
+            string keyValue = "userID";
+            KeyValuePair<string, int> result = new KeyValuePair<string, int>(keyValue,0);
             try
             {
-                result[0] = client.GetUserID(username, password);
+                
+                result = new KeyValuePair<string, int>(keyValue, client.GetUserID(username, password));
             }
-            catch
+            catch (Exception e)
             {
             }
 
