@@ -14,9 +14,10 @@ import Index from './useCase/index/screen/Index';
 import Reklam from './common/reklam/screen/Reklam';
 import Footer from './common/footer/screen/Footer';
 import LogIn from './useCase/logIn/screen/LogIn';
+import ModalLogIn from './useCase/modalLogin/screen/ModalLogIn';
 import Search from './useCase/search/screen/Search';
 
-import ReduxTest from './useCase/ReduxTester/screen/ReduxTest';
+import ReduxTest from './useCase/reduxTester/screen/ReduxTest';
 
 const mapStateToProps = (state) => ({
   user: state.user,
@@ -55,6 +56,10 @@ class App extends Component {
                   <li class="nav-items">
                     <a class="nav-link linkColor" href="/event">Event</a>
                   </li>
+                  <li class="nav-items">
+                    <a class="nav-link linkColor" data-toggle="modal" data-target="#exampleModalCenter">Modal Login</a>
+                  </li>
+
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Dropdown
@@ -70,6 +75,9 @@ class App extends Component {
                     <a class="nav-link linkColor disabled" href="#">Disabled</a>
                   </li>
                 </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal">Logga In</button>
+                </form>
               </div>
             </nav>
           </header>
@@ -82,7 +90,7 @@ class App extends Component {
             <Route path="/event" component={Event}/>
             <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.user} setUser={this.onSetUser}/>}  />
           </div> 
-
+          <ModalLogIn title="Logga In"/>
           <Footer/>
         </div>
       
