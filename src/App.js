@@ -2,25 +2,41 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  withRouter,
 } from 'react-router-dom'
 import './App.css';
 import './common/style/CommonStyle.css';
+import { actionCreators } from './common/redux/reducer';
+import { connect } from 'react-redux';
 import Index from './useCase/index/screen/Index';
 
 import Reklam from './common/reklam/screen/Reklam';
 import Footer from './common/footer/screen/Footer';
 import LogIn from './useCase/logIn/screen/LogIn';
-import Search from './useCase/search/screen/Search'
+import Search from './useCase/search/screen/Search';
+
+import ReduxTest from './useCase/ReduxTester/screen/ReduxTest';
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
 
 class App extends Component {
+  state = {};
+
+  onSetUser = (text) => {
+    const {dispatch} = this.props;
+
+    dispatch(actionCreators.set(text));
+  }
+
   render() {
     return (
-      <Router>
         <div className="App">
-          <header className="App-header">           
+          <header className="App-header">          
             <nav class="navbar navbar-expand-lg">
-              <h1 class="navbar-brand App-title" href="#">View It</h1>
+              <h1 class="navbar-brand App-title" href="#">Find It</h1>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -34,6 +50,9 @@ class App extends Component {
                     <a class="nav-link linkColor" href="/reklam">Reklam</a>
                   </li>
                   <li class="nav-item">
+                     <a class="nav-link linkColor" href="/ReduxTest">Redux Test</a>
+                  </li>
+                  <li class="nav-items">
                     <a class="nav-link linkColor" href="/event">Event</a>
                   </li>
                   <li class="nav-item dropdown">
@@ -61,13 +80,14 @@ class App extends Component {
             <Route path="/search" component={Search}/>
             <Route path="/reklam" component={Reklam}/>
             <Route path="/event" component={Event}/>
+            <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.user} setUser={this.onSetUser}/>}  />
           </div> 
 
           <Footer/>
         </div>
-      </Router>
+      
     );
   }
 }
 
-export default App;
+export default withRouter(connect(mapStateToProps)(App))
