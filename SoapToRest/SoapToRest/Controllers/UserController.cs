@@ -104,6 +104,7 @@ namespace SoapToRest.Controllers
             try
             {
                 establishmentInfos = client.GetEstablishmentInfo(userID);
+            
 
             }
             catch
