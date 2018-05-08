@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import LogInButton from '../component/LogInButton';
+import SignupButton from '../component/SignupButton';
 import ModalCloseButton from '../component/ModalCloseButton';
 
 class ModalFooter extends Component {
   render() {
     return (
       <div class="modal-footer">
-        <ModalCloseButton/>
-        <LogInButton name="Logga In"/>
+        <ModalCloseButton />
+        <SignupButton name="Bli Medlem"/>
       </div>   
     );
   }

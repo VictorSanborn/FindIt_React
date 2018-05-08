@@ -18,6 +18,7 @@ import ModalLogIn from './useCase/modalLogin/screen/ModalLogIn';
 import Search from './useCase/search/screen/Search';
 
 import ReduxTest from './useCase/reduxTester/screen/ReduxTest';
+import ModalSignup from './useCase/modalsignup/screen/ModalSignup';
 
 const mapStateToProps = (state) => ({
   user: state.user,
@@ -56,9 +57,6 @@ class App extends Component {
                   <li class="nav-items">
                     <a class="nav-link linkColor" href="/event">Event</a>
                   </li>
-                  <li class="nav-items">
-                    <a class="nav-link linkColor" data-toggle="modal" data-target="#exampleModalCenter">Modal Login</a>
-                  </li>
 
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -76,7 +74,10 @@ class App extends Component {
                   </li>
                 </ul>
                 <form class="form-inline my-2 my-lg-0">
-                  <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#exampleModal">Logga In</button>
+                  <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#LoginModal">Logga In</button>
+                </form>
+                <form class="form-inline my-2 my-lg-0 MarginLeft">
+                  <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#SignupModal">Bli Medlem</button>
                 </form>
               </div>
             </nav>
@@ -91,6 +92,8 @@ class App extends Component {
             <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.user} setUser={this.onSetUser}/>}  />
           </div> 
           <ModalLogIn title="Logga In"/>
+          <ModalSignup title="Bli medlem"/>
+
           <Footer/>
         </div>
       

@@ -39,3 +39,6 @@
   to { transform: rotate(360deg); }
 }
 
+.MarginLeft{
+  margin-left: 10px;
+}
