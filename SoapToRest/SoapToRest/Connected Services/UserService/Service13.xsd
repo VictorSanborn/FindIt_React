@@ -67,18 +67,6 @@
       <xs:sequence />
     </xs:complexType>
   </xs:element>
-  <xs:element name="DeleteEstablishment">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="establishmentID" type="xs:int" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="DeleteEstablishmentResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
   <xs:element name="CreateUser">
     <xs:complexType>
       <xs:sequence>
@@ -91,19 +79,6 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateUserResponse">
-    <xs:complexType>
-      <xs:sequence />
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="CreateEstablishment">
-    <xs:complexType>
-      <xs:sequence>
-        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
-      </xs:sequence>
-    </xs:complexType>
-  </xs:element>
-  <xs:element name="CreateEstablishmentResponse">
     <xs:complexType>
       <xs:sequence />
     </xs:complexType>
@@ -129,8 +104,6 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="establishmentID" type="xs:int" />
-        <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="rating" type="xs:int" />
         <xs:element minOccurs="0" name="userID" type="xs:int" />
       </xs:sequence>
@@ -168,6 +141,18 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="GetUserIDResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstablishments">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetEstablishmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/GruppFemWCF" minOccurs="0" name="GetEstablishmentsResult" nillable="true" type="q5:ArrayOfEstablishmentInfo" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

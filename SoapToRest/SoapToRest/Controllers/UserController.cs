@@ -98,13 +98,43 @@ namespace SoapToRest.Controllers
 
         }
 
-        public HttpStatusCode UpdateEstablishment(int establishmentID, string name, string description, int rating, int userID)
+        public UserService.EstablishmentInfo[] GetEstablishmentInfo(int? userID)
+        {
+            UserService.EstablishmentInfo[] establishmentInfos = new UserService.EstablishmentInfo[] { };
+            try
+            {
+                establishmentInfos = client.GetEstablishmentInfo(userID);
+
+            }
+            catch
+            {
+
+            }
+            return establishmentInfos;
+        }
+
+        public UserService.EstablishmentInfo[] GetEstablishments()
+        {
+            UserService.EstablishmentInfo[] establishmentInfos = new UserService.EstablishmentInfo[] { };
+            try
+            {
+                establishmentInfos = client.GetEstablishments();
+            }
+            catch
+            {
+
+            }
+            return establishmentInfos;
+        }
+
+
+        public HttpStatusCode UpdateEstablishment(int establishmentID, int rating, int userID)
         {
             UserService.UserInfo user = new UserService.UserInfo();
-
+  
             try 
             {
-                client.UpdateEstablishment(establishmentID, name, description, rating, userID);
+                client.UpdateEstablishment(establishmentID, rating, userID);
             }
             catch (Exception e)
             {

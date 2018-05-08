@@ -38,23 +38,11 @@
   <wsdl:message name="IService1_DeleteUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteUserResponse" />
   </wsdl:message>
-  <wsdl:message name="IService1_DeleteEstablishment_InputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteEstablishment" />
-  </wsdl:message>
-  <wsdl:message name="IService1_DeleteEstablishment_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DeleteEstablishmentResponse" />
-  </wsdl:message>
   <wsdl:message name="IService1_CreateUser_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateUser" />
   </wsdl:message>
   <wsdl:message name="IService1_CreateUser_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateUserResponse" />
-  </wsdl:message>
-  <wsdl:message name="IService1_CreateEstablishment_InputMessage">
-    <wsdl:part name="parameters" element="tns:CreateEstablishment" />
-  </wsdl:message>
-  <wsdl:message name="IService1_CreateEstablishment_OutputMessage">
-    <wsdl:part name="parameters" element="tns:CreateEstablishmentResponse" />
   </wsdl:message>
   <wsdl:message name="IService1_UpdateUser_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateUser" />
@@ -80,6 +68,12 @@
   <wsdl:message name="IService1_GetUserID_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetUserIDResponse" />
   </wsdl:message>
+  <wsdl:message name="IService1_GetEstablishments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEstablishments" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetEstablishments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEstablishmentsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IService1">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetData" message="tns:IService1_GetData_InputMessage" />
@@ -101,17 +95,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteUser" message="tns:IService1_DeleteUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteUserResponse" message="tns:IService1_DeleteUser_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DeleteEstablishment">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteEstablishment" message="tns:IService1_DeleteEstablishment_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteEstablishmentResponse" message="tns:IService1_DeleteEstablishment_OutputMessage" />
-    </wsdl:operation>
     <wsdl:operation name="CreateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateUser" message="tns:IService1_CreateUser_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateUserResponse" message="tns:IService1_CreateUser_OutputMessage" />
-    </wsdl:operation>
-    <wsdl:operation name="CreateEstablishment">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService1/CreateEstablishment" message="tns:IService1_CreateEstablishment_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService1/CreateEstablishmentResponse" message="tns:IService1_CreateEstablishment_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateUser">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateUser" message="tns:IService1_UpdateUser_InputMessage" />
@@ -128,6 +114,10 @@
     <wsdl:operation name="GetUserID">
       <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetUserID" message="tns:IService1_GetUserID_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetUserIDResponse" message="tns:IService1_GetUserID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEstablishments">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetEstablishments" message="tns:IService1_GetEstablishments_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetEstablishmentsResponse" message="tns:IService1_GetEstablishments_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
@@ -177,26 +167,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DeleteEstablishment">
-      <soap:operation soapAction="http://tempuri.org/IService1/DeleteEstablishment" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
     <wsdl:operation name="CreateUser">
       <soap:operation soapAction="http://tempuri.org/IService1/CreateUser" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="CreateEstablishment">
-      <soap:operation soapAction="http://tempuri.org/IService1/CreateEstablishment" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -233,6 +205,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetUserID">
       <soap:operation soapAction="http://tempuri.org/IService1/GetUserID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEstablishments">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetEstablishments" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
