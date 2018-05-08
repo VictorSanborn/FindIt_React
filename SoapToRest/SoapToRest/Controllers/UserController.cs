@@ -40,16 +40,15 @@ namespace SoapToRest.Controllers
             return HttpStatusCode.OK;
         }
 
-        public int GetUserID(string username, string password)
+        public int[] GetUserID(string username, string password)
         {
-            int result = 0;
+            int[] result = new int[1];
             try
             {
-                result = client.GetUserID(username, password);
+                result[0] = client.GetUserID(username, password);
             }
             catch
             {
-               
             }
 
             return result;
