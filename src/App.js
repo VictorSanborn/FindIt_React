@@ -10,22 +10,25 @@ import './common/style/CommonStyle.css';
 import { actionCreators } from './common/redux/reducer';
 import { connect } from 'react-redux';
 import Index from './useCase/index/screen/Index';
+
 import Reklam from './common/reklam/screen/Reklam';
-import Search from './useCase/search/screen/Search';
 import Footer from './common/footer/screen/Footer';
+import LogIn from './useCase/logIn/screen/LogIn';
+import Search from './useCase/search/screen/Search';
+
 import ReduxTest from './useCase/ReduxTester/screen/ReduxTest';
 
 const mapStateToProps = (state) => ({
   user: state.user,
-})
+});
 
 class App extends Component {
-  state = {}
+  state = {};
 
   onSetUser = (text) => {
     const {dispatch} = this.props;
 
-    dispatch(actionCreators.set(text))
+    dispatch(actionCreators.set(text));
   }
 
   render() {
@@ -47,7 +50,10 @@ class App extends Component {
                     <a class="nav-link linkColor" href="/reklam">Reklam</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link linkColor" href="/ReduxTest">Redux Test</a>
+                     <a class="nav-link linkColor" href="/ReduxTest">Redux Test</a>
+                  </li>
+                  <li class="nav-items">
+                    <a class="nav-link linkColor" href="/event">Event</a>
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,9 +76,10 @@ class App extends Component {
             
           <div class="col-sm-8 offset-sm-2" style={{backgroundColor: 'white', minHeight: '80vh'}}>
             { /*Lägg till alla sidor som skall kunna navigeras ifrån!*/ }
-            <Route exact path="/" component={Index} />
-            <Route path="/search" component={Search} />
-            <Route path="/reklam" component={Reklam} />
+            <Route exact path="/" component={Index}/>
+            <Route path="/search" component={Search}/>
+            <Route path="/reklam" component={Reklam}/>
+            <Route path="/event" component={Event}/>
             <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.user} setUser={this.onSetUser}/>}  />
           </div> 
 

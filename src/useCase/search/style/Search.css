@@ -34,3 +34,22 @@
     padding:0;
     margin:0;
 }
+
+.DropDownStyle {
+    height: 100%;
+}
+
+.OrganisationImage{
+    height: 100px;
+    width: 100px;
+    background:White;
+    border: 1px solid black;
+    float: left;
+    margin: 10px;
+}
+
+.SearchResultListObject
+{
+    margin-bottom: 10px;
+    background-color: rgb(255, 255, 255);
+}
