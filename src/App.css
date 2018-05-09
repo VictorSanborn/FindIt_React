@@ -42,6 +42,12 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+
+.MarginLeft{
+  margin-left: 10px;
+}
+
 @keyframes fa-spin {
   0% {
     -webkit-transform: rotate(0deg);
@@ -56,3 +62,4 @@
   -webkit-animation: fa-spin 6s infinite linear;
   animation: fa-spin 6s infinite linear;
 }
+
