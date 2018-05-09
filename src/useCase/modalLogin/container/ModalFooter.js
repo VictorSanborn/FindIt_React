@@ -7,7 +7,7 @@ class ModalFooter extends Component {
     return (
       <div class="modal-footer">
         <ModalCloseButton/>
-        <LogInButton name="Logga In"/>
+        <LogInButton name="Logga In" styleText="btn btn-primary"/>
       </div>   
     );
   }
