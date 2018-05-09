@@ -5,7 +5,7 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 import App from './App';
 import { createStore } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist'
+import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage' // defaults to localStorage for web and AsyncStorage for react-native
 import { Provider } from 'react-redux';
 import { reducer } from './common/redux/reducer';
