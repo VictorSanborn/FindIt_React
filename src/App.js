@@ -24,14 +24,9 @@ const mapStateToProps = (state) => ({
   user: state.user,
 });
 
+
 class App extends Component {
   state = {};
-
-  onSetUser = (text) => {
-    const {dispatch} = this.props;
-
-    dispatch(actionCreators.set(text));
-  }
 
   render() {
     return (
@@ -90,7 +85,7 @@ class App extends Component {
             <Route path="/reklam" component={Reklam}/>
             <Route path="/event" component={Event}/>
             <Route path="/business" component={Business}/>
-            <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.user} setUser={this.onSetUser}/>}  />
+            <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.user} dispatch={this.props.dispatch}/>}  />
           </div> 
           <ModalLogIn title="Logga In"/>
           <ModalSignup title="Bli medlem"/>
