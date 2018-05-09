@@ -2,25 +2,43 @@ import React, { Component } from 'react';
 import {
   BrowserRouter as Router,
   Route,
-  Link
+  Link,
+  withRouter,
 } from 'react-router-dom'
 import './App.css';
 import './common/style/CommonStyle.css';
+import { actionCreators } from './common/redux/reducer';
+import { connect } from 'react-redux';
 import Index from './useCase/index/screen/Index';
 import Event from './useCase/event/screen/Event';
 import Reklam from './common/reklam/screen/Reklam';
 import Footer from './common/footer/screen/Footer';
 import LogIn from './useCase/logIn/screen/LogIn';
+import ModalLogIn from './useCase/modalLogin/screen/ModalLogIn';
 import Search from './useCase/search/screen/Search';
+import Business from './useCase/business/screen/Business';
+import ReduxTest from './useCase/reduxTester/screen/ReduxTest';
+import ModalSignup from './useCase/modalsignup/screen/ModalSignup';
+
+const mapStateToProps = (state) => ({
+  user: state.user,
+});
 
 class App extends Component {
+  state = {};
+
+  onSetUser = (text) => {
+    const {dispatch} = this.props;
+
+    dispatch(actionCreators.set(text));
+  }
+
   render() {
     return (
-      <Router>
         <div className="App">
-          <header className="App-header">           
+          <header className="App-header">          
             <nav class="navbar navbar-expand-lg">
-              <h1 class="navbar-brand App-title" href="#">View It</h1>
+              <h1 class="navbar-brand App-title" href="#">Find It</h1>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -34,8 +52,12 @@ class App extends Component {
                     <a class="nav-link linkColor" href="/reklam">Reklam</a>
                   </li>
                   <li class="nav-item">
+                     <a class="nav-link linkColor" href="/ReduxTest">Redux Test</a>
+                  </li>
+                  <li class="nav-items">
                     <a class="nav-link linkColor" href="/event">Event</a>
                   </li>
+
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Dropdown
@@ -51,23 +73,33 @@ class App extends Component {
                     <a class="nav-link linkColor disabled" href="#">Disabled</a>
                   </li>
                 </ul>
+                <form class="form-inline my-2 my-lg-0">
+                  <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#LoginModal">Logga In</button>
+                </form>
+                <form class="form-inline my-2 my-lg-0 MarginLeft">
+                  <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#SignupModal">Bli Medlem</button>
+                </form>
               </div>
             </nav>
           </header>
             
-          <div class="col-sm-8 offset-sm-2" style={{backgroundColor: 'white', minHeight: '80vh'}}>
+          <div class="col-sm-8 offset-sm-2 contentPadding" style={{backgroundColor: 'white', minHeight: '80vh'}}>
             { /*Lägg till alla sidor som skall kunna navigeras ifrån!*/ }
             <Route exact path="/" component={Index}/>
             <Route path="/search" component={Search}/>
             <Route path="/reklam" component={Reklam}/>
             <Route path="/event" component={Event}/>
+            <Route path="/business" component={Business}/>
+            <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.user} setUser={this.onSetUser}/>}  />
           </div> 
+          <ModalLogIn title="Logga In"/>
+          <ModalSignup title="Bli medlem"/>
 
           <Footer/>
         </div>
-      </Router>
+      
     );
   }
 }
 
-export default App;
+export default withRouter(connect(mapStateToProps)(App))
