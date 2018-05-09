@@ -52,6 +52,9 @@ class App extends Component {
                   <li class="nav-items">
                     <a class="nav-link linkColor" href="/event">Event</a>
                   </li>
+                  <li class="nav-items">
+                    <a class="nav-link linkColor" href="/business">Bar</a>
+                  </li>
 
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

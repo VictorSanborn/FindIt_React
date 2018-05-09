@@ -11,9 +11,6 @@ import { Provider } from 'react-redux';
 import { reducer } from './common/redux/reducer';
 import { PersistGate } from 'redux-persist/integration/react'
 
-//Redux Functions
-import './common/redux/functions/login';
-
 const persistConfig = {
     key: 'root',
     storage,
