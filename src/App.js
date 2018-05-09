@@ -7,11 +7,11 @@ import {
 import './App.css';
 import './common/style/CommonStyle.css';
 import Index from './useCase/index/screen/Index';
-
+import Event from './useCase/event/screen/Event';
 import Reklam from './common/reklam/screen/Reklam';
 import Footer from './common/footer/screen/Footer';
 import LogIn from './useCase/logIn/screen/LogIn';
-import Search from './useCase/search/screen/Search'
+import Search from './useCase/search/screen/Search';
 
 class App extends Component {
   render() {
