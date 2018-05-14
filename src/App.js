@@ -23,6 +23,7 @@ const mapStateToProps = (state) => ({
   userID: state.userID,
   setLoginUser: state.setLoginUser,
   setLoginPassword: state.setLoginPassword,
+  setUsername: state.setUsername,
 });
 
 class App extends Component {
@@ -72,7 +73,7 @@ class App extends Component {
                     <a class="nav-link linkColor disabled" href="#">Disabled</a>
                   </li>
                 </ul>
-               { this.props.userID === "" ? 
+               { this.props.setUsername === "" ? 
                   <form class="form-inline my-2 my-lg-0 row">
                     <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#LoginModal">Logga In</button>
                     <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#SignupModal">Bli Medlem</button>
@@ -82,10 +83,10 @@ class App extends Component {
                   <ul class="navbar-nav mr-auto">
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Välkommen {this.props.userID}
+                          Välkommen {this.props.setUsername}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" href="#">Logga Ut</a>
+                          <a class="dropdown-item" onClick={()=>{this.props.dispatch(actionCreators.logoutUser(''));}} href="#">Logga Ut</a>
                         </div>
                       </li>
                     </ul>

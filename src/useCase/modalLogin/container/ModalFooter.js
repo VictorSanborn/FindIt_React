@@ -9,9 +9,10 @@ class ModalFooter extends Component {
     loginUser(this.props.setLoginUser, this.props.setLoginPassword).then((response) => {
       console.log(response);
       console.log(this.props.setLoginUser);
-      if (response.status == 200)
+      if (response.status == 200 && response.data.userID !== '0' )
       {
         this.props.dispatch(actionCreators.setUserID(response.data.userID));
+        this.props.dispatch(actionCreators.setUsername(this.props.setLoginUser));
       }
       this.props.dispatch(actionCreators.removeLoginBoxData(''));
     });
