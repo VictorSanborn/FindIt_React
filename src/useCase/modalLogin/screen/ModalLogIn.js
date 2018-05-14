@@ -9,9 +9,9 @@ class ModalLogIn extends Component {
       <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content backgroundColor">
-            <ModalHeader title={this.props.title}/>
-            <ModalBody />
-            <ModalFooter />
+            <ModalHeader dispatch={this.props.dispatch} title={this.props.title}/>
+            <ModalBody dispatch={this.props.dispatch}  />
+            <ModalFooter setLoginUser={this.props.setLoginUser} setLoginPassword={this.props.setLoginPassword} dispatch={this.props.dispatch} />
           </div>
         </div>
       </div>

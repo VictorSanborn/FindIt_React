@@ -5,12 +5,8 @@ import TestButton from '../component/TestButton';
 import { actionCreators } from '../../../common/redux/reducer';
 
 class InputWithLabel extends Component {
-  mapStateToProps = (state) => ({
-    user: state.user,
-  });
-
   onSetUser = (text) => {
-    this.props.dispatch(actionCreators.set(text.target.value));
+    this.props.dispatch(actionCreators.setUserID(text.target.value));
   }
 
   render() {

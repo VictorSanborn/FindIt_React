@@ -12,7 +12,6 @@ import { connect } from 'react-redux';
 import Index from './useCase/index/screen/Index';
 import Reklam from './common/reklam/screen/Reklam';
 import Footer from './common/footer/screen/Footer';
-import LogIn from './useCase/logIn/screen/LogIn';
 import ModalLogIn from './useCase/modalLogin/screen/ModalLogIn';
 import Search from './useCase/search/screen/Search';
 import Business from './useCase/business/screen/Business';
@@ -21,12 +20,15 @@ import ReduxTest from './useCase/reduxTester/screen/ReduxTest';
 import ModalSignup from './useCase/modalsignup/screen/ModalSignup';
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  userID: state.userID,
+  setLoginUser: state.setLoginUser,
+  setLoginPassword: state.setLoginPassword,
+  setUsername: state.setUsername,
 });
-
 
 class App extends Component {
   state = {};
+  
 
   render() {
     return (
@@ -37,7 +39,7 @@ class App extends Component {
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-
+              
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
@@ -71,12 +73,26 @@ class App extends Component {
                     <a class="nav-link linkColor disabled" href="#">Disabled</a>
                   </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                  <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#LoginModal">Logga In</button>
-                </form>
-                <form class="form-inline my-2 my-lg-0 MarginLeft">
-                  <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#SignupModal">Bli Medlem</button>
-                </form>
+               { this.props.setUsername === "" ? 
+                  <form class="form-inline my-2 my-lg-0 row">
+                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#LoginModal">Logga In</button>
+                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#SignupModal">Bli Medlem</button>
+                  </form>
+                 : 
+                 <form class="form-inline my-2 my-lg-0 row">
+                  <ul class="navbar-nav mr-auto">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Välkommen {this.props.setUsername}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" onClick={()=>{this.props.dispatch(actionCreators.logoutUser(''));}} href="#">Logga Ut</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </form>
+                }
+                
               </div>
             </nav>
           </header>
@@ -88,9 +104,9 @@ class App extends Component {
             <Route path="/reklam" component={Reklam}/>
             <Route path="/event" component={Event}/>
             <Route path="/business" component={Business}/>
-            <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.user} dispatch={this.props.dispatch}/>}  />
+            <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.userID} dispatch={this.props.dispatch}/>}  />
           </div> 
-          <ModalLogIn title="Logga In"/>
+          <ModalLogIn setLoginUser={this.props.setLoginUser} setLoginPassword={this.props.setLoginPassword} dispatch={this.props.dispatch} title="Logga In"/>
           <ModalSignup title="Bli medlem"/>
 
           <Footer/>
