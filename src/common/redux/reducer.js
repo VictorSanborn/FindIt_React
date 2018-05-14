@@ -1,18 +1,32 @@
 // The types of actions that you can dispatch to modify the state of the store
 export const types = {
   SET: "SET",
+  SETLOGINUSERNAME: "SETLOGINUSERNAME",
+  SETLOGINPASSWORD: "SETLOGINUSERNAME",
+  REMOVELOGINBOXDATA: "REMOVELOGINBOXDATA",
 };
   
 // Helper functions to dispatch actions, optionally with payloads
 export const actionCreators = {
   set: item => {
       return { type: types.SET, payload: item};
+  },
+  setLoginUser: item => {
+    return { type: types.SETLOGINUSERNAME, payload: item};
+  },
+  SETLOGINPASSWORD: item => {
+    return { type: types.SETLOGINPASSWORD, payload: item};
+  },
+  REMOVELOGINBOXDATA: item => {
+    return { type: types.REMOVELOGINBOXDATA, payload: item};
   }
 };
   
 // Initial state of the store
 const initialState = {
-  user: 'Test',
+  user: '',
+  setLoginUser: '',
+  setLoginPassword: '',
 };
 
 // Function to handle actions and update the state of the store.
@@ -31,6 +45,25 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         user: payload,
+      };
+    }
+    case types.SETLOGINUSERNAME: {
+      return {
+        ...state,
+        setLoginUser: payload,
+      };
+    }
+    case types.SETLOGINPASSWORD: {
+      return {
+        ...state,
+        setLoginPassword: payload,
+      };
+    }
+    case types.REMOVELOGINBOXDATA: {
+      return {
+        ...state,
+        setLoginUser: '',
+        setLoginPassword: ''
       };
     }
   }
