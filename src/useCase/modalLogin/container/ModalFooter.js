@@ -13,6 +13,7 @@ class ModalFooter extends Component {
       {
         this.props.dispatch(actionCreators.setUserID(response.data.userID));
         this.props.dispatch(actionCreators.setUsername(this.props.setLoginUser));
+        document.getElementsByName('closer')[0].click();
       }
       this.props.dispatch(actionCreators.removeLoginBoxData(''));
     });
@@ -28,6 +29,7 @@ class ModalFooter extends Component {
       <div class="modal-footer">
         <ModalCloseButton removeLoginData={this.removeLogInBoxDataFunction}/>
         <LogInButton onLogin={this.onLogin} name="Logga In" styleText="btn btn-primary"/>
+        <button name="closer" hidden data-dismiss="modal"/>
       </div>   
     );
   }
