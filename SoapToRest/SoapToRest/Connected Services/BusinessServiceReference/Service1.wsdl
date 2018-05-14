@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://193.10.202.72/business/Service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://193.10.202.72/business/Service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://193.10.202.72/business/Service1.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BusinessWcf.Data" />
+      <xsd:import schemaLocation="http://193.10.202.72/business/Service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BusinessWcf" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_GetAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAll" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddBusinessUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBusinessUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddBusinessUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBusinessUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddBusiness_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddBusiness" />
+  </wsdl:message>
+  <wsdl:message name="IService1_AddBusiness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBusinessById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBusinessById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBusinessByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessByName" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBusinessByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateBusiness_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBusiness" />
+  </wsdl:message>
+  <wsdl:message name="IService1_UpdateBusiness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteBusiness_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBusiness" />
+  </wsdl:message>
+  <wsdl:message name="IService1_DeleteBusiness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBusinessNameById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessNameById" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBusinessNameById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessNameByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBusinessUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessUser" />
+  </wsdl:message>
+  <wsdl:message name="IService1_GetBusinessUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBusinessUserResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="GetAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetAll" message="tns:IService1_GetAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetAllResponse" message="tns:IService1_GetAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBusinessUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddBusinessUser" message="tns:IService1_AddBusinessUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddBusinessUserResponse" message="tns:IService1_AddBusinessUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddBusiness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/AddBusiness" message="tns:IService1_AddBusiness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/AddBusinessResponse" message="tns:IService1_AddBusiness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBusinessById" message="tns:IService1_GetBusinessById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBusinessByIdResponse" message="tns:IService1_GetBusinessById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBusinessByName" message="tns:IService1_GetBusinessByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBusinessByNameResponse" message="tns:IService1_GetBusinessByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBusiness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/UpdateBusiness" message="tns:IService1_UpdateBusiness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/UpdateBusinessResponse" message="tns:IService1_UpdateBusiness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBusiness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/DeleteBusiness" message="tns:IService1_DeleteBusiness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/DeleteBusinessResponse" message="tns:IService1_DeleteBusiness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessNameById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBusinessNameById" message="tns:IService1_GetBusinessNameById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBusinessNameByIdResponse" message="tns:IService1_GetBusinessNameById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/GetBusinessUser" message="tns:IService1_GetBusinessUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/GetBusinessUserResponse" message="tns:IService1_GetBusinessUser_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAll">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBusinessUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddBusinessUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddBusiness">
+      <soap:operation soapAction="http://tempuri.org/IService1/AddBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetBusinessById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessByName">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetBusinessByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBusiness">
+      <soap:operation soapAction="http://tempuri.org/IService1/UpdateBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBusiness">
+      <soap:operation soapAction="http://tempuri.org/IService1/DeleteBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessNameById">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetBusinessNameById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBusinessUser">
+      <soap:operation soapAction="http://tempuri.org/IService1/GetBusinessUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://193.10.202.72/business/Service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
