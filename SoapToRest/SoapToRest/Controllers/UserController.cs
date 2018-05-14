@@ -7,6 +7,8 @@ using System.Web.Http;
 
 namespace SoapToRest.Controllers
 {
+
+
     public class UserController : ApiController
     {
         UserService.Service1Client client = new UserService.Service1Client();
@@ -40,21 +42,18 @@ namespace SoapToRest.Controllers
             return HttpStatusCode.OK;
         }
 
-        public string[] GetUserID(string username, string password)
+        public UserID GetUserID(string username, string password)
         {
-            string keyValue = "userID";
-            string[] result = new string[2];
-            result[0] = keyValue;
+            UserID user = new UserID();
             try
             {
-                
-                result[1]  = client.GetUserID(username, password).ToString();
+                user.userID = client.GetUserID(username, password).ToString();
             }
             catch (Exception e)
             {
             }
 
-            return result;
+            return user;
 
         }
 
@@ -106,7 +105,7 @@ namespace SoapToRest.Controllers
             try
             {
                 establishmentInfos = client.GetEstablishmentInfo(userID);
-            
+
 
             }
             catch
@@ -134,8 +133,8 @@ namespace SoapToRest.Controllers
         public HttpStatusCode UpdateEstablishment(int establishmentID, int rating, int userID)
         {
             UserService.UserInfo user = new UserService.UserInfo();
-  
-            try 
+
+            try
             {
                 client.UpdateEstablishment(establishmentID, rating, userID);
             }
