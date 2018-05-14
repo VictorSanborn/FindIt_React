@@ -14,10 +14,10 @@ export const actionCreators = {
   setLoginUser: item => {
     return { type: types.SETLOGINUSERNAME, payload: item};
   },
-  SETLOGINPASSWORD: item => {
+  setLoginPassword: item => {
     return { type: types.SETLOGINPASSWORD, payload: item};
   },
-  REMOVELOGINBOXDATA: item => {
+  removeLoginBoxData: item => {
     return { type: types.REMOVELOGINBOXDATA, payload: item};
   }
 };
