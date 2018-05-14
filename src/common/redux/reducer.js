@@ -44,7 +44,7 @@ export const reducer = (state = initialState, action) => {
     case types.SETUSERID: {
       return {
         ...state,
-        user: payload,
+        userID: payload,
       };
     }
     case types.SETLOGINUSERNAME: {

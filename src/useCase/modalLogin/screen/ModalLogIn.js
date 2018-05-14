@@ -10,8 +10,8 @@ class ModalLogIn extends Component {
         <div class="modal-dialog" role="document">
           <div class="modal-content backgroundColor">
             <ModalHeader dispatch={this.props.dispatch} title={this.props.title}/>
-            <ModalBody dispatch={this.props.dispatch} setLoginUser={this.props.setLoginUser} setLoginPassword={this.setLoginPassword} />
-            <ModalFooter dispatch={this.props.dispatch} />
+            <ModalBody dispatch={this.props.dispatch}  />
+            <ModalFooter setLoginUser={this.props.setLoginUser} setLoginPassword={this.props.setLoginPassword} dispatch={this.props.dispatch} />
           </div>
         </div>
       </div>

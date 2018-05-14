@@ -38,7 +38,7 @@ class App extends Component {
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
-
+              
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
@@ -72,7 +72,7 @@ class App extends Component {
                     <a class="nav-link linkColor disabled" href="#">Disabled</a>
                   </li>
                 </ul>
-               { this.props.user === "" ? 
+               { this.props.userID === "" ? 
                   <form class="form-inline my-2 my-lg-0 row">
                     <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#LoginModal">Logga In</button>
                     <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#SignupModal">Bli Medlem</button>
@@ -82,7 +82,7 @@ class App extends Component {
                   <ul class="navbar-nav mr-auto">
                       <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Välkommen {this.props.user}
+                          Välkommen {this.props.userID}
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="#">Logga Ut</a>
@@ -105,7 +105,7 @@ class App extends Component {
             <Route path="/business" component={Business}/>
             <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.userID} dispatch={this.props.dispatch}/>}  />
           </div> 
-          <ModalLogIn dispatch={this.props.dispatch} title="Logga In"/>
+          <ModalLogIn setLoginUser={this.props.setLoginUser} setLoginPassword={this.props.setLoginPassword} dispatch={this.props.dispatch} title="Logga In"/>
           <ModalSignup title="Bli medlem"/>
 
           <Footer/>

@@ -4,17 +4,9 @@ import ModalCloseButton from '../component/ModalCloseButton';
 import { actionCreators } from '../../../common/redux/reducer';
 import {loginUser} from '../../../common/functions/API';
 
-const mapStateToProps = (state) => ({
-  user: state.user,
-  setLoginUser: state.setLoginUser,
-  setLoginPassword: state.setLoginPassword,
-});
-
 class ModalFooter extends Component {
-
-
-  onLogin = async(text) => {
-    await loginUser(this.props.setLoginUser, this.props.setLoginPassword).then((response) => {
+  onLogin = (text) => {
+    loginUser(this.props.setLoginUser, this.props.setLoginPassword).then((response) => {
       console.log(response);
       console.log(this.props.setLoginUser);
       if (response.status == 200)
