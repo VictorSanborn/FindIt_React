@@ -1,7 +1,9 @@
-export async const loginUser = (user, password) => {
+import axios from 'axios';
+
+
+export const loginUser = (username, password) => {
   try {
-    const response = await axios.get('193.10.202.73/User/GetUserID?username={'+username+'}&password={'+password+'}');
-    console.log(response);
+    return axios.get('http://localhost:5470/User/GetUserID?username='+username+'&password='+password+'');
   } catch (error) {
     console.error(error);
   }

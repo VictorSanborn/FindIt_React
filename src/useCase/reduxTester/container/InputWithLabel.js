@@ -10,7 +10,7 @@ class InputWithLabel extends Component {
   });
 
   onSetUser = (text) => {
-    this.props.dispatch(actionCreators.set(text.target.value));
+    this.props.dispatch(actionCreators.setUserID(text.target.value));
   }
 
   render() {

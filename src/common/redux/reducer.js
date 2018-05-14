@@ -1,6 +1,6 @@
 // The types of actions that you can dispatch to modify the state of the store
 export const types = {
-  SET: "SET",
+  SETUSERID: "SETUSERID",
   SETLOGINUSERNAME: "SETLOGINUSERNAME",
   SETLOGINPASSWORD: "SETLOGINPASSWORD",
   REMOVELOGINBOXDATA: "REMOVELOGINBOXDATA",
@@ -8,8 +8,8 @@ export const types = {
   
 // Helper functions to dispatch actions, optionally with payloads
 export const actionCreators = {
-  set: item => {
-      return { type: types.SET, payload: item};
+  setUserID: item => {
+      return { type: types.SETUSERID, payload: item};
   },
   setLoginUser: item => {
     return { type: types.SETLOGINUSERNAME, payload: item};
@@ -24,7 +24,7 @@ export const actionCreators = {
   
 // Initial state of the store
 const initialState = {
-  user: '',
+  userID: '',
   setLoginUser: '',
   setLoginPassword: '',
 };
@@ -37,11 +37,11 @@ const initialState = {
 //   call reducer() with no state on startup, and we are expected to
 //   return the initial state of the app in this case.
 export const reducer = (state = initialState, action) => {
-  const { user } = state;
+  const { userID } = state;
   const { type, payload } = action;
 
   switch (type) {
-    case types.SET: {
+    case types.SETUSERID: {
       return {
         ...state,
         user: payload,

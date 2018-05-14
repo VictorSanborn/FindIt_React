@@ -12,7 +12,6 @@ import { connect } from 'react-redux';
 import Index from './useCase/index/screen/Index';
 import Reklam from './common/reklam/screen/Reklam';
 import Footer from './common/footer/screen/Footer';
-import LogIn from './useCase/logIn/screen/LogIn';
 import ModalLogIn from './useCase/modalLogin/screen/ModalLogIn';
 import Search from './useCase/search/screen/Search';
 import Business from './useCase/business/screen/Business';
@@ -21,12 +20,14 @@ import ReduxTest from './useCase/reduxTester/screen/ReduxTest';
 import ModalSignup from './useCase/modalsignup/screen/ModalSignup';
 
 const mapStateToProps = (state) => ({
-  user: state.user,
+  userID: state.userID,
+  setLoginUser: state.setLoginUser,
+  setLoginPassword: state.setLoginPassword,
 });
-
 
 class App extends Component {
   state = {};
+  
 
   render() {
     return (
@@ -88,9 +89,9 @@ class App extends Component {
             <Route path="/reklam" component={Reklam}/>
             <Route path="/event" component={Event}/>
             <Route path="/business" component={Business}/>
-            <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.user} dispatch={this.props.dispatch}/>}  />
+            <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.userID} dispatch={this.props.dispatch}/>}  />
           </div> 
-          <ModalLogIn title="Logga In"/>
+          <ModalLogIn dispatch={this.props.dispatch} title="Logga In"/>
           <ModalSignup title="Bli medlem"/>
 
           <Footer/>
