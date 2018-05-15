@@ -4,7 +4,7 @@ class SignupButton extends Component {
   render() {
     return (
       <div className = "App">
-        <button type="button" onPress={this.props.on_press} class="btn btn-primary">{this.props.name}</button>
+        <button type="button" onClick={this.props.onClick} class="btn btn-primary">{this.props.name}</button>
       </div>
     );
   }

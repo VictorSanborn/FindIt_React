@@ -7,7 +7,7 @@ class ModalFooter extends Component {
     return (
       <div class="modal-footer">
         <ModalCloseButton />
-        <SignupButton name="Bli Medlem"/>
+        <SignupButton onClick={this.props.OnCreateUserSubmit} name="Bli Medlem"/>
       </div>   
     );
   }
