@@ -25,6 +25,12 @@
   font-family: 'Lobster', cursive;
   color: #E9C458;
 }
+.MediumText {
+  font-size: 1.8em;
+  font-family: 'Lobster', cursive;
+  color: #E9C458;
+}
+
 
 .App-intro {
   font-size: large;
