@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let serverUri = 'http://localhost:5470';
+let serverUri = 'http://193.10.202.73';
 
 export const loginUser = (username, password) => {
   try {
