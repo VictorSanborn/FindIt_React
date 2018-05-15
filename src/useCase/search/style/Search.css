@@ -8,7 +8,9 @@
 
 .SearchField {
     margin:5px;
+ 
 }
+
 
 .BorderLeft {
     border-left: 1px solid #E9C458;
@@ -50,6 +52,8 @@
 
 .SearchResultListObject
 {
-    margin-bottom: 10px;
-    background-color: rgb(255, 255, 255);
+    margin-right: 0;
+    padding-right: 0;
+    margin-top:10px;
+    background: rgba(232, 210, 160, 0.377);
 }

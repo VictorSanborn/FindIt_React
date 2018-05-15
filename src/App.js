@@ -99,8 +99,7 @@ class App extends Component {
             
           <div class="col-sm-8 offset-sm-2 contentPadding" style={{backgroundColor: 'white', minHeight: '80vh'}}>
             { /*Lägg till alla sidor som skall kunna navigeras ifrån!*/ }
-            <Route exact path="/" component={Index}/>
-            <Route path="/search" component={Search}/>
+            <Route exact path="/" component={Search}/>
             <Route path="/reklam" component={Reklam}/>
             <Route path="/event" component={Event}/>
             <Route path="/business/:barId" component={Business}/>

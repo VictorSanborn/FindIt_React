@@ -9,7 +9,6 @@ class Search extends Component {
   render() {
     return (
       <div className="App">
-        <Title text="Hitta öl"/>
         <SearchFields/>
         <ResultFields/>
       </div>
