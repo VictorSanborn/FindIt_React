@@ -3,14 +3,14 @@ import ResultField from './ResultField';
 
 class ResultFields extends Component {
   GetValues = () => {
-    return [{imgsrc: 'test', title: 'ttttitle', description: 'descccriptttion'},{imgsrc: 'test', title: 'ttttitle', description: 'descccriptttion'}];
+    return [{imgsrc: 'test', title: 'Business Title', description: 'Description'},{imgsrc: 'test', title: 'Business Title', description: 'Description'}];
   }
   render() {
     return (
-        <div className="SearchBox row">
+        <div className="row">
         {this.GetValues().map((value) => {
             return (
-            <div class="col-sm-12">
+            <div class="col-sm-12 SearchResultListObject">
                 <ResultField imgsrc={value.imgsrc} title={value.title} description={value.description}/>
             </div>)
         })}

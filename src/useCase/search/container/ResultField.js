@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ResultField extends Component {
   render() {
     return (
-        <div className="col-sm-12 row SearchResultListObject" style={{}}>
+        <div className="col-sm-12 row">
             <img class="OrganisationImage"></img>
 
             <div class="row">
