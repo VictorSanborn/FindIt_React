@@ -28,11 +28,11 @@ namespace SoapToRest.Controllers
             }
         }
         [HttpPost]
-        public HttpStatusCode CreateUser(string username, string password, string firstname, string lastname, string email)
+        public HttpStatusCode CreateUser(UserService.UserInfo user)
         {
             try
             {
-                client.CreateUser(username, password, firstname, lastname, email);
+               client.CreateUser(user.Username, user.Password, user.FName, user.LName, user.Email);
             }
             catch
             {
