@@ -19,3 +19,11 @@ export const signupUser = (Username, Password, FName, LName, Email) => {
     console.error(error);
   }
 };
+
+export const getAllEvents = () => {
+  try {
+    return axios.get(serverUri + '/Event/GetEvents');
+  } catch (error) {
+    console.error(error);
+  }
+};
