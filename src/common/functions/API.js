@@ -19,3 +19,11 @@ export const signupUser = (Username, Password, FName, LName, Email) => {
     console.error(error);
   }
 };
+
+export const getBuisness = (id) => {
+  try {
+    return axios.get(serverUri + '/Business/GetBusinessById/'+id);
+  } catch (error) {
+    console.error(error);
+  }
+};
