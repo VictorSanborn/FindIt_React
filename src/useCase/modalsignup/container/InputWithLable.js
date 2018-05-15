@@ -8,7 +8,7 @@ class InputWithLable extends Component {
     return (
       <div class="modal-body" style={{backgroundColor: 'white'}}>
         <SmallLabel title={this.props.title} />
-        <SignupBox placeholder={this.props.placeholder} type={this.props.type}/>
+        <SignupBox text={this.props.text} onChange={this.props.onChange} placeholder={this.props.placeholder} type={this.props.type}/>
       </div>
     );
   }

@@ -9,3 +9,13 @@ export const loginUser = (username, password) => {
     console.error(error);
   }
 };
+
+export const signupUser = (Username, Password, FName, LName, Email) => {
+  try {
+    let data = {"Username":Username,"Password":Password,"Fname":FName,"LName":LName,"Email":Email}
+    console.log(data);
+    return axios.post(serverUri + '/User/CreateUser', data);
+  } catch (error) {
+    console.error(error);
+  }
+};
