@@ -176,7 +176,7 @@ namespace SoapToRest.Controllers
         }
 
         [HttpGet]
-        public UserService.EstablishmentInfo GetRatingWithUser(int establishmentID, int rating, int userID)
+        public UserService.EstablishmentInfo GetRatingWithUser(int establishmentID, int userID)
         {
             UserService.EstablishmentInfo establishment = new UserService.EstablishmentInfo();
             UserService.EstablishmentInfo[] establishmentInfos = new UserService.EstablishmentInfo[] { };
@@ -202,7 +202,7 @@ namespace SoapToRest.Controllers
         }
 
         [HttpGet]
-        public UserService.EstablishmentInfo GetRatingWithoutUser(int establishmentID, int rating)
+        public UserService.EstablishmentInfo GetRatingWithoutUser(int establishmentID)
         {
             UserService.EstablishmentInfo establishment = new UserService.EstablishmentInfo();
             UserService.EstablishmentInfo[] establishmentInfos = new UserService.EstablishmentInfo[] { };
