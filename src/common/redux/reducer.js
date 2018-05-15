@@ -3,9 +3,6 @@ export const types = {
   LOGOUTUSER: "LOGOUTUSER",
   SETUSERNAME: "SETUSERNAME",
   SETUSERID: "SETUSERID",
-  SETLOGINUSERNAME: "SETLOGINUSERNAME",
-  SETLOGINPASSWORD: "SETLOGINPASSWORD",
-  REMOVELOGINBOXDATA: "REMOVELOGINBOXDATA",
 };
   
 // Helper functions to dispatch actions, optionally with payloads
@@ -19,22 +16,11 @@ export const actionCreators = {
   setUserID: item => {
       return { type: types.SETUSERID, payload: item};
   },
-  setLoginUser: item => {
-    return { type: types.SETLOGINUSERNAME, payload: item};
-  },
-  setLoginPassword: item => {
-    return { type: types.SETLOGINPASSWORD, payload: item};
-  },
-  removeLoginBoxData: item => {
-    return { type: types.REMOVELOGINBOXDATA, payload: item};
-  }
 };
   
 // Initial state of the store
 const initialState = {
   userID: '',
-  setLoginUser: '',
-  setLoginPassword: '',
   setUsername: '',
 };
 
@@ -74,25 +60,6 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         setUsername: payload,
-      };
-    }
-    case types.SETLOGINUSERNAME: {
-      return {
-        ...state,
-        setLoginUser: payload,
-      };
-    }
-    case types.SETLOGINPASSWORD: {
-      return {
-        ...state,
-        setLoginPassword: payload,
-      };
-    }
-    case types.REMOVELOGINBOXDATA: {
-      return {
-        ...state,
-        setLoginUser: '',
-        setLoginPassword: '',
       };
     }
   }
