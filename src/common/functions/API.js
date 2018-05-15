@@ -22,12 +22,12 @@ export const getBuisness = (id) => {
   }
 };
 
-export const getReview = (barId, UserId) => {
+export const getReview = (establishmentID, UserId) => {
   try {
-      if(UserId !== 0){
-        return axios.get(serverUri + 'User/GetRatingWithUser?establishmentID='+barId+'&userID='+UserId);
+      if(UserId !== 0 && UserId !== ''){
+        return axios.get(serverUri + '/User/GetRatingWithUser?establishmentID='+establishmentID+'&userID='+UserId);
       } else{
-        return axios.get(serverUri + 'User/GetRatingWithUser?establishmentID='+barId+'&userID=0');
+        return axios.get(serverUri + '/User/GetRatingWithUser?establishmentID='+establishmentID+'&userID=0');
       }
     
   } catch (error) {
@@ -43,17 +43,15 @@ export const getReview = (barId, UserId) => {
 export const signupUser = (Username, Password, FName, LName, Email) => {
   try {
     let data = {"Username":Username,"Password":Password,"Fname":FName,"LName":LName,"Email":Email}
-    console.log(data);
     return axios.post(serverUri + '/User/CreateUser', data);
   } catch (error) {
     console.error(error);
   }
 };
-export const sendReview = (Username, Password, FName, LName, Email) => {
+export const sendReview = (UserId, establishmentID, rating) => {
   try {
-    let data = {"Username":Username,"Password":Password,"Fname":FName,"LName":LName,"Email":Email}
-    console.log(data);
-    return axios.post(serverUri + '/User/CreateUser', data);
+    let data = {}
+    return axios.post(serverUri + '/User/UpdateEstablishment?establishmentID='+establishmentID+'&rating='+rating+'&userID='+UserId);
   } catch (error) {
     console.error(error);
   }

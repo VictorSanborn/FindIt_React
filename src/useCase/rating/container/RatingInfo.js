@@ -2,39 +2,59 @@ import React, { Component } from 'react';
 import Slider from '../component/Slider';
 import Text from '../component/Text';
 import TextSmall from '../component/TextSmall';
+import { getReview, sendReview } from '../../../common/functions/API';
 
 class RatingInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userRating: this.props.userRating,
+      sliderRating: 0.0,
+      userRating: 0.0,
+      avarageRating: 0.0,
     }
   }; 
 
-  onChangeRating = (userRating) =>{
+  componentDidMount(){
+    getReview(this.props.barID, this.props.userID).then((response) => {
+      this.setState({
+        ...this.state,
+        avarageRating: response.data.Rating .toFixed(2),
+        userRating: response.data.URating[0],
+        sliderRating: response.data.URating[0],
+      })
+    });
+ }
+
+  onChangeRating = (sliderRating) =>{
     this.setState({
         ...this.state,
-        userRating: userRating.target.value,
+        sliderRating: sliderRating.target.value,
       })
   };
 
   onButtonPress = () => {
-      //
-      //
-      // SKICKA TILL API!
-      //
-      //
+    sendReview(this.props.userID, this.props.barID, this.state.sliderRating).then((response) => {
+      //Gett the new data from the api after the review is sent
+      getReview(this.props.barID, this.props.userID).then((response) => {
+        this.setState({
+          ...this.state,
+          avarageRating: response.data.Rating.toFixed(2),
+          userRating: response.data.URating[0],
+          sliderRating: response.data.URating[0],
+        })
+      });
+    });
   }
 
   render() {
     return (
       <div className="App">
-        <Text size="h3" text={'Snitt '+this.props.avarage}/>
+        <Text size="h3" text={'Snitt '+this.state.avarageRating}/>
         {this.props.userID !== '' && this.props.userID !== 0 ?         
           <div>
             <TextSmall text={'Ditt betyg: '+this.state.userRating}/>
-            <Slider userRating={this.state.userRating} onChangeRating={this.onChangeRating}/>
-            <button class="btn btn-outline-warning text-left" type="button" data-toggle="modal" data-target="#exampleModal">Sätt betyg</button>
+            <Slider sliderRating={this.state.sliderRating} onChangeRating={this.onChangeRating}/>
+            <button class="btn btn-outline-warning text-left" onClick={this.onButtonPress} type="button" data-toggle="modal" data-target="#exampleModal">Sätt betyg</button>
           </div> : 
           <div>
             <Text size="h3" text="Logga in för att sätta betyg!"/>

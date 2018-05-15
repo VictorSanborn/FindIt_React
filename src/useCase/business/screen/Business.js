@@ -3,7 +3,7 @@ import Information from '../container/Information';
 import ListGroup from '../container/ListGroup';
 import Image from '../component/Image';
 import Rating from '../../rating/screen/Rating';
-import { getBuisness, getReview } from '../../../common/functions/API';
+import { getBuisness } from '../../../common/functions/API';
 
 class Business extends Component {  
   constructor(props) {
@@ -35,13 +35,6 @@ class Business extends Component {
         zipcode: response.data.zipcode,
       })
     });
-
-    getReview(this.props.match.params.barId, 1).then((response) => {
-      console.log(response.data);
-      this.setState({
-        ...this.state,
-      })
-    });
  }
 
   render() {
@@ -54,7 +47,7 @@ class Business extends Component {
               title={this.state.name}
               presentation={this.state.description}
               certified={this.state.verified}/>
-            <Rating avarage="4,5" userRating="5" userID='1'/>
+            <Rating barID={this.props.match.params.barId} userID={this.props.userID}/>
           </div>
         </div>
         <div class="col-sm-5">
