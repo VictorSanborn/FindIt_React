@@ -21,8 +21,6 @@ import ModalSignup from './useCase/modalsignup/screen/ModalSignup';
 
 const mapStateToProps = (state) => ({
   userID: state.userID,
-  setLoginUser: state.setLoginUser,
-  setLoginPassword: state.setLoginPassword,
   setUsername: state.setUsername,
 });
 
@@ -105,7 +103,7 @@ class App extends Component {
             <Route path="/business/:barId" component={Business}/>
             <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.userID} dispatch={this.props.dispatch}/>}  />
           </div> 
-          <ModalLogIn setLoginUser={this.props.setLoginUser} setLoginPassword={this.props.setLoginPassword} dispatch={this.props.dispatch} title="Logga In"/>
+          <ModalLogIn dispatch={this.props.dispatch} title="Logga In"/>
           <ModalSignup title="Bli medlem"/>
 
           <Footer/>

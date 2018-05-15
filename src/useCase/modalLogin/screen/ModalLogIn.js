@@ -7,8 +7,8 @@ class ModalLogIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      usernameInput: 'hej',
-      passwordInput: 'hopp',
+      usernameInput: '',
+      passwordInput: '',
     }
   }; 
 
@@ -26,6 +26,8 @@ class ModalLogIn extends Component {
       })
   };
 
+
+  
   render() {
     return (
       <div class="modal fade" id="LoginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -34,11 +36,12 @@ class ModalLogIn extends Component {
             <ModalHeader dispatch={this.props.dispatch} title={this.props.title}/>
             <ModalBody 
               dispatch={this.props.dispatch} 
-              setUsername={this.onChangeUsername} 
-              setLoginPassword={this.onChangePassword} 
+              usernameInput={this.state.usernameInput} setUsername={this.onChangeUsername} 
+              passwordInput={this.state.passwordInput} setLoginPassword={this.onChangePassword} 
             />
             <ModalFooter 
-              setLoginUser={this.props.setLoginUser} 
+              usernameInput={this.state.usernameInput}
+              passwordInput={this.state.passwordInput}
               dispatch={this.props.dispatch} 
             />
           </div>
