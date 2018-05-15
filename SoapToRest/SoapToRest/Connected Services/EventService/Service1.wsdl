@@ -1,0 +1,651 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://193.10.202.74/EventWS/service1.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://193.10.202.74/EventWS/service1.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://193.10.202.74/EventWS/service1.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://193.10.202.74/EventWS/service1.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfProduct.Data" />
+      <xsd:import schemaLocation="http://193.10.202.74/EventWS/service1.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BusinessWcf.Data" />
+      <xsd:import schemaLocation="http://193.10.202.74/EventWS/service1.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/EventService.Contracts" />
+      <xsd:import schemaLocation="http://193.10.202.74/EventWS/service1.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/EventService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService1_listEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:listEvents" />
+  </wsdl:message>
+  <wsdl:message name="IService1_listEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_listCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:listCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_listCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_listParticipantsForEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:listParticipantsForEvent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_listParticipantsForEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listParticipantsForEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_listBusinessesForEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:listBusinessesForEvent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_listBusinessesForEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:listBusinessesForEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRandomProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRandomProduct" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRandomProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRandomProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRandomBusiness_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRandomBusiness" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getRandomBusiness_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRandomBusinessResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEvent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:getEvents" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getTodaysEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:getTodaysEvents" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getTodaysEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getTodaysEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUpcomingEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:getUpcomingEvents" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getUpcomingEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getUpcomingEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getMyEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMyEvents" />
+  </wsdl:message>
+  <wsdl:message name="IService1_getMyEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMyEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_searchForEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchForEvent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_searchForEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchForEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_searchForCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:searchForCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_searchForCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:searchForCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:createEvent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:readEvent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:readEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readEvents_InputMessage">
+    <wsdl:part name="parameters" element="tns:readEvents" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readEvents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:readEventsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateEvent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteEvent_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteEvent" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteEvent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteEventResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:createCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:readCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:readCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:readCategories" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:readCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createBusinessConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:createBusinessConnection" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createBusinessConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createBusinessConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readBusinessConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:readBusinessConnection" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readBusinessConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:readBusinessConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readBusinessConnections_InputMessage">
+    <wsdl:part name="parameters" element="tns:readBusinessConnections" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readBusinessConnections_OutputMessage">
+    <wsdl:part name="parameters" element="tns:readBusinessConnectionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateBusinessConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateBusinessConnection" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateBusinessConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateBusinessConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteBusinessConnection_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteBusinessConnection" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteBusinessConnection_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteBusinessConnectionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createParticipant_InputMessage">
+    <wsdl:part name="parameters" element="tns:createParticipant" />
+  </wsdl:message>
+  <wsdl:message name="IService1_createParticipant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:createParticipantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readParticipant_InputMessage">
+    <wsdl:part name="parameters" element="tns:readParticipant" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readParticipant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:readParticipantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readParticipants_InputMessage">
+    <wsdl:part name="parameters" element="tns:readParticipants" />
+  </wsdl:message>
+  <wsdl:message name="IService1_readParticipants_OutputMessage">
+    <wsdl:part name="parameters" element="tns:readParticipantsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateParticipant_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateParticipant" />
+  </wsdl:message>
+  <wsdl:message name="IService1_updateParticipant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateParticipantResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteParticipant_InputMessage">
+    <wsdl:part name="parameters" element="tns:deleteParticipant" />
+  </wsdl:message>
+  <wsdl:message name="IService1_deleteParticipant_OutputMessage">
+    <wsdl:part name="parameters" element="tns:deleteParticipantResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService1">
+    <wsdl:operation name="listEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/listEvents" message="tns:IService1_listEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/listEventsResponse" message="tns:IService1_listEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/listCategories" message="tns:IService1_listCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/listCategoriesResponse" message="tns:IService1_listCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listParticipantsForEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/listParticipantsForEvent" message="tns:IService1_listParticipantsForEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/listParticipantsForEventResponse" message="tns:IService1_listParticipantsForEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="listBusinessesForEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/listBusinessesForEvent" message="tns:IService1_listBusinessesForEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/listBusinessesForEventResponse" message="tns:IService1_listBusinessesForEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRandomProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRandomProduct" message="tns:IService1_getRandomProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRandomProductResponse" message="tns:IService1_getRandomProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRandomBusiness">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getRandomBusiness" message="tns:IService1_getRandomBusiness_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getRandomBusinessResponse" message="tns:IService1_getRandomBusiness_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getEvent" message="tns:IService1_getEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getEventResponse" message="tns:IService1_getEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getEvents" message="tns:IService1_getEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getEventsResponse" message="tns:IService1_getEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getTodaysEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getTodaysEvents" message="tns:IService1_getTodaysEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getTodaysEventsResponse" message="tns:IService1_getTodaysEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getUpcomingEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getUpcomingEvents" message="tns:IService1_getUpcomingEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getUpcomingEventsResponse" message="tns:IService1_getUpcomingEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMyEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/getMyEvents" message="tns:IService1_getMyEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/getMyEventsResponse" message="tns:IService1_getMyEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchForEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/searchForEvent" message="tns:IService1_searchForEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/searchForEventResponse" message="tns:IService1_searchForEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="searchForCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/searchForCategory" message="tns:IService1_searchForCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/searchForCategoryResponse" message="tns:IService1_searchForCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createEvent" message="tns:IService1_createEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createEventResponse" message="tns:IService1_createEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="readEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/readEvent" message="tns:IService1_readEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/readEventResponse" message="tns:IService1_readEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="readEvents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/readEvents" message="tns:IService1_readEvents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/readEventsResponse" message="tns:IService1_readEvents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateEvent" message="tns:IService1_updateEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateEventResponse" message="tns:IService1_updateEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteEvent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteEvent" message="tns:IService1_deleteEvent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteEventResponse" message="tns:IService1_deleteEvent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createCategory" message="tns:IService1_createCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createCategoryResponse" message="tns:IService1_createCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="readCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/readCategory" message="tns:IService1_readCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/readCategoryResponse" message="tns:IService1_readCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="readCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/readCategories" message="tns:IService1_readCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/readCategoriesResponse" message="tns:IService1_readCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateCategory" message="tns:IService1_updateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateCategoryResponse" message="tns:IService1_updateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteCategory" message="tns:IService1_deleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteCategoryResponse" message="tns:IService1_deleteCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createBusinessConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createBusinessConnection" message="tns:IService1_createBusinessConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createBusinessConnectionResponse" message="tns:IService1_createBusinessConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="readBusinessConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/readBusinessConnection" message="tns:IService1_readBusinessConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/readBusinessConnectionResponse" message="tns:IService1_readBusinessConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="readBusinessConnections">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/readBusinessConnections" message="tns:IService1_readBusinessConnections_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/readBusinessConnectionsResponse" message="tns:IService1_readBusinessConnections_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateBusinessConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateBusinessConnection" message="tns:IService1_updateBusinessConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateBusinessConnectionResponse" message="tns:IService1_updateBusinessConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteBusinessConnection">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteBusinessConnection" message="tns:IService1_deleteBusinessConnection_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteBusinessConnectionResponse" message="tns:IService1_deleteBusinessConnection_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="createParticipant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/createParticipant" message="tns:IService1_createParticipant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/createParticipantResponse" message="tns:IService1_createParticipant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="readParticipant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/readParticipant" message="tns:IService1_readParticipant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/readParticipantResponse" message="tns:IService1_readParticipant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="readParticipants">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/readParticipants" message="tns:IService1_readParticipants_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/readParticipantsResponse" message="tns:IService1_readParticipants_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateParticipant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/updateParticipant" message="tns:IService1_updateParticipant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/updateParticipantResponse" message="tns:IService1_updateParticipant_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteParticipant">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService1/deleteParticipant" message="tns:IService1_deleteParticipant_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService1/deleteParticipantResponse" message="tns:IService1_deleteParticipant_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService1" type="tns:IService1">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="listEvents">
+      <soap:operation soapAction="http://tempuri.org/IService1/listEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/listCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listParticipantsForEvent">
+      <soap:operation soapAction="http://tempuri.org/IService1/listParticipantsForEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listBusinessesForEvent">
+      <soap:operation soapAction="http://tempuri.org/IService1/listBusinessesForEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRandomProduct">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRandomProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRandomBusiness">
+      <soap:operation soapAction="http://tempuri.org/IService1/getRandomBusiness" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEvent">
+      <soap:operation soapAction="http://tempuri.org/IService1/getEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEvents">
+      <soap:operation soapAction="http://tempuri.org/IService1/getEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTodaysEvents">
+      <soap:operation soapAction="http://tempuri.org/IService1/getTodaysEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUpcomingEvents">
+      <soap:operation soapAction="http://tempuri.org/IService1/getUpcomingEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMyEvents">
+      <soap:operation soapAction="http://tempuri.org/IService1/getMyEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchForEvent">
+      <soap:operation soapAction="http://tempuri.org/IService1/searchForEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="searchForCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/searchForCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createEvent">
+      <soap:operation soapAction="http://tempuri.org/IService1/createEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readEvent">
+      <soap:operation soapAction="http://tempuri.org/IService1/readEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readEvents">
+      <soap:operation soapAction="http://tempuri.org/IService1/readEvents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateEvent">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteEvent">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteEvent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/createCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/readCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readCategories">
+      <soap:operation soapAction="http://tempuri.org/IService1/readCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteCategory">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createBusinessConnection">
+      <soap:operation soapAction="http://tempuri.org/IService1/createBusinessConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readBusinessConnection">
+      <soap:operation soapAction="http://tempuri.org/IService1/readBusinessConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readBusinessConnections">
+      <soap:operation soapAction="http://tempuri.org/IService1/readBusinessConnections" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateBusinessConnection">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateBusinessConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteBusinessConnection">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteBusinessConnection" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createParticipant">
+      <soap:operation soapAction="http://tempuri.org/IService1/createParticipant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readParticipant">
+      <soap:operation soapAction="http://tempuri.org/IService1/readParticipant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="readParticipants">
+      <soap:operation soapAction="http://tempuri.org/IService1/readParticipants" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateParticipant">
+      <soap:operation soapAction="http://tempuri.org/IService1/updateParticipant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteParticipant">
+      <soap:operation soapAction="http://tempuri.org/IService1/deleteParticipant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IService1" binding="tns:BasicHttpBinding_IService1">
+      <soap:address location="http://193.10.202.74/EventWS/service1.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

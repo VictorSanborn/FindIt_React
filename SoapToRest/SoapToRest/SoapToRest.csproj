@@ -189,6 +189,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\EventService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProductService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -200,8 +205,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Controllers\BusinessController.cs" />
+    <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ProductServiceController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -230,6 +236,49 @@
     <Content Include="Connected Services\BusinessServiceReference\SoapToRest.BusinessServiceReference.BusinessUser1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <None Include="Connected Services\EventService\Service1.wsdl" />
+    <None Include="Connected Services\EventService\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EventService\service11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EventService\service12.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EventService\service13.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EventService\service14.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EventService\service15.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EventService\service16.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\EventService\SoapToRest.EventService.Business.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\EventService\SoapToRest.EventService.BusinessConnections.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\EventService\SoapToRest.EventService.Categories.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\EventService\SoapToRest.EventService.DetailedEvent.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\EventService\SoapToRest.EventService.Events.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\EventService\SoapToRest.EventService.Participants.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\EventService\SoapToRest.EventService.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ProductService\ProductService.disco" />
     <None Include="Connected Services\ProductService\configuration91.svcinfo" />
     <None Include="Connected Services\ProductService\configuration.svcinfo" />
@@ -248,6 +297,13 @@
     <None Include="Connected Services\BusinessServiceReference\configuration91.svcinfo" />
     <None Include="Connected Services\BusinessServiceReference\configuration.svcinfo" />
     <None Include="Connected Services\BusinessServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\EventService\service1.disco" />
+    <None Include="Connected Services\EventService\configuration91.svcinfo" />
+    <None Include="Connected Services\EventService\configuration.svcinfo" />
+    <None Include="Connected Services\EventService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -372,6 +428,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\BusinessServiceReference\" />
+    <WCFMetadataStorage Include="Connected Services\EventService\" />
     <WCFMetadataStorage Include="Connected Services\ProductService\" />
     <WCFMetadataStorage Include="Connected Services\UserService\" />
   </ItemGroup>

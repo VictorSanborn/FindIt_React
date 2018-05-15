@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/EventService" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/EventService" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfBusiness">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Business" nillable="true" type="tns:Business" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusiness" nillable="true" type="tns:ArrayOfBusiness" />
+  <xs:complexType name="Business">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="adress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="latitude" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="longitude" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Business" nillable="true" type="tns:Business" />
+  <xs:complexType name="BusinessConnections">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="businessId" type="xs:int" />
+      <xs:element minOccurs="0" name="eventId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="BusinessConnections" nillable="true" type="tns:BusinessConnections" />
+  <xs:complexType name="ArrayOfBusinessConnections">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="BusinessConnections" nillable="true" type="tns:BusinessConnections" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfBusinessConnections" nillable="true" type="tns:ArrayOfBusinessConnections" />
+  <xs:complexType name="Participants">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="eventId" type="xs:int" />
+      <xs:element minOccurs="0" name="registered" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="userId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Participants" nillable="true" type="tns:Participants" />
+  <xs:complexType name="ArrayOfParticipants">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Participants" nillable="true" type="tns:Participants" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParticipants" nillable="true" type="tns:ArrayOfParticipants" />
+</xs:schema>

@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace SoapToRest.Controllers
 {
-    public class ProductServiceController : ApiController
+    public class ProductController : ApiController
     {
 
         ProductService.ProductServiceClient client = new ProductService.ProductServiceClient();

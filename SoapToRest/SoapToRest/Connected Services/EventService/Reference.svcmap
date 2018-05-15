@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7c208cc8-375f-41b4-83e1-fdbc46a086ca" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://193.10.202.74/eventws/service1.svc " Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service1.disco" MetadataType="Disco" ID="a10feac1-ce78-4aeb-96c4-446e76aaeed6" SourceId="1" SourceUrl="http://193.10.202.74/EventWS/service1.svc?disco" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="87d251f1-7d02-4dfd-84f9-f1658b179cee" SourceId="1" SourceUrl="http://193.10.202.74/EventWS/service1.svc?wsdl" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="e0f14c55-e9c1-4397-80fd-52409608b198" SourceId="1" SourceUrl="http://193.10.202.74/EventWS/service1.svc?xsd=xsd4" />
+    <MetadataFile FileName="service11.xsd" MetadataType="Schema" ID="fd885e6c-5902-45d8-9610-99ce68c419de" SourceId="1" SourceUrl="http://193.10.202.74/EventWS/service1.svc?xsd=xsd5" />
+    <MetadataFile FileName="service12.xsd" MetadataType="Schema" ID="ff437490-757e-468e-a32b-e73d9ec24d90" SourceId="1" SourceUrl="http://193.10.202.74/EventWS/service1.svc?xsd=xsd6" />
+    <MetadataFile FileName="service13.xsd" MetadataType="Schema" ID="cf6c3a29-04c6-4231-95bf-0e0a859dfde6" SourceId="1" SourceUrl="http://193.10.202.74/EventWS/service1.svc?xsd=xsd0" />
+    <MetadataFile FileName="service14.xsd" MetadataType="Schema" ID="3e5742db-b567-4b0f-b006-9bdab117c07e" SourceId="1" SourceUrl="http://193.10.202.74/EventWS/service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="service15.xsd" MetadataType="Schema" ID="b5ed1372-7ca4-4cf8-89f5-f18c3e96c623" SourceId="1" SourceUrl="http://193.10.202.74/EventWS/service1.svc?xsd=xsd2" />
+    <MetadataFile FileName="service16.xsd" MetadataType="Schema" ID="cf0a4de2-2c92-455f-a665-5a250ee85e25" SourceId="1" SourceUrl="http://193.10.202.74/EventWS/service1.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
