@@ -15,67 +15,6 @@ namespace SoapToRest.UserService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CompositeType", Namespace="http://schemas.datacontract.org/2004/07/GruppFemWCF")]
-    [System.SerializableAttribute()]
-    public partial class CompositeType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private bool BoolValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string StringValueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public bool BoolValue {
-            get {
-                return this.BoolValueField;
-            }
-            set {
-                if ((this.BoolValueField.Equals(value) != true)) {
-                    this.BoolValueField = value;
-                    this.RaisePropertyChanged("BoolValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string StringValue {
-            get {
-                return this.StringValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StringValueField, value) != true)) {
-                    this.StringValueField = value;
-                    this.RaisePropertyChanged("StringValue");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="UserInfo", Namespace="http://schemas.datacontract.org/2004/07/GruppFemWCF")]
     [System.SerializableAttribute()]
     public partial class UserInfo : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -360,18 +299,6 @@ namespace SoapToRest.UserService {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserService.IService1")]
     public interface IService1 {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        string GetData(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetData", ReplyAction="http://tempuri.org/IService1/GetDataResponse")]
-        System.Threading.Tasks.Task<string> GetDataAsync(int value);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        SoapToRest.UserService.CompositeType GetDataUsingDataContract(SoapToRest.UserService.CompositeType composite);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetDataUsingDataContract", ReplyAction="http://tempuri.org/IService1/GetDataUsingDataContractResponse")]
-        System.Threading.Tasks.Task<SoapToRest.UserService.CompositeType> GetDataUsingDataContractAsync(SoapToRest.UserService.CompositeType composite);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUserInfo", ReplyAction="http://tempuri.org/IService1/GetUserInfoResponse")]
         SoapToRest.UserService.UserInfo[] GetUserInfo();
         
@@ -425,6 +352,12 @@ namespace SoapToRest.UserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetEstablishments", ReplyAction="http://tempuri.org/IService1/GetEstablishmentsResponse")]
         System.Threading.Tasks.Task<SoapToRest.UserService.EstablishmentInfo[]> GetEstablishmentsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUsername", ReplyAction="http://tempuri.org/IService1/GetUsernameResponse")]
+        string GetUsername(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUsername", ReplyAction="http://tempuri.org/IService1/GetUsernameResponse")]
+        System.Threading.Tasks.Task<string> GetUsernameAsync(int userID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -452,22 +385,6 @@ namespace SoapToRest.UserService {
         
         public Service1Client(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        public string GetData(int value) {
-            return base.Channel.GetData(value);
-        }
-        
-        public System.Threading.Tasks.Task<string> GetDataAsync(int value) {
-            return base.Channel.GetDataAsync(value);
-        }
-        
-        public SoapToRest.UserService.CompositeType GetDataUsingDataContract(SoapToRest.UserService.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContract(composite);
-        }
-        
-        public System.Threading.Tasks.Task<SoapToRest.UserService.CompositeType> GetDataUsingDataContractAsync(SoapToRest.UserService.CompositeType composite) {
-            return base.Channel.GetDataUsingDataContractAsync(composite);
         }
         
         public SoapToRest.UserService.UserInfo[] GetUserInfo() {
@@ -540,6 +457,14 @@ namespace SoapToRest.UserService {
         
         public System.Threading.Tasks.Task<SoapToRest.UserService.EstablishmentInfo[]> GetEstablishmentsAsync() {
             return base.Channel.GetEstablishmentsAsync();
+        }
+        
+        public string GetUsername(int userID) {
+            return base.Channel.GetUsername(userID);
+        }
+        
+        public System.Threading.Tasks.Task<string> GetUsernameAsync(int userID) {
+            return base.Channel.GetUsernameAsync(userID);
         }
     }
 }

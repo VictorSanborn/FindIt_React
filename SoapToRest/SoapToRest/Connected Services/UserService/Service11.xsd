@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/GruppFemWCF" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/GruppFemWCF" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://193.10.202.75/UserWS/Service1.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-  <xs:complexType name="CompositeType">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="BoolValue" type="xs:boolean" />
-      <xs:element minOccurs="0" name="StringValue" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="CompositeType" nillable="true" type="tns:CompositeType" />
   <xs:complexType name="ArrayOfUserInfo">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="UserInfo" nillable="true" type="tns:UserInfo" />

@@ -32,7 +32,7 @@ namespace SoapToRest.Controllers
         {
             try
             {
-               client.CreateUser(user.Username, user.Password, user.FName, user.LName, user.Email);
+                client.CreateUser(user.Username, user.Password, user.FName, user.LName, user.Email);
             }
             catch
             {
@@ -106,7 +106,7 @@ namespace SoapToRest.Controllers
             {
                 establishmentInfos = client.GetEstablishmentInfo(userID);
 
-
+                //användare och snittbetyg för verksamhet
             }
             catch
             {
@@ -145,6 +145,86 @@ namespace SoapToRest.Controllers
 
             return HttpStatusCode.OK;
 
+        }
+
+        [HttpGet]
+        public UserService.EstablishmentInfo UpdateEstablishmentAndGetRating(int establishmentID, int rating, int userID)
+        {
+            UserService.EstablishmentInfo establishment = new UserService.EstablishmentInfo();
+            UserService.EstablishmentInfo[] establishmentInfos = new UserService.EstablishmentInfo[] { };
+
+            try
+            {
+                client.UpdateEstablishment(establishmentID, rating, userID);
+
+                establishmentInfos = client.GetEstablishmentInfo(userID);
+
+                foreach (UserService.EstablishmentInfo e in establishmentInfos)
+                {
+                    if (e.ID == establishmentID)
+                    {
+                        establishment = e;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return establishment;
+        }
+
+        [HttpGet]
+        public UserService.EstablishmentInfo GetRatingWithUser(int establishmentID, int rating, int userID)
+        {
+            UserService.EstablishmentInfo establishment = new UserService.EstablishmentInfo();
+            UserService.EstablishmentInfo[] establishmentInfos = new UserService.EstablishmentInfo[] { };
+
+            try
+            {
+                establishmentInfos = client.GetEstablishmentInfo(userID);
+
+                foreach (UserService.EstablishmentInfo e in establishmentInfos)
+                {
+                    if (e.ID == establishmentID)
+                    {
+                        establishment = e;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return establishment;
+        }
+
+        [HttpGet]
+        public UserService.EstablishmentInfo GetRatingWithoutUser(int establishmentID, int rating)
+        {
+            UserService.EstablishmentInfo establishment = new UserService.EstablishmentInfo();
+            UserService.EstablishmentInfo[] establishmentInfos = new UserService.EstablishmentInfo[] { };
+
+            try
+            {
+                establishmentInfos = client.GetEstablishmentInfo(null);
+
+                foreach (UserService.EstablishmentInfo e in establishmentInfos)
+                {
+                    if (e.ID == establishmentID)
+                    {
+                        establishment = e;
+                    }
+                }
+            }
+            catch (Exception e)
+            {
+
+            }
+
+            return establishment;
         }
     }
 }
