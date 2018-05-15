@@ -30,7 +30,7 @@ class RatingInfo extends Component {
     return (
       <div className="App">
         <Text size="h3" text={'Snitt '+this.props.avarage}/>
-        {this.props.userID !== '' ?         
+        {this.props.userID !== '' && this.props.userID !== 0 ?         
           <div>
             <TextSmall text={'Ditt betyg: '+this.state.userRating}/>
             <Slider userRating={this.state.userRating} onChangeRating={this.onChangeRating}/>

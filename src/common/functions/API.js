@@ -2,6 +2,10 @@ import axios from 'axios';
 
 let serverUri = 'http://193.10.202.73';
 
+//
+//  GET
+//
+
 export const loginUser = (username, password) => {
   try {
     return axios.get(serverUri + '/User/GetUserID?username='+username+'&password='+password+'');
@@ -9,6 +13,32 @@ export const loginUser = (username, password) => {
     console.error(error);
   }
 };
+
+export const getBuisness = (id) => {
+  try {
+    return axios.get(serverUri + '/Business/GetBusinessById/'+id);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getReview = (barId, UserId) => {
+  try {
+      if(UserId !== 0){
+        return axios.get(serverUri + 'User/GetRatingWithUser?establishmentID='+barId+'&userID='+UserId);
+      } else{
+        return axios.get(serverUri + 'User/GetRatingWithUser?establishmentID='+barId+'&userID=0');
+      }
+    
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
+//
+//  POST
+//
 
 export const signupUser = (Username, Password, FName, LName, Email) => {
   try {
@@ -19,10 +49,11 @@ export const signupUser = (Username, Password, FName, LName, Email) => {
     console.error(error);
   }
 };
-
-export const getBuisness = (id) => {
+export const sendReview = (Username, Password, FName, LName, Email) => {
   try {
-    return axios.get(serverUri + '/Business/GetBusinessById/'+id);
+    let data = {"Username":Username,"Password":Password,"Fname":FName,"LName":LName,"Email":Email}
+    console.log(data);
+    return axios.post(serverUri + '/User/CreateUser', data);
   } catch (error) {
     console.error(error);
   }
