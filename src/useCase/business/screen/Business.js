@@ -23,7 +23,6 @@ class Business extends Component {
   componentDidMount(){
     
     getBuisness(this.props.match.params.barId).then((response) => {
-      console.log(response.data);
       this.setState({
         ...this.state,
         adress: response.data.adress,
@@ -48,7 +47,7 @@ class Business extends Component {
               title={this.state.name}
               presentation={this.state.description}
               certified={this.state.verified}/>
-            <Rating avarage="4,5" userRating="5" userID='1'/>
+            <Rating barID={this.props.match.params.barId} userID={this.props.userID}/>
           </div>
         </div>
         <div class="col-sm-5">

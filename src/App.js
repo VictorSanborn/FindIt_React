@@ -100,7 +100,7 @@ class App extends Component {
             <Route exact path="/" component={Search}/>
             <Route path="/reklam" component={Reklam}/>
             <Route path="/event" component={Event}/>
-            <Route path="/business/:barId" component={Business}/>
+            <Route path="/business/:barId" render={(props) => <Business {...props} userID={this.props.userID} />} />
             <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.userID} dispatch={this.props.dispatch}/>}  />
           </div> 
           <ModalLogIn dispatch={this.props.dispatch} title="Logga In"/>
