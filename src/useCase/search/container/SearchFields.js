@@ -3,12 +3,12 @@ import SearchInputWithLabel from '../container/SearchInputWithLabel';
 import DropDownInputWithLabel from '../container/DropDownInputWithLabel';
 
 class SearchFields extends Component {
-  /*constructor(props){
+  constructor(props){
       super(props);
       this.state = {
           selectedValue: 'välj bar', 
         };
-  }*/
+  }
 
   GetOptions = () => {
       return [{text: "test1"}, {text: "test2"}]
@@ -20,13 +20,13 @@ class SearchFields extends Component {
                 <SearchInputWithLabel borderOption={'BorderLeft'} label="Stad" />
             </div>
             <div class="col noSpace">
-                <SearchInputWithLabel borderOption={'BorderMiddle'} label="Öl" />
+                <SearchInputWithLabel borderOption={'BorderMiddle'} label="Ölsort" />
             </div>
             <div class="col noSpace">
-                <SearchInputWithLabel borderOption={'BorderMiddle'} label="Pris" />
+                <SearchInputWithLabel borderOption={'BorderMiddle'} label="Verksamhet" />
             </div>
             <div class="col noSpace">
-                <DropDownInputWithLabel dropdownOptions={this.GetOptions()} selectedValue={this.state.selectedValue} borderOption={'BorderRight'} label="Pub" />
+                <DropDownInputWithLabel dropdownOptions={this.GetOptions()} selectedValue={this.state.selectedValue} borderOption={'BorderRight'} label="Kategori" />
             </div>
         </div>
     );

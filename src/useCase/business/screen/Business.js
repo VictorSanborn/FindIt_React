@@ -3,32 +3,65 @@ import Information from '../container/Information';
 import ListGroup from '../container/ListGroup';
 import Image from '../component/Image';
 import Rating from '../../rating/screen/Rating';
+import { getBuisness } from '../../../common/functions/API';
 
-class Business extends Component {
+class Business extends Component {  
+  constructor(props) {
+    super(props);
+    this.state = {
+      adress: '',
+      city: '',
+      description: '',
+      imageLink: 'https://vignette.wikia.nocookie.net/roblox-phantom-forces/images/7/7c/Noimage.png/revision/latest?cb=20171115203949',
+      name: '',
+      telephone: '',
+      verified: false,
+      zipcode: '',
+    }
+  }; 
+
+  componentDidMount(){
+    
+    getBuisness(this.props.match.params.barId).then((response) => {
+      this.setState({
+        ...this.state,
+        adress: response.data.adress,
+        city: response.data.city,
+        description: response.data.description,
+        imageLink: response.data.imageLink,
+        name: response.data.name,
+        telephone: response.data.telephone,
+        verified: response.data.verified,
+        zipcode: response.data.zipcode,
+      })
+    });
+ }
+
   render() {
     return (
       <div class="row">
         <div className="contentPadding col-xs-12 col-sm-7" >
           <div>
             <Information 
-              imgUrl="https://upload.wikimedia.org/wikipedia/commons/4/43/Bar-P1030319.jpg" 
-              title="JO;s Tentadränkar-hak"
-              presentation="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."/>
+              imgUrl={this.state.imageLink} 
+              title={this.state.name}
+              presentation={this.state.description}
+              certified={this.state.verified}/>
+            <Rating barID={this.props.match.params.barId} userID={this.props.userID}/>
           </div>
-          <Rating avarage="4,5" userRating="5" userID='1'/>
         </div>
         <div class="col-sm-5">
           <div>
-            <Image url="https://upload.wikimedia.org/wikipedia/commons/4/43/Bar-P1030319.jpg"/>
+            <Image url={this.state.imageLink}/>
           </div>
           <div>
             <ListGroup 
               data={[
-                {icon:'fas fa-certificate', info:'Verified!'},
-                {icon:'fas fa-phone', info:' 0520-123 4567'},   
-                {icon:'fas fa-angle-down', info:'Västerlanda Hagen 181'},
-                {icon:'fas fa-university', info:'Västerlanda'},
-                {icon:'fas fa-map-marker', info:' 463 93'}, 
+                {icon:'fas fa-certificate', info:this.state.verified ? 'Verifierad!' : 'Inte Verifierad'},
+                {icon:'fas fa-phone', info: this.state.telephone},   
+                {icon:'fas fa-angle-down', info: this.state.adress},
+                {icon:'fas fa-university', info: this.state.city},
+                {icon:'fas fa-map-marker', info: this.state.zipcode}, 
                 ]}/>  
           </div>
         </div>
