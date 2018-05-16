@@ -79,6 +79,96 @@
   <wsdl:message name="IProductService_DeleteProduct_OutputMessage">
     <wsdl:part name="parameters" element="tns:DeleteProductResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductService_GetAllGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGroups" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetAllGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_CreateGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGroup" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_CreateGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetGroupDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupDetails" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetGroupDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGroupDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGroup" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroup" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_CreateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_CreateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetCategoryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryDetails" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetCategoryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetAllTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTypes" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetAllTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_CreateType_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateType" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_CreateType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetTypeDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeDetails" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetTypeDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTypeDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateType_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateType" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdateType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteType_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteType" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeleteType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTypeResponse" />
+  </wsdl:message>
   <wsdl:message name="IProductService_GetAllAttributes_InputMessage">
     <wsdl:part name="parameters" element="tns:GetAllAttributes" />
   </wsdl:message>
@@ -114,6 +204,12 @@
   </wsdl:message>
   <wsdl:message name="IProductService_CreateAttribute_OutputMessage">
     <wsdl:part name="parameters" element="tns:CreateAttributeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DoILive_InputMessage">
+    <wsdl:part name="parameters" element="tns:DoILive" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DoILive_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DoILiveResponse" />
   </wsdl:message>
   <wsdl:portType name="IProductService">
     <wsdl:operation name="GetAllProducts">
@@ -164,6 +260,66 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeleteProduct" message="tns:IProductService_DeleteProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DeleteProductResponse" message="tns:IProductService_DeleteProduct_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllGroups">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetAllGroups" message="tns:IProductService_GetAllGroups_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetAllGroupsResponse" message="tns:IProductService_GetAllGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/CreateGroup" message="tns:IProductService_CreateGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/CreateGroupResponse" message="tns:IProductService_CreateGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetGroupDetails" message="tns:IProductService_GetGroupDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetGroupDetailsResponse" message="tns:IProductService_GetGroupDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateGroup" message="tns:IProductService_UpdateGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateGroupResponse" message="tns:IProductService_UpdateGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeleteGroup" message="tns:IProductService_DeleteGroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DeleteGroupResponse" message="tns:IProductService_DeleteGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetAllCategories" message="tns:IProductService_GetAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetAllCategoriesResponse" message="tns:IProductService_GetAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/CreateCategory" message="tns:IProductService_CreateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/CreateCategoryResponse" message="tns:IProductService_CreateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetCategoryDetails" message="tns:IProductService_GetCategoryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetCategoryDetailsResponse" message="tns:IProductService_GetCategoryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateCategory" message="tns:IProductService_UpdateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateCategoryResponse" message="tns:IProductService_UpdateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeleteCategory" message="tns:IProductService_DeleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DeleteCategoryResponse" message="tns:IProductService_DeleteCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetAllTypes" message="tns:IProductService_GetAllTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetAllTypesResponse" message="tns:IProductService_GetAllTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/CreateType" message="tns:IProductService_CreateType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/CreateTypeResponse" message="tns:IProductService_CreateType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetTypeDetails" message="tns:IProductService_GetTypeDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetTypeDetailsResponse" message="tns:IProductService_GetTypeDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdateType" message="tns:IProductService_UpdateType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdateTypeResponse" message="tns:IProductService_UpdateType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeleteType" message="tns:IProductService_DeleteType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DeleteTypeResponse" message="tns:IProductService_DeleteType_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetAllAttributes">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetAllAttributes" message="tns:IProductService_GetAllAttributes_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetAllAttributesResponse" message="tns:IProductService_GetAllAttributes_OutputMessage" />
@@ -187,6 +343,10 @@
     <wsdl:operation name="CreateAttribute">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/CreateAttribute" message="tns:IProductService_CreateAttribute_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/CreateAttributeResponse" message="tns:IProductService_CreateAttribute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DoILive">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DoILive" message="tns:IProductService_DoILive_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DoILiveResponse" message="tns:IProductService_DoILive_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IProductService" type="tns:IProductService">
@@ -299,6 +459,141 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="GetAllGroups">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetAllGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateGroup">
+      <soap:operation soapAction="http://tempuri.org/IProductService/CreateGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupDetails">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetGroupDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateGroup">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <soap:operation soapAction="http://tempuri.org/IProductService/DeleteGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCategory">
+      <soap:operation soapAction="http://tempuri.org/IProductService/CreateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryDetails">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetCategoryDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCategory">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <soap:operation soapAction="http://tempuri.org/IProductService/DeleteCategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllTypes">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetAllTypes" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateType">
+      <soap:operation soapAction="http://tempuri.org/IProductService/CreateType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTypeDetails">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetTypeDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateType">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdateType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteType">
+      <soap:operation soapAction="http://tempuri.org/IProductService/DeleteType" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="GetAllAttributes">
       <soap:operation soapAction="http://tempuri.org/IProductService/GetAllAttributes" style="document" />
       <wsdl:input>
@@ -346,6 +641,15 @@
     </wsdl:operation>
     <wsdl:operation name="CreateAttribute">
       <soap:operation soapAction="http://tempuri.org/IProductService/CreateAttribute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoILive">
+      <soap:operation soapAction="http://tempuri.org/IProductService/DoILive" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

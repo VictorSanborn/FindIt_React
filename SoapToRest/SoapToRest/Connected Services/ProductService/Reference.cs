@@ -740,6 +740,96 @@ namespace SoapToRest.ProductService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteProduct", ReplyAction="http://tempuri.org/IProductService/DeleteProductResponse")]
         System.Threading.Tasks.Task DeleteProductAsync(int productId);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllGroups", ReplyAction="http://tempuri.org/IProductService/GetAllGroupsResponse")]
+        SoapToRest.ProductService.Group[] GetAllGroups();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllGroups", ReplyAction="http://tempuri.org/IProductService/GetAllGroupsResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Group[]> GetAllGroupsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateGroup", ReplyAction="http://tempuri.org/IProductService/CreateGroupResponse")]
+        SoapToRest.ProductService.Group CreateGroup(SoapToRest.ProductService.Group group);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateGroup", ReplyAction="http://tempuri.org/IProductService/CreateGroupResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Group> CreateGroupAsync(SoapToRest.ProductService.Group group);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetGroupDetails", ReplyAction="http://tempuri.org/IProductService/GetGroupDetailsResponse")]
+        SoapToRest.ProductService.Group GetGroupDetails(int groupId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetGroupDetails", ReplyAction="http://tempuri.org/IProductService/GetGroupDetailsResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Group> GetGroupDetailsAsync(int groupId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateGroup", ReplyAction="http://tempuri.org/IProductService/UpdateGroupResponse")]
+        bool UpdateGroup(SoapToRest.ProductService.Group group);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateGroup", ReplyAction="http://tempuri.org/IProductService/UpdateGroupResponse")]
+        System.Threading.Tasks.Task<bool> UpdateGroupAsync(SoapToRest.ProductService.Group group);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteGroup", ReplyAction="http://tempuri.org/IProductService/DeleteGroupResponse")]
+        bool DeleteGroup(int GroupId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteGroup", ReplyAction="http://tempuri.org/IProductService/DeleteGroupResponse")]
+        System.Threading.Tasks.Task<bool> DeleteGroupAsync(int GroupId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllCategories", ReplyAction="http://tempuri.org/IProductService/GetAllCategoriesResponse")]
+        SoapToRest.ProductService.Category[] GetAllCategories();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllCategories", ReplyAction="http://tempuri.org/IProductService/GetAllCategoriesResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Category[]> GetAllCategoriesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateCategory", ReplyAction="http://tempuri.org/IProductService/CreateCategoryResponse")]
+        SoapToRest.ProductService.Category CreateCategory(SoapToRest.ProductService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateCategory", ReplyAction="http://tempuri.org/IProductService/CreateCategoryResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Category> CreateCategoryAsync(SoapToRest.ProductService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetCategoryDetails", ReplyAction="http://tempuri.org/IProductService/GetCategoryDetailsResponse")]
+        SoapToRest.ProductService.Category GetCategoryDetails(int categoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetCategoryDetails", ReplyAction="http://tempuri.org/IProductService/GetCategoryDetailsResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Category> GetCategoryDetailsAsync(int categoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateCategory", ReplyAction="http://tempuri.org/IProductService/UpdateCategoryResponse")]
+        bool UpdateCategory(SoapToRest.ProductService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateCategory", ReplyAction="http://tempuri.org/IProductService/UpdateCategoryResponse")]
+        System.Threading.Tasks.Task<bool> UpdateCategoryAsync(SoapToRest.ProductService.Category category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteCategory", ReplyAction="http://tempuri.org/IProductService/DeleteCategoryResponse")]
+        bool DeleteCategory(int categoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteCategory", ReplyAction="http://tempuri.org/IProductService/DeleteCategoryResponse")]
+        System.Threading.Tasks.Task<bool> DeleteCategoryAsync(int categoryId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllTypes", ReplyAction="http://tempuri.org/IProductService/GetAllTypesResponse")]
+        SoapToRest.ProductService.Type[] GetAllTypes();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllTypes", ReplyAction="http://tempuri.org/IProductService/GetAllTypesResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Type[]> GetAllTypesAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateType", ReplyAction="http://tempuri.org/IProductService/CreateTypeResponse")]
+        SoapToRest.ProductService.Type CreateType(SoapToRest.ProductService.Type type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateType", ReplyAction="http://tempuri.org/IProductService/CreateTypeResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Type> CreateTypeAsync(SoapToRest.ProductService.Type type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetTypeDetails", ReplyAction="http://tempuri.org/IProductService/GetTypeDetailsResponse")]
+        SoapToRest.ProductService.Type GetTypeDetails(int typeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetTypeDetails", ReplyAction="http://tempuri.org/IProductService/GetTypeDetailsResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Type> GetTypeDetailsAsync(int typeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateType", ReplyAction="http://tempuri.org/IProductService/UpdateTypeResponse")]
+        bool UpdateType(SoapToRest.ProductService.Type type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateType", ReplyAction="http://tempuri.org/IProductService/UpdateTypeResponse")]
+        System.Threading.Tasks.Task<bool> UpdateTypeAsync(SoapToRest.ProductService.Type type);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteType", ReplyAction="http://tempuri.org/IProductService/DeleteTypeResponse")]
+        bool DeleteType(int typeId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteType", ReplyAction="http://tempuri.org/IProductService/DeleteTypeResponse")]
+        System.Threading.Tasks.Task<bool> DeleteTypeAsync(int typeId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllAttributes", ReplyAction="http://tempuri.org/IProductService/GetAllAttributesResponse")]
         SoapToRest.ProductService.Attribute[] GetAllAttributes();
         
@@ -759,22 +849,28 @@ namespace SoapToRest.ProductService {
         System.Threading.Tasks.Task<SoapToRest.ProductService.Attribute> GetAttributeDetailsAsync(int attributeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateAttribute", ReplyAction="http://tempuri.org/IProductService/UpdateAttributeResponse")]
-        void UpdateAttribute(SoapToRest.ProductService.Attribute attribute);
+        bool UpdateAttribute(SoapToRest.ProductService.Attribute attribute);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdateAttribute", ReplyAction="http://tempuri.org/IProductService/UpdateAttributeResponse")]
-        System.Threading.Tasks.Task UpdateAttributeAsync(SoapToRest.ProductService.Attribute attribute);
+        System.Threading.Tasks.Task<bool> UpdateAttributeAsync(SoapToRest.ProductService.Attribute attribute);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteAttribute", ReplyAction="http://tempuri.org/IProductService/DeleteAttributeResponse")]
-        void DeleteAttribute(int attributeId);
+        bool DeleteAttribute(int attributeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeleteAttribute", ReplyAction="http://tempuri.org/IProductService/DeleteAttributeResponse")]
-        System.Threading.Tasks.Task DeleteAttributeAsync(int attributeId);
+        System.Threading.Tasks.Task<bool> DeleteAttributeAsync(int attributeId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateAttribute", ReplyAction="http://tempuri.org/IProductService/CreateAttributeResponse")]
-        int CreateAttribute(SoapToRest.ProductService.Attribute attribute);
+        SoapToRest.ProductService.Attribute CreateAttribute(SoapToRest.ProductService.Attribute attribute);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateAttribute", ReplyAction="http://tempuri.org/IProductService/CreateAttributeResponse")]
-        System.Threading.Tasks.Task<int> CreateAttributeAsync(SoapToRest.ProductService.Attribute attribute);
+        System.Threading.Tasks.Task<SoapToRest.ProductService.Attribute> CreateAttributeAsync(SoapToRest.ProductService.Attribute attribute);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DoILive", ReplyAction="http://tempuri.org/IProductService/DoILiveResponse")]
+        string DoILive();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DoILive", ReplyAction="http://tempuri.org/IProductService/DoILiveResponse")]
+        System.Threading.Tasks.Task<string> DoILiveAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -900,6 +996,126 @@ namespace SoapToRest.ProductService {
             return base.Channel.DeleteProductAsync(productId);
         }
         
+        public SoapToRest.ProductService.Group[] GetAllGroups() {
+            return base.Channel.GetAllGroups();
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Group[]> GetAllGroupsAsync() {
+            return base.Channel.GetAllGroupsAsync();
+        }
+        
+        public SoapToRest.ProductService.Group CreateGroup(SoapToRest.ProductService.Group group) {
+            return base.Channel.CreateGroup(group);
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Group> CreateGroupAsync(SoapToRest.ProductService.Group group) {
+            return base.Channel.CreateGroupAsync(group);
+        }
+        
+        public SoapToRest.ProductService.Group GetGroupDetails(int groupId) {
+            return base.Channel.GetGroupDetails(groupId);
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Group> GetGroupDetailsAsync(int groupId) {
+            return base.Channel.GetGroupDetailsAsync(groupId);
+        }
+        
+        public bool UpdateGroup(SoapToRest.ProductService.Group group) {
+            return base.Channel.UpdateGroup(group);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateGroupAsync(SoapToRest.ProductService.Group group) {
+            return base.Channel.UpdateGroupAsync(group);
+        }
+        
+        public bool DeleteGroup(int GroupId) {
+            return base.Channel.DeleteGroup(GroupId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteGroupAsync(int GroupId) {
+            return base.Channel.DeleteGroupAsync(GroupId);
+        }
+        
+        public SoapToRest.ProductService.Category[] GetAllCategories() {
+            return base.Channel.GetAllCategories();
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Category[]> GetAllCategoriesAsync() {
+            return base.Channel.GetAllCategoriesAsync();
+        }
+        
+        public SoapToRest.ProductService.Category CreateCategory(SoapToRest.ProductService.Category category) {
+            return base.Channel.CreateCategory(category);
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Category> CreateCategoryAsync(SoapToRest.ProductService.Category category) {
+            return base.Channel.CreateCategoryAsync(category);
+        }
+        
+        public SoapToRest.ProductService.Category GetCategoryDetails(int categoryId) {
+            return base.Channel.GetCategoryDetails(categoryId);
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Category> GetCategoryDetailsAsync(int categoryId) {
+            return base.Channel.GetCategoryDetailsAsync(categoryId);
+        }
+        
+        public bool UpdateCategory(SoapToRest.ProductService.Category category) {
+            return base.Channel.UpdateCategory(category);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateCategoryAsync(SoapToRest.ProductService.Category category) {
+            return base.Channel.UpdateCategoryAsync(category);
+        }
+        
+        public bool DeleteCategory(int categoryId) {
+            return base.Channel.DeleteCategory(categoryId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteCategoryAsync(int categoryId) {
+            return base.Channel.DeleteCategoryAsync(categoryId);
+        }
+        
+        public SoapToRest.ProductService.Type[] GetAllTypes() {
+            return base.Channel.GetAllTypes();
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Type[]> GetAllTypesAsync() {
+            return base.Channel.GetAllTypesAsync();
+        }
+        
+        public SoapToRest.ProductService.Type CreateType(SoapToRest.ProductService.Type type) {
+            return base.Channel.CreateType(type);
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Type> CreateTypeAsync(SoapToRest.ProductService.Type type) {
+            return base.Channel.CreateTypeAsync(type);
+        }
+        
+        public SoapToRest.ProductService.Type GetTypeDetails(int typeId) {
+            return base.Channel.GetTypeDetails(typeId);
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Type> GetTypeDetailsAsync(int typeId) {
+            return base.Channel.GetTypeDetailsAsync(typeId);
+        }
+        
+        public bool UpdateType(SoapToRest.ProductService.Type type) {
+            return base.Channel.UpdateType(type);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdateTypeAsync(SoapToRest.ProductService.Type type) {
+            return base.Channel.UpdateTypeAsync(type);
+        }
+        
+        public bool DeleteType(int typeId) {
+            return base.Channel.DeleteType(typeId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeleteTypeAsync(int typeId) {
+            return base.Channel.DeleteTypeAsync(typeId);
+        }
+        
         public SoapToRest.ProductService.Attribute[] GetAllAttributes() {
             return base.Channel.GetAllAttributes();
         }
@@ -924,28 +1140,36 @@ namespace SoapToRest.ProductService {
             return base.Channel.GetAttributeDetailsAsync(attributeId);
         }
         
-        public void UpdateAttribute(SoapToRest.ProductService.Attribute attribute) {
-            base.Channel.UpdateAttribute(attribute);
+        public bool UpdateAttribute(SoapToRest.ProductService.Attribute attribute) {
+            return base.Channel.UpdateAttribute(attribute);
         }
         
-        public System.Threading.Tasks.Task UpdateAttributeAsync(SoapToRest.ProductService.Attribute attribute) {
+        public System.Threading.Tasks.Task<bool> UpdateAttributeAsync(SoapToRest.ProductService.Attribute attribute) {
             return base.Channel.UpdateAttributeAsync(attribute);
         }
         
-        public void DeleteAttribute(int attributeId) {
-            base.Channel.DeleteAttribute(attributeId);
+        public bool DeleteAttribute(int attributeId) {
+            return base.Channel.DeleteAttribute(attributeId);
         }
         
-        public System.Threading.Tasks.Task DeleteAttributeAsync(int attributeId) {
+        public System.Threading.Tasks.Task<bool> DeleteAttributeAsync(int attributeId) {
             return base.Channel.DeleteAttributeAsync(attributeId);
         }
         
-        public int CreateAttribute(SoapToRest.ProductService.Attribute attribute) {
+        public SoapToRest.ProductService.Attribute CreateAttribute(SoapToRest.ProductService.Attribute attribute) {
             return base.Channel.CreateAttribute(attribute);
         }
         
-        public System.Threading.Tasks.Task<int> CreateAttributeAsync(SoapToRest.ProductService.Attribute attribute) {
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.Attribute> CreateAttributeAsync(SoapToRest.ProductService.Attribute attribute) {
             return base.Channel.CreateAttributeAsync(attribute);
+        }
+        
+        public string DoILive() {
+            return base.Channel.DoILive();
+        }
+        
+        public System.Threading.Tasks.Task<string> DoILiveAsync() {
+            return base.Channel.DoILiveAsync();
         }
     }
 }
