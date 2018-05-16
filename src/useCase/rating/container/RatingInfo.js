@@ -19,8 +19,8 @@ class RatingInfo extends Component {
       this.setState({
         ...this.state,
         avarageRating: response.data.Rating .toFixed(2),
-        userRating: response.data.URating[0],
-        sliderRating: response.data.URating[0],
+        userRating: response.data.URating,
+        sliderRating: response.data.URating,
       })
     });
  }
@@ -39,8 +39,8 @@ class RatingInfo extends Component {
         this.setState({
           ...this.state,
           avarageRating: response.data.Rating.toFixed(2),
-          userRating: response.data.URating[0],
-          sliderRating: response.data.URating[0],
+          userRating: response.data.URating,
+          sliderRating: response.data.URating,
         })
       });
     });
