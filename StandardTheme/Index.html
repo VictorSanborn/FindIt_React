@@ -8,42 +8,35 @@
 		<link rel="stylesheet" type="text/css" href="./StandardTheme.css"/>
 	</head>
 	<body>
-    <header class="App-header">
-      <!-- nav bar example -->           
-      <nav class="navbar navbar-expand-lg">
-
-        <!-- App title example -->
-        <h1 class="App-title">Find It</h1>
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <!-- link item example -->
-            <li class="nav-item active">
-              <a class="nav-link linkColor" href="/">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link linkColor" href="/reklam">Reklam</a>
-            </li>
+    <header>
+        <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
             <!-- Dropdown example -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-        </div>
+        <nav class="navbar navbar-expand-lg navbar-light App-header">
+        <!--<nav class="navbar navbar-expand-lg App-header">-->
+            <h1 class="App-title">Find It</h1>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon linkColor"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                  <a class="nav linkColor" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav linkColor" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav linkColor disabled" href="#">Disabled </a>
+                </li>
+              </ul>
+              </form>
+            </div> 
       </nav>
     </header>
-  
+    
+
   <!-- content area example -->
   <div class="col-sm-8 offset-sm-2 ContentArea row  " style="height:800px;">
     <div class="col-sm-6">
