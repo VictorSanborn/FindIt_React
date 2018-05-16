@@ -184,6 +184,11 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Connected Services\AdvertisingService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\BusinessServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -204,6 +209,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Controllers\AdvertisingController.cs" />
     <Compile Include="Controllers\BusinessController.cs" />
     <Compile Include="Controllers\EventController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -217,6 +223,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />
+    <None Include="Connected Services\AdvertisingService\ServiceAdvertising.wsdl" />
+    <None Include="Connected Services\AdvertisingService\ServiceAdvertising.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AdvertisingService\ServiceAdvertising1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AdvertisingService\ServiceAdvertising2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\AdvertisingService\SoapToRest.AdvertisingService.AnnonsKlass.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\BusinessServiceReference\Service1.wsdl" />
     <None Include="Connected Services\BusinessServiceReference\Service1.xsd">
       <SubType>Designer</SubType>
@@ -229,6 +248,13 @@
     </None>
     <None Include="Connected Services\BusinessServiceReference\Service13.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AdvertisingService\ServiceAdvertising.disco" />
+    <None Include="Connected Services\AdvertisingService\configuration91.svcinfo" />
+    <None Include="Connected Services\AdvertisingService\configuration.svcinfo" />
+    <None Include="Connected Services\AdvertisingService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Connected Services\BusinessServiceReference\SoapToRest.BusinessServiceReference.Business.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -427,6 +453,7 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\AdvertisingService\" />
     <WCFMetadataStorage Include="Connected Services\BusinessServiceReference\" />
     <WCFMetadataStorage Include="Connected Services\EventService\" />
     <WCFMetadataStorage Include="Connected Services\ProductService\" />

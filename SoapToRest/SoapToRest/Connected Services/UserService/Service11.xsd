@@ -31,8 +31,8 @@
       <xs:element minOccurs="0" name="ID" type="xs:int" />
       <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Rating" type="xs:double" />
-      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="URating" nillable="true" type="q2:ArrayOfdouble" />
-      <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserID" nillable="true" type="q3:ArrayOfint" />
+      <xs:element minOccurs="0" name="URating" type="xs:double" />
+      <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserID" nillable="true" type="q2:ArrayOfint" />
       <xs:element minOccurs="0" name="UserRating" type="xs:int" />
     </xs:sequence>
   </xs:complexType>

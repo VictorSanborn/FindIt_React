@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://193.10.202.78/AdvertisingService/ServiceAdvertising.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AdvertisingService" />
+  <xs:element name="DoWork">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DoWorkResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAnnons">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadAnnonsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/AdvertisingService" minOccurs="0" name="ReadAnnonsResult" nillable="true" type="q1:ArrayOfAnnonsKlass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAnnons">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="resource" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="onHooverText" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateAnnonsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAnnons">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+        <xs:element minOccurs="0" name="resource" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="onHooverText" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateAnnonsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAnnons">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="addId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteAnnonsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

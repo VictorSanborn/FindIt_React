@@ -163,7 +163,7 @@ namespace SoapToRest.UserService {
         private double RatingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private double[] URatingField;
+        private double URatingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int[] UserIDField;
@@ -247,12 +247,12 @@ namespace SoapToRest.UserService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public double[] URating {
+        public double URating {
             get {
                 return this.URatingField;
             }
             set {
-                if ((object.ReferenceEquals(this.URatingField, value) != true)) {
+                if ((this.URatingField.Equals(value) != true)) {
                     this.URatingField = value;
                     this.RaisePropertyChanged("URating");
                 }
@@ -318,10 +318,10 @@ namespace SoapToRest.UserService {
         System.Threading.Tasks.Task DeleteUserAsync(int userID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateUser", ReplyAction="http://tempuri.org/IService1/CreateUserResponse")]
-        void CreateUser(string username, string password, string firstname, string lastname, string email);
+        bool CreateUser(string username, string password, string firstname, string lastname, string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/CreateUser", ReplyAction="http://tempuri.org/IService1/CreateUserResponse")]
-        System.Threading.Tasks.Task CreateUserAsync(string username, string password, string firstname, string lastname, string email);
+        System.Threading.Tasks.Task<bool> CreateUserAsync(string username, string password, string firstname, string lastname, string email);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateUser", ReplyAction="http://tempuri.org/IService1/UpdateUserResponse")]
         void UpdateUser(int userID, string username, string password, string firstname, string lastname, string email);
@@ -411,11 +411,11 @@ namespace SoapToRest.UserService {
             return base.Channel.DeleteUserAsync(userID);
         }
         
-        public void CreateUser(string username, string password, string firstname, string lastname, string email) {
-            base.Channel.CreateUser(username, password, firstname, lastname, email);
+        public bool CreateUser(string username, string password, string firstname, string lastname, string email) {
+            return base.Channel.CreateUser(username, password, firstname, lastname, email);
         }
         
-        public System.Threading.Tasks.Task CreateUserAsync(string username, string password, string firstname, string lastname, string email) {
+        public System.Threading.Tasks.Task<bool> CreateUserAsync(string username, string password, string firstname, string lastname, string email) {
             return base.Channel.CreateUserAsync(username, password, firstname, lastname, email);
         }
         

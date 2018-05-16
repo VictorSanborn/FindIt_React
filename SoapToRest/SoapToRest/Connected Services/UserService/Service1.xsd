@@ -6,10 +6,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ArrayOfint" nillable="true" type="tns:ArrayOfint" />
-  <xs:complexType name="ArrayOfdouble">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="double" type="xs:double" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfdouble" nillable="true" type="tns:ArrayOfdouble" />
 </xs:schema>
