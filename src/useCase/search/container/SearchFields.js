@@ -20,10 +20,10 @@ class SearchFields extends Component {
                 <SearchInputWithLabel borderOption={'BorderLeft'} label="Stad" />
             </div>
             <div class="col noSpace">
-                <SearchInputWithLabel borderOption={'BorderMiddle'} label="Namn på öl" />
+                <SearchInputWithLabel borderOption={'BorderMiddle'} label="Ölsort" />
             </div>
             <div class="col noSpace">
-                <SearchInputWithLabel borderOption={'BorderMiddle'} label="Namn på verksamhet" />
+                <SearchInputWithLabel borderOption={'BorderMiddle'} label="Verksamhet" />
             </div>
             <div class="col noSpace">
                 <DropDownInputWithLabel dropdownOptions={this.GetOptions()} selectedValue={this.state.selectedValue} borderOption={'BorderRight'} label="Kategori" />
