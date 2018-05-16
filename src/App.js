@@ -18,6 +18,7 @@ import Business from './useCase/business/screen/Business';
 import Event from './useCase/event/screen/Event';
 import ReduxTest from './useCase/reduxTester/screen/ReduxTest';
 import ModalSignup from './useCase/modalsignup/screen/ModalSignup';
+import Products from './useCase/products/screen/Products';
 
 const mapStateToProps = (state) => ({
   userID: state.userID,
@@ -100,6 +101,7 @@ class App extends Component {
             <Route exact path="/" component={Search}/>
             <Route path="/reklam" component={Reklam}/>
             <Route path="/event" component={Event}/>
+            <Route path="/products" component={Products}/>
             <Route path="/business/:barId" render={(props) => <Business {...props} userID={this.props.userID} />} />
             <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.userID} dispatch={this.props.dispatch}/>}  />
           </div> 
