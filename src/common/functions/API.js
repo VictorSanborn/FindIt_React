@@ -35,6 +35,14 @@ export const getReview = (establishmentID, UserId) => {
   }
 };
 
+export const getAllEvents = () => {
+  try {
+    return axios.get(serverUri + '/Event/GetEvents');
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
 //
 //  POST
@@ -48,6 +56,7 @@ export const signupUser = (Username, Password, FName, LName, Email) => {
     console.error(error);
   }
 };
+
 export const sendReview = (UserId, establishmentID, rating) => {
   try {
     let data = {}

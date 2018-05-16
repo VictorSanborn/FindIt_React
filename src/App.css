@@ -12,7 +12,11 @@
   font-family: 'Lobster', cursive;
   color: #E9C458;
 }
-
+.TransparentMediumText {
+  font-size: 1.2em;
+  font-family: 'Lobster', cursive;
+  color: rgba(102, 95, 76, 0.233);
+}
 
 .App-intro {
   font-size: large;

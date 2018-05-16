@@ -90,8 +90,7 @@ class App extends Component {
                       </li>
                     </ul>
                   </form>
-                }
-                
+                }        
               </div>
             </nav>*/}
              <nav class="navbar navbar-expand-lg navbar-light App-header">
@@ -146,10 +145,8 @@ class App extends Component {
           </div> 
           <ModalLogIn dispatch={this.props.dispatch} title="Logga In"/>
           <ModalSignup title="Bli medlem"/>
-
           <Footer/>
-        </div>
-      
+        </div>  
     );
   }
 }
