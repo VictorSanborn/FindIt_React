@@ -91,8 +91,7 @@ class App extends Component {
                       </li>
                     </ul>
                   </form>
-                }
-                
+                }        
               </div>
             </nav>
           </header>
@@ -108,10 +107,8 @@ class App extends Component {
           </div> 
           <ModalLogIn setLoginUser={this.props.setLoginUser} setLoginPassword={this.props.setLoginPassword} dispatch={this.props.dispatch} title="Logga In"/>
           <ModalSignup title="Bli medlem"/>
-
           <Footer/>
-        </div>
-      
+        </div>  
     );
   }
 }
