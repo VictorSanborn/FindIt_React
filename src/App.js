@@ -33,66 +33,6 @@ class App extends Component {
     return (
         <div className="App">
           <header className="App-header">          
-           {/*} <nav class="navbar navbar-expand-lg">
-              <h1 class="App-title" href="#">Find It</h1>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link linkColor" href="/">Home <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link linkColor" href="/reklam">Reklam</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link linkColor" href="/ReduxTest">Redux Test</a>
-                  </li>
-                  <li class="nav-items">
-                    <a class="nav-link linkColor" href="/event">Event</a>
-                  </li>
-                  <li class="nav-items">
-                    <a class="nav-link linkColor" href="/business">Bar</a>
-                  </li>
-
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link linkColor disabled" href="#">Disabled</a>
-                  </li>
-                </ul>
-               { this.props.setUsername === "" ? 
-                  <form class="form-inline my-2 my-lg-0 row">
-                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#LoginModal">Logga In</button>
-                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#SignupModal">Bli Medlem</button>
-                  </form>
-                 : 
-                 <form class="form-inline my-2 my-lg-0 row">
-                  <ul class="navbar-nav mr-auto">
-                      <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          Välkommen {this.props.setUsername}
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                          <a class="dropdown-item" onClick={()=>{this.props.dispatch(actionCreators.logoutUser(''));}} href="#">Logga Ut</a>
-                        </div>
-                      </li>
-                    </ul>
-                  </form>
-                }        
-              </div>
-            </nav>*/}
              <nav class="navbar navbar-expand-lg navbar-light App-header">
             <h1 class="App-title mr-5">Find It</h1>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -117,19 +57,26 @@ class App extends Component {
                 <li class="nav-item">
                   <a class="nav linkColor mr-5" href="/business">Bar</a>
                 </li>
-                <li class="nav-item dropdown">
-                    <a class="nav linkColor dropdown" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Dropdown 
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <a class="dropdown-item" href="#">Action</a>
-                      <a class="dropdown-item" href="#">Another action</a>
-                      <div class="dropdown-divider"></div>
-                      <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                  </li>
               </ul>
-              
+              { this.props.setUsername === "" ? 
+                  <form class="form-inline my-2 my-lg-0 row">
+                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#LoginModal">Logga In</button>
+                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#SignupModal">Bli Medlem</button>
+                  </form>
+                 : 
+                 <form class="form-inline my-2 my-lg-0 row">
+                  <ul class="navbar-nav mr-auto">
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle linkColor" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <span class="linkColor">Välkommen {this.props.setUsername}</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" onClick={()=>{this.props.dispatch(actionCreators.logoutUser(''));}} href="#">Logga Ut</a>
+                        </div>
+                      </li>
+                    </ul>
+                  </form>
+                }        
             </div> 
       </nav>
           </header>
