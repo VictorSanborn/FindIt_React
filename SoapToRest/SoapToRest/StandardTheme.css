@@ -1,0 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #E8D2A0;
+    height: 100%;
+  }
+ 
+h1 {
+  color: #6A0002; 
+}
+
+footer {
+  background-color: #4c4c4c;
+  color: #E8D2A0;
+  padding:40px;
+}
+
+.App {
+  text-align: center;
+  height: 100%;
+}
+
+.App-header {
+  background-color: #6A0002;
+  padding: 20px;
+  padding-top: 70px;
+  padding-bottom: 0;
+  color: white;
+}
+
+.App-title {
+  font-family: 'Lobster', cursive;
+  font-size: 4em;
+  color: #E9C458;
+}
+
+.linkColor {
+  color: #E8D2A0;
+}
+
+.linkColor:hover {
+  color: #ffffff;
+}
+  
+.ContentArea {
+  background:white;
+  padding:40px;
+}
+
+.ContentAreaHighlight{
+  background: #f4ebd7;
+  padding:40px;
+}
+
+.Small-title {
+  font-size: 1.5em;
+  color: #6A0002;
+}

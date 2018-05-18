@@ -24,8 +24,17 @@ namespace SoapToRest.Controllers
         public BusinessServiceReference.Business[] GetAll()
         {
             BusinessServiceReference.Business[] businesses = new BusinessServiceReference.Business[] { };
-
+      
             businesses = client.GetAll();
+
+            return businesses;
+        }
+
+        public BusinessServiceReference.Business[] GetBusinessByName(string name)
+        {
+            BusinessServiceReference.Business[] businesses = new BusinessServiceReference.Business[] { };
+
+            businesses = client.GetBusinessByName(name);
 
             return businesses;
         }
