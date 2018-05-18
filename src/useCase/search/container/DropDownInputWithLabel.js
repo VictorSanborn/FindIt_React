@@ -7,7 +7,7 @@ class DropDownInputWithLabel extends Component {
     return (
       <div>
         <SmallTitle text={this.props.label}/>
-        <DropDown dropdownOptions={this.props.dropdownOptions}/>
+        <DropDown dataField={this.props.dataField} selected={this.props.selected} onChange={this.props.onChange} dropdownOptions={this.props.dropdownOptions}/>
       </div>
     );
   }

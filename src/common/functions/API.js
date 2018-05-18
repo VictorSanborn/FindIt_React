@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-let serverUri = 'http://193.10.202.73';
+let serverUri = 'http://finditappapi.azurewebsites.net/';
 
 //
 //  GET
@@ -38,6 +38,22 @@ export const getReview = (establishmentID, UserId) => {
 export const getAllEvents = () => {
   try {
     return axios.get(serverUri + '/Event/GetEvents');
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getAllBusinesses = () => {
+  try {
+    return axios.get(serverUri + '/Business/GetAll');
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getBusinessesByName = () => {
+  try {
+    return axios.get(serverUri + '/Business/GetAll');
   } catch (error) {
     console.error(error);
   }
