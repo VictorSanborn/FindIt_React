@@ -23,11 +23,15 @@ import Products from './useCase/products/screen/Products';
 const mapStateToProps = (state) => ({
   userID: state.userID,
   setUsername: state.setUsername,
+  cookies: state.cookies,
 });
 
 class App extends Component {
   state = {};
   
+  removeCookies = () => {
+    this.props.dispatch(actionCreators.setCookies(true));
+  }
 
   render() {
     return (
@@ -71,6 +75,18 @@ class App extends Component {
             </div> 
       </nav>
           </header>
+          {
+            this.props.cookies === false ? 
+            <div class="alert alert-warning" role="alert" style={{borderRadius: 0, padding:50, margin: 0}}>
+              <div>
+                Vi använder oss av Cookies för att hålla dig inloggad och spara värdern temporärt <i class="h1 far fa-heart"></i>
+              </div>
+              <a href={this.props.link} class="btn btn-outline-light" style={{margin: '12px'}} onClick={() => {this.removeCookies()}}>Skål!</a>
+            </div>
+            :
+            <div></div>
+          }
+          
             
           <div class="col-sm-8 offset-sm-2 contentPadding" style={{backgroundColor: 'white', minHeight: '80vh'}}>
             { /*Lägg till alla sidor som skall kunna navigeras ifrån!*/ }

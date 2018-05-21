@@ -3,6 +3,7 @@ export const types = {
   LOGOUTUSER: "LOGOUTUSER",
   SETUSERNAME: "SETUSERNAME",
   SETUSERID: "SETUSERID",
+  SETCOOKIES: "SETCOOKIES",
 };
   
 // Helper functions to dispatch actions, optionally with payloads
@@ -16,12 +17,16 @@ export const actionCreators = {
   setUserID: item => {
       return { type: types.SETUSERID, payload: item};
   },
+  setCookies: item => {
+    return { type: types.SETCOOKIES, payload: item};
+},
 };
   
 // Initial state of the store
 const initialState = {
   userID: '',
   setUsername: '',
+  cookies: false,
 };
 
 // Function to handle actions and update the state of the store.
@@ -37,6 +42,7 @@ export const reducer = (state = initialState, action) => {
     setLoginUser,
     setLoginPassword,
     setUsername,
+    cookies,
    } = state;
   const { type, payload } = action;
 
@@ -60,6 +66,12 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         setUsername: payload,
+      };
+    }
+    case types.SETCOOKIES: {
+      return {
+        ...state,
+        cookies: true,
       };
     }
   }
