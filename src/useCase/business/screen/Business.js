@@ -69,7 +69,7 @@ class Business extends Component {
           </div>
         </div>
         <div class="row col">
-          <Products userID={this.props.userID}/>  
+          <Products barID={this.props.match.params.barId} userID={this.props.userID}/>  
         </div>
       </div>
     );

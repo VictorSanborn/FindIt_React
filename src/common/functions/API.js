@@ -43,6 +43,22 @@ export const getAllEvents = () => {
   }
 };
 
+export const GetProductsFromBusiness = (businessId) => {
+  try {
+    return axios.get(serverUri + '/Product/GetProductsFromBusiness?businessId='+businessId);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const GetPricesFromProductAtBusiness = (businessId, productId) => {
+  try {
+    return axios.get(serverUri + '/Product/GetPricesFromProductAtBusiness?productId='+productId+'&businessId='+businessId);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
 //
 //  POST
