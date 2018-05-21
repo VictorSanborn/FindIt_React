@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Text extends Component {
+class MediumText extends Component {
 
   componentDidMount(){
     let text = this.props.text;
@@ -12,12 +12,11 @@ class Text extends Component {
 
   render() {
     return (
-      <div>
-        <h5 class="card-title">{this.props.titel}</h5>
-        <p class="card-text">{this.props.text}</p>
+      <div class="col-sm-6 MediumText">
+        {this.props.text}
       </div>
     );
   }
 }
 
-export default Text;
+export default MediumText;
