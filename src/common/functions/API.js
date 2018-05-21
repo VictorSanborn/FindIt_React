@@ -22,6 +22,24 @@ export const getBuisness = (id) => {
   }
 };
 
+export const getAllProducts = () => {
+  try {
+    return axios.get(serverUri + '/Product/GetAllProducts/');
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getProductCategories = () => {
+  try {
+    return axios.get(serverUri + '/Product/GetProductCategories/');
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
+
 export const getReview = (establishmentID, UserId) => {
   try {
       if(UserId !== 0 && UserId !== ''){

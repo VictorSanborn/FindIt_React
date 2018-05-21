@@ -3,6 +3,7 @@ import Title from '../../../common/component/Title';
 import SearchFields from '../container/SearchFields';
 import ResultFields from '../container/ResultFields';
 import DropDownInputWithLabel from '../container/DropDownInputWithLabel';
+import {getProductCategories} from '../../../common/functions/API';
 import '../style/Search.css';
 
 class Search extends Component {
@@ -38,9 +39,25 @@ class Search extends Component {
       })
   };
 
+  GetProductCategories(){
+    getProductCategories().then((response) =>
+    {
+      console.log(response);
+      if (response.status === 200)
+      {
+        return response.data;
+      }
+    });
+  }
 
   GetSearchAlternatives = (alternative) => {
+    let categories = this.GetProductCategories();
+    /*for (let i = 0; i < categories.length; i++)
+    {
+      //if (categories[i].)
+    }*/
     return alternative === "Verksamhet" ? [{label: "Namn", type:"input", value: ''}, {label: "Verifierad", type:"dropdown", value: 'Alla', options: [{text:"Alla"}, {text:"Endast Verifierade"}]}, {label: "Plats", type:"input", value: ''}] :  [{label: "Namn", type:"input", value: ''}, {label: "Kategori", type:"dropdown", value:'', options: ["Alla", "Endast Verifierade"]}, {label: "Plats", type:"input", value:''}]
+
   }
   
   render() {
