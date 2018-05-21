@@ -42,6 +42,10 @@ class Event extends Component {
   render() {
     return (
       <div className="App">
+      <div class="col">
+        <h1 class="text-left App-title">Evenemang</h1>
+        <p class="text-left TransparentSmallText">Klicka på ett evenemang för att visa mer information</p>
+      </div>
         <table class="table">
           <tbody>
             {
