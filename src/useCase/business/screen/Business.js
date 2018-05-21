@@ -4,6 +4,8 @@ import ListGroup from '../container/ListGroup';
 import Image from '../component/Image';
 import Rating from '../../rating/screen/Rating';
 import { getBusiness } from '../../../common/functions/API';
+import Products from '../../products/screen/Products';
+
 
 class Business extends Component {  
   constructor(props) {
@@ -39,31 +41,36 @@ class Business extends Component {
 
   render() {
     return (
-      <div class="row">
-        <div className="contentPadding col-xs-12 col-sm-7" >
-          <div>
-            <Information 
-              imgUrl={this.state.imageLink} 
-              title={this.state.name}
-              presentation={this.state.description}
-              certified={this.state.verified}/>
-            <Rating barID={this.props.match.params.barId} userID={this.props.userID}/>
+      <div class="col">
+        <div class="row">
+          <div className="contentPadding col-xs-12 col-sm-7" >
+            <div>
+              <Information 
+                imgUrl={this.state.imageLink} 
+                title={this.state.name}
+                presentation={this.state.description}
+                certified={this.state.verified}/>
+              <Rating barID={this.props.match.params.barId} userID={this.props.userID}/>
+            </div>
+          </div>
+          <div class="col-sm-5">
+            <div>
+              <Image url={this.state.imageLink}/>
+            </div>
+            <div>
+              <ListGroup 
+                data={[
+                  {icon:'fas fa-certificate', info:this.state.verified ? 'Verifierad!' : 'Inte Verifierad'},
+                  {icon:'fas fa-phone', info: this.state.telephone},   
+                  {icon:'fas fa-angle-down', info: this.state.adress},
+                  {icon:'fas fa-university', info: this.state.city},
+                  {icon:'fas fa-map-marker', info: this.state.zipcode}, 
+                  ]}/>  
+            </div>
           </div>
         </div>
-        <div class="col-sm-5">
-          <div>
-            <Image url={this.state.imageLink}/>
-          </div>
-          <div>
-            <ListGroup 
-              data={[
-                {icon:'fas fa-certificate', info:this.state.verified ? 'Verifierad!' : 'Inte Verifierad'},
-                {icon:'fas fa-phone', info: this.state.telephone},   
-                {icon:'fas fa-angle-down', info: this.state.adress},
-                {icon:'fas fa-university', info: this.state.city},
-                {icon:'fas fa-map-marker', info: this.state.zipcode}, 
-                ]}/>  
-          </div>
+        <div class="row col">
+          <Products userID={this.props.userID}/>  
         </div>
       </div>
     );

@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-let serverUri = 'https://finditappapi.azurewebsites.net/';
+let serverUri = 'https://finditappapi.azurewebsites.net';
+
 
 //
 //  GET

@@ -43,19 +43,10 @@ class App extends Component {
                 
               <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                  <a class="nav linkColor mr-5" href="/">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav linkColor mr-5" href="/">Hem <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav linkColor mr-5" href="/reklam">Reklam</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav linkColor mr-5" href="/ReduxTest">Redux test</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav linkColor mr-5" href="/event">Event</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav linkColor mr-5" href="/business">Bar</a>
+                  <a class="nav linkColor mr-5" href="/event">Evenemang</a>
                 </li>
               </ul>
               { this.props.setUsername === "" ? 
@@ -84,11 +75,9 @@ class App extends Component {
           <div class="col-sm-8 offset-sm-2 contentPadding" style={{backgroundColor: 'white', minHeight: '80vh'}}>
             { /*Lägg till alla sidor som skall kunna navigeras ifrån!*/ }
             <Route exact path="/" component={Search}/>
-            <Route path="/reklam" component={Reklam}/>
             <Route path="/event" component={Event}/>
             <Route path="/products" component={Products}/>
             <Route path="/business/:barId" render={(props) => <Business {...props} userID={this.props.userID} />} />
-            <Route path="/ReduxTest" render={() => <ReduxTest user={this.props.userID} dispatch={this.props.dispatch}/>}  />
           </div> 
           <ModalLogIn dispatch={this.props.dispatch} title="Logga In"/>
           <ModalSignup title="Bli medlem"/>
