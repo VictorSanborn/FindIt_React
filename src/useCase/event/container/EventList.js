@@ -37,7 +37,7 @@ class EventList extends Component {
             <div>      
               {
                 this.props.data.businesses.map((val) => {
-                  <Button link={'/business/'+val.Id} name="Gå Till Bar"/>
+                 return <Button link={'/business/'+val.Id} name={"Gå Till "+val.name}/>
                 })
               }
             </div>
