@@ -12,12 +12,40 @@ namespace SoapToRest.Controllers
 
         ProductService.ProductServiceClient client = new ProductService.ProductServiceClient();
         
-
+        
+        
         // GET: /ProductService/GetAllProducts?showDiscounted=false
         public ProductService.Product[] GetAllProducts()
         {
             ProductService.Product[] products = client.GetAllProducts();
             return products;
+        }
+
+        public ProductService.PriceReport[] GetPricesFromProduct(int productId)
+        {
+            ProductService.PriceReport[] priceReport = client.GetPricesFromProduct(productId);
+            return priceReport;
+        }
+
+        public ProductService.PriceReport GetLowestPrice(int productId)
+        {
+            ProductService.PriceReport[] priceReport = client.GetPricesFromProduct(productId);
+            ProductService.PriceReport lowest = new ProductService.PriceReport();
+            if (priceReport.Length > 0)
+            {
+                lowest = priceReport[0];
+            }
+
+            
+            foreach (ProductService.PriceReport p in priceReport)
+            {
+                if (lowest.price > p.price)
+                {
+                    lowest = p;
+                }
+            }
+
+            return lowest;
         }
 
         // Productservice/GetAllCategories
@@ -29,9 +57,28 @@ namespace SoapToRest.Controllers
 
         public ProductService.PriceReport[] GetPricesFromProductAtBusiness(int productId, int businessId)
         {
-         
+    
             ProductService.PriceReport[] priceReports = client.GetPricesFromProductAtBusiness(productId, businessId);
             return priceReports;
+        }
+
+        public ProductService.Product[] GetProductsFromBusiness(int businessId)
+        {
+
+            ProductService.Product[] products = client.GetProductsFromBusiness(businessId);
+            return products;
+        }
+
+        public List<ProductService.PriceReport[]> GetProductsFromBusinessWithPrices(int businessId)
+        {
+            ProductService.Product[] products = client.GetProductsFromBusiness(businessId);
+            List<ProductService.PriceReport[]> productsWithPrice = new List<ProductService.PriceReport[]>();
+            foreach (ProductService.Product p in products)
+            {
+                productsWithPrice.Add(client.GetPricesFromProductAtBusiness(p.id, businessId));
+            }
+
+            return productsWithPrice;
         }
 
         public HttpStatusCode ReportPrice(ProductService.PriceReport priceReport)

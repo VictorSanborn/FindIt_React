@@ -21,6 +21,23 @@ namespace SoapToRest.Controllers
 
         }
 
+        public List<string> GetCities()
+        {
+            BusinessServiceReference.Business[] business = new BusinessServiceReference.Business[] { };
+            List<string> cities = new List<string>();
+            business = client.GetAll();
+
+            foreach(BusinessServiceReference.Business b in business)
+            {
+                if (!cities.Contains(b.city))
+                {
+                    cities.Add(b.city);
+                }
+                
+            }
+            return cities;
+        }
+
         public BusinessServiceReference.Business[] GetAll()
         {
             BusinessServiceReference.Business[] businesses = new BusinessServiceReference.Business[] { };

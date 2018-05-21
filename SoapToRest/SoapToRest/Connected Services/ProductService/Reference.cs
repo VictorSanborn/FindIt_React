@@ -48,7 +48,10 @@ namespace SoapToRest.ProductService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int typeIdField;
-        
+        private object p;
+
+
+
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
