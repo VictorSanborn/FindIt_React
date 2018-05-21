@@ -13,7 +13,7 @@ class ResultField extends Component {
             </div>
             <div className="col-sm-3 text-right">
                 <div className="align-middle">
-                    <button className="btn btn-outline-warning align-middle" style={{margin: '5px'}} href={'/Business/' + this.props.itemId}>Till bar</button>
+                    <a className="btn btn-outline-warning align-middle" style={{margin: '5px'}} href={'/Business/' + this.props.itemId}>Till bar</a>
                 </div>
             </div>
         </div>

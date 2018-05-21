@@ -46,7 +46,8 @@ class SearchFields extends Component {
                     }
                     else if (data.type ==="dropdown")
                     {
-                        return <div class="col noSpace"><DropDownInputWithLabel selected={data.value} dataField={data.label} onChange={this.dropdownOnChange} dropdownOptions={data.options} selectedValue={this.state.selectedValue} borderOption={'BorderRight'} label={data.label} /></div>
+                            return <div class="col noSpace"><DropDownInputWithLabel selected={data.value} dataField={data.label} onChange={this.dropdownOnChange} dropdownOptions={data.options} selectedValue={this.state.selectedValue} borderOption={'BorderRight'} label={data.label} /></div>
+
                     }
 
                 })

@@ -40,7 +40,7 @@ class Search extends Component {
 
 
   GetSearchAlternatives = (alternative) => {
-    return alternative === "Verksamhet" ? [{label: "Namn", type:"input", value: ''}, {label: "Verifierad", type:"dropdown", value: '', options: [{text:"Alla"}, {text:"Endast Verifierade"}]}, {label: "Plats", type:"input", value: ''}] :  [{label: "Namn", type:"input", value: ''}, {label: "Kategori", type:"dropdown", value:'', options: ["Alla", "Endast Verifierade"]}, {label: "Plats", type:"input", value:''}]
+    return alternative === "Verksamhet" ? [{label: "Namn", type:"input", value: ''}, {label: "Verifierad", type:"dropdown", value: 'Alla', options: [{text:"Alla"}, {text:"Endast Verifierade"}]}, {label: "Plats", type:"input", value: ''}] :  [{label: "Namn", type:"input", value: ''}, {label: "Kategori", type:"dropdown", value:'', options: ["Alla", "Endast Verifierade"]}, {label: "Plats", type:"input", value:''}]
   }
   
   render() {
