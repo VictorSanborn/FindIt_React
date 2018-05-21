@@ -3,7 +3,7 @@ import Information from '../container/Information';
 import ListGroup from '../container/ListGroup';
 import Image from '../component/Image';
 import Rating from '../../rating/screen/Rating';
-import { getBuisness } from '../../../common/functions/API';
+import { getBusiness } from '../../../common/functions/API';
 
 class Business extends Component {  
   constructor(props) {
@@ -22,7 +22,7 @@ class Business extends Component {
 
   componentDidMount(){
     
-    getBuisness(this.props.match.params.barId).then((response) => {
+    getBusiness(this.props.match.params.barId).then((response) => {
       this.setState({
         ...this.state,
         adress: response.data.adress,

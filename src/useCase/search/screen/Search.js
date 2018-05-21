@@ -3,7 +3,7 @@ import Title from '../../../common/component/Title';
 import SearchFields from '../container/SearchFields';
 import ResultFields from '../container/ResultFields';
 import DropDownInputWithLabel from '../container/DropDownInputWithLabel';
-import {getProductCategories} from '../../../common/functions/API';
+import {getProductCategories, getCities} from '../../../common/functions/API';
 import '../style/Search.css';
 
 class Search extends Component {
@@ -12,9 +12,18 @@ class Search extends Component {
     this.state = {
       targetOptions: [{text: "Verksamhet"}, {text: "Öl"}],
       searchTarget: 'Verksamhet',
-      searchAlternatives: this.GetSearchAlternatives('Verksamhet'),
+      productCategories: [],
+      searchAlternatives: [{label: "Namn", type:"input", value: ''}, {label: "Verifierad", type:"dropdown", value: 'Alla', options: [{text:"Alla"}, {text:"Endast Verifierade"}]}, {label: "Plats", type:"dropdown", value: 'Alla', options: []}],
+      cities: [],
     }
+
   }; 
+
+  componentDidMount(){
+    this.GetSearchAlternatives('Verksamhet');
+    this.GetProductCategories();
+    this.FetchCities();
+  }
 
   onChangeSearchAlternatives = (searchalt) => {
     this.setState({
@@ -25,10 +34,13 @@ class Search extends Component {
   }
 
   onChangeSearchTarget = (searchTargetValue) =>{
+    let newState = this.GetSearchAlternatives(searchTargetValue.target.text);
+
+    newState = this.SetCities(newState);
     this.setState({
         ...this.state,
         searchTarget: searchTargetValue.target.text,
-        searchAlternatives: this.GetSearchAlternatives(searchTargetValue.target.text),
+        searchAlternatives: newState,
       })
   }
 
@@ -39,25 +51,67 @@ class Search extends Component {
       })
   };
 
-  GetProductCategories(){
-    getProductCategories().then((response) =>
+  FetchCities = () => {
+    getCities().then((response) =>
     {
-      console.log(response);
       if (response.status === 200)
       {
-        return response.data;
+        let cityList = [{text : "Alla"}];
+          for (let i = 0; i < response.data.length; i++)
+          {
+            cityList.push({text: response.data[i]});
+            console.log(cityList);
+          }
+          let newState = this.state.searchAlternatives;
+          for (let i = 0; i < this.state.searchAlternatives.length; i++){
+            if (this.state.searchAlternatives[i].label === "Plats")
+            {
+              newState[i].options = cityList;
+            }
+          }
+          this.setState(() => ({
+            ...this.state,
+            searchAlternatives: newState,
+            cities: cityList,
+          }))
       }
     });
   }
 
-  GetSearchAlternatives = (alternative) => {
-    let categories = this.GetProductCategories();
-    /*for (let i = 0; i < categories.length; i++)
-    {
-      //if (categories[i].)
-    }*/
-    return alternative === "Verksamhet" ? [{label: "Namn", type:"input", value: ''}, {label: "Verifierad", type:"dropdown", value: 'Alla', options: [{text:"Alla"}, {text:"Endast Verifierade"}]}, {label: "Plats", type:"input", value: ''}] :  [{label: "Namn", type:"input", value: ''}, {label: "Kategori", type:"dropdown", value:'', options: ["Alla", "Endast Verifierade"]}, {label: "Plats", type:"input", value:''}]
+  SetCities = (newState) => {
+    let cityList = this.state.cities;
+    for (let i = 0; i < newState.length; i++){
+      if (newState[i].label === "Plats")
+      {
+        newState[i].options = cityList;
+      }
+    }
+    return newState;
+  }
 
+  GetProductCategories = () => {
+    getProductCategories().then((response) =>
+    {
+      let categories = [{text : "Alla"}];
+      if (response.status === 200)
+      {
+        for (let i = 0; i < response.data.length; i++)
+        {
+          if (response.data[i].groupId === 1)
+          {
+            categories.push({text: response.data[i].description});
+          }
+        }
+      }
+      this.setState({
+        ...this.state,
+        productCategories: categories,
+      })
+    });
+  }
+
+  GetSearchAlternatives = (alternative) => {
+    return alternative === "Verksamhet" ? [{label: "Namn", type:"input", value: ''}, {label: "Verifierad", type:"dropdown", value: 'Alla', options: [{text:"Alla"}, {text:"Endast Verifierade"}]}, {label: "Plats", type:"dropdown", value: 'Alla', options: []}] :  [{label: "Namn", type:"input", value: ''}, {label: "Kategori", type:"dropdown", value:'Alla', options: this.state.productCategories}, {label: "Plats", type:"dropdown", value: 'Alla', options: []}]
   }
   
   render() {
@@ -66,7 +120,7 @@ class Search extends Component {
         <div className="SearchBox">
           <DropDownInputWithLabel dropdownOptions={this.state.targetOptions} label="Sökalternativ" selected={this.state.searchTarget} onChange={this.onChangeSearchTarget}/>
           <br/>
-          <SearchFields searchValues={this.state.searchValues} onChangeSearchValues={this.onChangeSearchAlternatives} searchAlternatives={this.state.searchAlternatives}  />
+          <SearchFields onChangeSearchValues={this.onChangeSearchAlternatives} searchAlternatives={this.state.searchAlternatives}  />
         </div>
         <ResultFields searchValues={this.state.searchAlternatives} searchTarget={this.state.searchTarget}/>
       </div>

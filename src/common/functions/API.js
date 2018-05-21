@@ -14,13 +14,22 @@ export const loginUser = (username, password) => {
   }
 };
 
-export const getBuisness = (id) => {
+export const getBusiness = (id) => {
   try {
     return axios.get(serverUri + '/Business/GetBusinessById/'+id);
   } catch (error) {
     console.error(error);
   }
 };
+
+export const getCities = () => {
+  try {
+    return axios.get(serverUri + '/Business/GetCities/');
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
 export const getAllProducts = () => {
   try {
@@ -38,6 +47,13 @@ export const getProductCategories = () => {
   }
 };
 
+export const getLowestPrice = (productId) => {
+  try {
+    return axios.get(serverUri + 'Product/GetLowestPrice?productId='+productId);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 
 export const getReview = (establishmentID, UserId) => {
