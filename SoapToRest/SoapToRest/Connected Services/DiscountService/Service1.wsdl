@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service1" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://193.10.202.76/discountservice/Discounts.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://193.10.202.76/discountservice/Discounts.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://193.10.202.76/discountservice/Discounts.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/DiscountService" />
+      <xsd:import schemaLocation="http://193.10.202.76/discountservice/Discounts.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WcfProduct.Data" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDiscounts_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_DeleteDiscountForProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscountForProduct" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_DeleteDiscountForProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscountForProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_UpdateDiscountForProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiscountForProduct" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_UpdateDiscountForProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiscountForProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_CreateDiscountForProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscountForProduct" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_CreateDiscountForProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscountForProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_CreateDiscountForProductgroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscountForProductgroup" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_CreateDiscountForProductgroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscountForProductgroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_CreateDiscountForProductcategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscountForProductcategory" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_CreateDiscountForProductcategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscountForProductcategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_CreateDiscountForProducttype_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscountForProducttype" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_CreateDiscountForProducttype_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscountForProducttypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_UpdateDiscountForProductgroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiscountForProductgroup" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_UpdateDiscountForProductgroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiscountForProductgroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_UpdateDiscountForProductcategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiscountForProductcategory" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_UpdateDiscountForProductcategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiscountForProductcategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_UpdateDiscountForProducttype_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiscountForProducttype" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_UpdateDiscountForProducttype_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateDiscountForProducttypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_DeleteDiscountForProductgroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscountForProductgroup" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_DeleteDiscountForProductgroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscountForProductgroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_DeleteDiscountForProductcategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscountForProductcategory" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_DeleteDiscountForProductcategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscountForProductcategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_DeleteDiscountForProducttype_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscountForProducttype" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_DeleteDiscountForProducttype_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscountForProducttypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_GetOrganisationDiscounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganisationDiscounts" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_GetOrganisationDiscounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrganisationDiscountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_GetADiscountsProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetADiscountsProducts" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_GetADiscountsProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetADiscountsProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_CreateDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscount" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_CreateDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_EditDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditDiscount" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_EditDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_DeleteDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscount" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_DeleteDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteDiscountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_GetDiscounts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiscounts" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_GetDiscounts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiscountsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_GetDiscount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiscount" />
+  </wsdl:message>
+  <wsdl:message name="IDiscounts_GetDiscount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDiscountResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDiscounts">
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/GetData" message="tns:IDiscounts_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/GetDataResponse" message="tns:IDiscounts_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscountForProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/DeleteDiscountForProduct" message="tns:IDiscounts_DeleteDiscountForProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/DeleteDiscountForProductResponse" message="tns:IDiscounts_DeleteDiscountForProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDiscountForProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/UpdateDiscountForProduct" message="tns:IDiscounts_UpdateDiscountForProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/UpdateDiscountForProductResponse" message="tns:IDiscounts_UpdateDiscountForProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscountForProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/CreateDiscountForProduct" message="tns:IDiscounts_CreateDiscountForProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/CreateDiscountForProductResponse" message="tns:IDiscounts_CreateDiscountForProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscountForProductgroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/CreateDiscountForProductgroup" message="tns:IDiscounts_CreateDiscountForProductgroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/CreateDiscountForProductgroupResponse" message="tns:IDiscounts_CreateDiscountForProductgroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscountForProductcategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/CreateDiscountForProductcategory" message="tns:IDiscounts_CreateDiscountForProductcategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/CreateDiscountForProductcategoryResponse" message="tns:IDiscounts_CreateDiscountForProductcategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscountForProducttype">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/CreateDiscountForProducttype" message="tns:IDiscounts_CreateDiscountForProducttype_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/CreateDiscountForProducttypeResponse" message="tns:IDiscounts_CreateDiscountForProducttype_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDiscountForProductgroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/UpdateDiscountForProductgroup" message="tns:IDiscounts_UpdateDiscountForProductgroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/UpdateDiscountForProductgroupResponse" message="tns:IDiscounts_UpdateDiscountForProductgroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDiscountForProductcategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/UpdateDiscountForProductcategory" message="tns:IDiscounts_UpdateDiscountForProductcategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/UpdateDiscountForProductcategoryResponse" message="tns:IDiscounts_UpdateDiscountForProductcategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDiscountForProducttype">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/UpdateDiscountForProducttype" message="tns:IDiscounts_UpdateDiscountForProducttype_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/UpdateDiscountForProducttypeResponse" message="tns:IDiscounts_UpdateDiscountForProducttype_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscountForProductgroup">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/DeleteDiscountForProductgroup" message="tns:IDiscounts_DeleteDiscountForProductgroup_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/DeleteDiscountForProductgroupResponse" message="tns:IDiscounts_DeleteDiscountForProductgroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscountForProductcategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/DeleteDiscountForProductcategory" message="tns:IDiscounts_DeleteDiscountForProductcategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/DeleteDiscountForProductcategoryResponse" message="tns:IDiscounts_DeleteDiscountForProductcategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscountForProducttype">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/DeleteDiscountForProducttype" message="tns:IDiscounts_DeleteDiscountForProducttype_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/DeleteDiscountForProducttypeResponse" message="tns:IDiscounts_DeleteDiscountForProducttype_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganisationDiscounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/GetOrganisationDiscounts" message="tns:IDiscounts_GetOrganisationDiscounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/GetOrganisationDiscountsResponse" message="tns:IDiscounts_GetOrganisationDiscounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADiscountsProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/GetADiscountsProducts" message="tns:IDiscounts_GetADiscountsProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/GetADiscountsProductsResponse" message="tns:IDiscounts_GetADiscountsProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/CreateDiscount" message="tns:IDiscounts_CreateDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/CreateDiscountResponse" message="tns:IDiscounts_CreateDiscount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/EditDiscount" message="tns:IDiscounts_EditDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/EditDiscountResponse" message="tns:IDiscounts_EditDiscount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/DeleteDiscount" message="tns:IDiscounts_DeleteDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/DeleteDiscountResponse" message="tns:IDiscounts_DeleteDiscount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiscounts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/GetDiscounts" message="tns:IDiscounts_GetDiscounts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/GetDiscountsResponse" message="tns:IDiscounts_GetDiscounts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDiscount">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDiscounts/GetDiscount" message="tns:IDiscounts_GetDiscount_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDiscounts/GetDiscountResponse" message="tns:IDiscounts_GetDiscount_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IDiscounts" type="tns:IDiscounts">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscountForProduct">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/DeleteDiscountForProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDiscountForProduct">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/UpdateDiscountForProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscountForProduct">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/CreateDiscountForProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscountForProductgroup">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/CreateDiscountForProductgroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscountForProductcategory">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/CreateDiscountForProductcategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscountForProducttype">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/CreateDiscountForProducttype" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDiscountForProductgroup">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/UpdateDiscountForProductgroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDiscountForProductcategory">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/UpdateDiscountForProductcategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateDiscountForProducttype">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/UpdateDiscountForProducttype" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscountForProductgroup">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/DeleteDiscountForProductgroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscountForProductcategory">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/DeleteDiscountForProductcategory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscountForProducttype">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/DeleteDiscountForProducttype" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrganisationDiscounts">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/GetOrganisationDiscounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADiscountsProducts">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/GetADiscountsProducts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateDiscount">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/CreateDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditDiscount">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/EditDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDiscount">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/DeleteDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiscounts">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/GetDiscounts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDiscount">
+      <soap:operation soapAction="http://tempuri.org/IDiscounts/GetDiscount" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="BasicHttpBinding_IDiscounts" binding="tns:BasicHttpBinding_IDiscounts">
+      <soap:address location="http://193.10.202.76/discountservice/Discounts.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

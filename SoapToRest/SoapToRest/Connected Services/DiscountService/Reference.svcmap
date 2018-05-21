@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="0e0da9e4-e1fa-4cd5-9b3d-18718942f998" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="Http://193.10.202.76/discountservice/Discounts.svc " Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Discounts.xsd" MetadataType="Schema" ID="8ba1df04-a212-433b-83eb-b39226f58bf6" SourceId="1" SourceUrl="http://193.10.202.76/discountservice/Discounts.svc?xsd=xsd0" />
+    <MetadataFile FileName="Discounts1.xsd" MetadataType="Schema" ID="5a08c32d-caa6-491c-8294-10234048e221" SourceId="1" SourceUrl="http://193.10.202.76/discountservice/Discounts.svc?xsd=xsd3" />
+    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="c6c4b888-19e1-4e23-a0e5-12b53dd49341" SourceId="1" SourceUrl="http://193.10.202.76/discountservice/Discounts.svc?wsdl" />
+    <MetadataFile FileName="Discounts2.xsd" MetadataType="Schema" ID="fbc222c3-503f-4dd2-8f3a-4e0dc0e84170" SourceId="1" SourceUrl="http://193.10.202.76/discountservice/Discounts.svc?xsd=xsd2" />
+    <MetadataFile FileName="Discounts.disco" MetadataType="Disco" ID="6dd8c186-1a0e-41fa-9e28-c1ab6be5c947" SourceId="1" SourceUrl="http://193.10.202.76/discountservice/Discounts.svc?disco" />
+    <MetadataFile FileName="Discounts3.xsd" MetadataType="Schema" ID="a9c03258-f48d-4255-9c89-e3079db0ff4c" SourceId="1" SourceUrl="http://193.10.202.76/discountservice/Discounts.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
