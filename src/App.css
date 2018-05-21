@@ -18,6 +18,11 @@
   color: rgba(102, 95, 76, 0.233);
 }
 
+.TransparentSmallText {
+  font-size: 1em;
+  color: rgba(102, 95, 76, 0.233);
+}
+
 .App-intro {
   font-size: large;
 }

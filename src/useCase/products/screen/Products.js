@@ -1,17 +1,14 @@
 import React, { Component } from 'react';
-import Products from '../container/List';
+import List from '../container/List';
 
-
-class Event extends Component {
+class Products extends Component {
   render() {
     return (
-      <div className="App">
-        <Products/>
+      <div class="col-xs-12" style={{width: '100%'}}>
+        <List userID={this.props.userID}/>
       </div>
-       
-      
     );
   }
 }
 
-export default Event;
+export default Products;
