@@ -62,14 +62,14 @@ namespace SoapToRest.Controllers
             return priceReports;
         }
 
-        public ProductService.Product[] GetProductsFromBusiness(int businessId)
+        public ProductService.ProductAtBusiness[] GetProductsAtBusiness(int businessId)
         {
 
-            ProductService.Product[] products = client.GetProductsFromBusiness(businessId);
+            ProductService.ProductAtBusiness[] products = client.GetProductsAtBusiness(businessId);
             return products;
         }
 
-        public List<ProductService.PriceReport[]> GetProductsFromBusinessWithPrices(int businessId)
+        /*public List<ProductService.PriceReport[]> GetProductsFromBusinessWithPrices(int businessId)
         {
             ProductService.Product[] products = client.GetProductsFromBusiness(businessId);
             List<ProductService.PriceReport[]> productsWithPrice = new List<ProductService.PriceReport[]>();
@@ -79,7 +79,7 @@ namespace SoapToRest.Controllers
             }
 
             return productsWithPrice;
-        }
+        }*/
 
         public HttpStatusCode ReportPrice(ProductService.PriceReport priceReport)
         {

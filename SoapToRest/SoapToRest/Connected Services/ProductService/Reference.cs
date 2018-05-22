@@ -48,10 +48,7 @@ namespace SoapToRest.ProductService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int typeIdField;
-        private object p;
-
-
-
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -268,6 +265,227 @@ namespace SoapToRest.ProductService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProductAtBusiness", Namespace="http://schemas.datacontract.org/2004/07/WcfProduct.Data")]
+    [System.SerializableAttribute()]
+    public partial class ProductAtBusiness : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SoapToRest.ProductService.ProductHasAttribute[] attributeListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string categoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int categoryIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string groupField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int groupIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SoapToRest.ProductService.PriceReport[] latestPricesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string nameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int typeIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal unverifiedPriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private decimal verifiedPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SoapToRest.ProductService.ProductHasAttribute[] attributeList {
+            get {
+                return this.attributeListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.attributeListField, value) != true)) {
+                    this.attributeListField = value;
+                    this.RaisePropertyChanged("attributeList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string category {
+            get {
+                return this.categoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.categoryField, value) != true)) {
+                    this.categoryField = value;
+                    this.RaisePropertyChanged("category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int categoryId {
+            get {
+                return this.categoryIdField;
+            }
+            set {
+                if ((this.categoryIdField.Equals(value) != true)) {
+                    this.categoryIdField = value;
+                    this.RaisePropertyChanged("categoryId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string group {
+            get {
+                return this.groupField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.groupField, value) != true)) {
+                    this.groupField = value;
+                    this.RaisePropertyChanged("group");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int groupId {
+            get {
+                return this.groupIdField;
+            }
+            set {
+                if ((this.groupIdField.Equals(value) != true)) {
+                    this.groupIdField = value;
+                    this.RaisePropertyChanged("groupId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SoapToRest.ProductService.PriceReport[] latestPrices {
+            get {
+                return this.latestPricesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.latestPricesField, value) != true)) {
+                    this.latestPricesField = value;
+                    this.RaisePropertyChanged("latestPrices");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.nameField, value) != true)) {
+                    this.nameField = value;
+                    this.RaisePropertyChanged("name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string type {
+            get {
+                return this.typeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typeField, value) != true)) {
+                    this.typeField = value;
+                    this.RaisePropertyChanged("type");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int typeId {
+            get {
+                return this.typeIdField;
+            }
+            set {
+                if ((this.typeIdField.Equals(value) != true)) {
+                    this.typeIdField = value;
+                    this.RaisePropertyChanged("typeId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal unverifiedPrice {
+            get {
+                return this.unverifiedPriceField;
+            }
+            set {
+                if ((this.unverifiedPriceField.Equals(value) != true)) {
+                    this.unverifiedPriceField = value;
+                    this.RaisePropertyChanged("unverifiedPrice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public decimal verifiedPrice {
+            get {
+                return this.verifiedPriceField;
+            }
+            set {
+                if ((this.verifiedPriceField.Equals(value) != true)) {
+                    this.verifiedPriceField = value;
+                    this.RaisePropertyChanged("verifiedPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PriceReport", Namespace="http://schemas.datacontract.org/2004/07/WcfProduct.Data")]
     [System.SerializableAttribute()]
     public partial class PriceReport : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -280,6 +498,9 @@ namespace SoapToRest.ProductService {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int businessIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private decimal priceField;
@@ -325,6 +546,19 @@ namespace SoapToRest.ProductService {
                 if ((this.businessIdField.Equals(value) != true)) {
                     this.businessIdField = value;
                     this.RaisePropertyChanged("businessId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
                 }
             }
         }
@@ -683,11 +917,11 @@ namespace SoapToRest.ProductService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductDetails", ReplyAction="http://tempuri.org/IProductService/GetProductDetailsResponse")]
         System.Threading.Tasks.Task<SoapToRest.ProductService.Product> GetProductDetailsAsync(int productId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsFromBusiness", ReplyAction="http://tempuri.org/IProductService/GetProductsFromBusinessResponse")]
-        SoapToRest.ProductService.Product[] GetProductsFromBusiness(int businessId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsAtBusiness", ReplyAction="http://tempuri.org/IProductService/GetProductsAtBusinessResponse")]
+        SoapToRest.ProductService.ProductAtBusiness[] GetProductsAtBusiness(int businessId);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsFromBusiness", ReplyAction="http://tempuri.org/IProductService/GetProductsFromBusinessResponse")]
-        System.Threading.Tasks.Task<SoapToRest.ProductService.Product[]> GetProductsFromBusinessAsync(int businessId);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetProductsAtBusiness", ReplyAction="http://tempuri.org/IProductService/GetProductsAtBusinessResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.ProductAtBusiness[]> GetProductsAtBusinessAsync(int businessId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetPricesFromProduct", ReplyAction="http://tempuri.org/IProductService/GetPricesFromProductResponse")]
         SoapToRest.ProductService.PriceReport[] GetPricesFromProduct(int productId);
@@ -869,6 +1103,12 @@ namespace SoapToRest.ProductService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateAttribute", ReplyAction="http://tempuri.org/IProductService/CreateAttributeResponse")]
         System.Threading.Tasks.Task<SoapToRest.ProductService.Attribute> CreateAttributeAsync(SoapToRest.ProductService.Attribute attribute);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllPrices", ReplyAction="http://tempuri.org/IProductService/GetAllPricesResponse")]
+        SoapToRest.ProductService.PriceReport[] GetAllPrices();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetAllPrices", ReplyAction="http://tempuri.org/IProductService/GetAllPricesResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.PriceReport[]> GetAllPricesAsync();
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DoILive", ReplyAction="http://tempuri.org/IProductService/DoILiveResponse")]
         string DoILive();
         
@@ -919,12 +1159,12 @@ namespace SoapToRest.ProductService {
             return base.Channel.GetProductDetailsAsync(productId);
         }
         
-        public SoapToRest.ProductService.Product[] GetProductsFromBusiness(int businessId) {
-            return base.Channel.GetProductsFromBusiness(businessId);
+        public SoapToRest.ProductService.ProductAtBusiness[] GetProductsAtBusiness(int businessId) {
+            return base.Channel.GetProductsAtBusiness(businessId);
         }
         
-        public System.Threading.Tasks.Task<SoapToRest.ProductService.Product[]> GetProductsFromBusinessAsync(int businessId) {
-            return base.Channel.GetProductsFromBusinessAsync(businessId);
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.ProductAtBusiness[]> GetProductsAtBusinessAsync(int businessId) {
+            return base.Channel.GetProductsAtBusinessAsync(businessId);
         }
         
         public SoapToRest.ProductService.PriceReport[] GetPricesFromProduct(int productId) {
@@ -1165,6 +1405,14 @@ namespace SoapToRest.ProductService {
         
         public System.Threading.Tasks.Task<SoapToRest.ProductService.Attribute> CreateAttributeAsync(SoapToRest.ProductService.Attribute attribute) {
             return base.Channel.CreateAttributeAsync(attribute);
+        }
+        
+        public SoapToRest.ProductService.PriceReport[] GetAllPrices() {
+            return base.Channel.GetAllPrices();
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.PriceReport[]> GetAllPricesAsync() {
+            return base.Channel.GetAllPricesAsync();
         }
         
         public string DoILive() {
