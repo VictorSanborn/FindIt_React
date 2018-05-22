@@ -20,7 +20,7 @@ class ResultField extends Component {
                 <h5 style={{margin: '10px'}} class="col-sm-6 text-left">{this.props.title}</h5>
                 <div style={{margin: '10px'}} class="col-sm-6 text-left">{this.props.description}</div>
                 {this.props.dataField == "Öl" ? 
-                    this.props.price !== 0 && this.props.businessForProduct ?
+                    this.props.price !== null && this.props.businessForProduct ?
                         <div style={{margin: '15px'}} class="col-sm-6 text-left">{this.props.price}kr hos <a href={'/Business/' + this.props.businessForProduct.id}>{this.props.businessForProduct.name}</a></div>
                         :
                         <div style={{margin: '15px', color: "#ff0000"}} class="col-sm-6 text-left">Inget pris rapporterat på den här produkten</div>
