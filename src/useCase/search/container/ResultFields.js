@@ -161,10 +161,11 @@ class ResultFields extends Component {
           <li class="page-item"><a onClick={this.props.pageNr>0? () => this.props.onChangePage(this.props.pageNr-1) : () => this.props.onChangePage(this.props.pageNr)} class="page-link" >Backa</a></li>
           {
             this.CreatePaginationButtons(listObjectPerPage, totalListed).map((value)=> {
+              console.log(this.CreatePaginationButtons(listObjectPerPage, totalListed).length-1)
               return value
             })
           }
-          <li class="page-item"><a onClick={this.props.pageNr<totalListed/listObjectPerPage? () => this.props.onChangePage(this.props.pageNr+1) : () => this.props.onChangePage(this.props.pageNr)} class="page-link" >Nästa</a></li>
+          <li class="page-item"><a onClick={this.props.pageNr<this.CreatePaginationButtons(listObjectPerPage, totalListed).length-1? () => this.props.onChangePage(this.props.pageNr+1) : () => this.props.onChangePage(this.props.pageNr)} class="page-link" >Nästa</a></li>
         </ul>
       </nav>
       :
