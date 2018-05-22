@@ -22,8 +22,7 @@ class Business extends Component {
     }
   }; 
 
-  componentDidMount(){
-    
+  componentDidMount(){ 
     getBusiness(this.props.match.params.barId).then((response) => {
       this.setState({
         ...this.state,
@@ -70,7 +69,7 @@ class Business extends Component {
           </div>
         </div>
         <div class="row col">
-          <Products userID={this.props.userID}/>  
+          <Products barID={this.props.match.params.barId} userID={this.props.userID}/>  
         </div>
       </div>
     );

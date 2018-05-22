@@ -78,6 +78,7 @@ export const getAllEvents = () => {
   }
 };
 
+
 export const getAllBusinesses = () => {
   try {
     return axios.get(serverUri + '/Business/GetAll');
@@ -85,6 +86,15 @@ export const getAllBusinesses = () => {
     console.error(error);
   }
 };
+
+export const GetPricesFromProductAtBusiness = (businessId, productId) => {
+  try {
+    return axios.get(serverUri + '/Product/GetPricesFromProductAtBusiness?productId='+productId+'&businessId='+businessId);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
 export const getBusinessesByName = () => {
   try {
@@ -112,6 +122,15 @@ export const sendReview = (UserId, establishmentID, rating) => {
   try {
     let data = {}
     return axios.post(serverUri + '/User/UpdateEstablishment?establishmentID='+establishmentID+'&rating='+rating+'&userID='+UserId);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const sendPrice = (businessId, price, productId, userId) => {
+  try {
+    let data = {"OccurrenceDT": new Date().toLocaleString(),"businessId": businessId,"id": 0,"price": price,"productId": productId,"userId": userId,"userType": 4}
+    return axios.post(serverUri + '/Product/ReportPrice', data);
   } catch (error) {
     console.error(error);
   }
