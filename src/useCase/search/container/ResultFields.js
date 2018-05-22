@@ -95,10 +95,8 @@ class ResultFields extends Component {
         for (let i = 0; i < response.data.length; i++)
         {
           getLowestPrice(response.data[i].id).then((priceResponse) => {
-            console.log(priceResponse);
             response.data[i].priceReported = priceResponse.data.price;
             response.data[i].businessReported = priceResponse.data.businessId;
-            
             if (response.data[i].businessReported && response.data[i].businessReported != null && response.data[i].businessReported != "0" && response.data[i].businessReported != 0)
             {
               getBusiness(response.data[i].businessReported).then((CityResponse) => {

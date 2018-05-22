@@ -17,7 +17,7 @@ export const loginUser = (username, password) => {
 
 export const getBusiness = (id) => {
   try {
-    return axios.get(serverUri + '/Business/GetBusinessById/'+id);
+    return axios.get(serverUri + '/Business/GetBusinessById?id='+id);
   } catch (error) {
     console.error(error);
   }
