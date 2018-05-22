@@ -33,12 +33,13 @@ class ResultFields extends Component {
                 return true;
               }
           }
+
           if (this.props.searchValues[i].label === "Plats" && this.props.searchValues[i].value != "Alla" && this.props.searchValues[i].value !== filterItem.city)
           {
-              if (!filterItem.verified)
-              {
-                return true;
-              }
+            console.log(this.props.searchValues[i].value);
+            console.log(filterItem.city + " verksamhet: " + filterItem.name);
+              return true;
+
           }
         }
         else if (this.props.searchTarget === "Öl"){
@@ -81,19 +82,17 @@ class ResultFields extends Component {
   GetValuesProducts = () => {
     getAllProducts().then((response) =>
     {
-      console.log(response);
       if (response.status == 200)
       {
+
         for (let i = 0; i < response.data.length; i++)
         {
           getLowestPrice(response.data[i].id).then((priceResponse) => {
-
             response.data[i].priceReported = priceResponse.data.price;
             response.data[i].businessReported = priceResponse.data.businessId;
             
             if (response.data[i].businessReported && response.data[i].businessReported != null && response.data[i].businessReported != "0" && response.data[i].businessReported != 0)
             {
-              console.log("fetching business for product");
               getBusiness(response.data[i].businessReported).then((CityResponse) => {
                 response.data[i].businessForProduct = CityResponse.data;
             })

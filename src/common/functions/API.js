@@ -50,7 +50,7 @@ export const getProductCategories = () => {
 
 export const getLowestPrice = (productId) => {
   try {
-    return axios.get(serverUri + 'Product/GetLowestPrice?productId='+productId);
+    return axios.get(serverUri + '/Product/GetLowestPrice?productId='+productId);
   } catch (error) {
     console.error(error);
   }
