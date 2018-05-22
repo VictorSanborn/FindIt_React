@@ -15,6 +15,7 @@ class Search extends Component {
       productCategories: [],
       searchAlternatives: [{label: "Namn", type:"input", value: ''}, {label: "Verifierad", type:"dropdown", value: 'Alla', options: [{text:"Alla"}, {text:"Endast Verifierade"}]}, {label: "Plats", type:"dropdown", value: 'Alla', options: []}],
       cities: [],
+      pageNr: 0,
     }
 
   }; 
@@ -29,8 +30,15 @@ class Search extends Component {
     this.setState({
       ...this.state,
       searchAlternatives: searchalt,
+      pageNr: 0,
     })
-    console.log(searchalt);
+  }
+
+  onChangePage = (pageNr) => {
+    this.setState({
+      ...this.state,
+      pageNr: pageNr,
+    })
   }
 
   onChangeSearchTarget = (searchTargetValue) =>{
@@ -41,15 +49,9 @@ class Search extends Component {
         ...this.state,
         searchTarget: searchTargetValue.target.text,
         searchAlternatives: newState,
+        pageNr: 0,
       })
   }
-
-  onChangeSearchValues = (searchValues) =>{
-    this.setState({
-        ...this.state,
-        searchValues: searchValues.target.value,
-      })
-  };
 
   FetchCities = () => {
     getCities().then((response) =>
@@ -122,7 +124,7 @@ class Search extends Component {
           <br/>
           <SearchFields onChangeSearchValues={this.onChangeSearchAlternatives} searchAlternatives={this.state.searchAlternatives}  />
         </div>
-        <ResultFields searchValues={this.state.searchAlternatives} searchTarget={this.state.searchTarget}/>
+        <ResultFields onChangePage={this.onChangePage} pageNr={this.state.pageNr} searchValues={this.state.searchAlternatives} searchTarget={this.state.searchTarget}/>
       </div>
     );
   }

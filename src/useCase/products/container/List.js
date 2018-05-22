@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import InputButton from '../component/InputButton';
-import { GetProductsFromBusiness, GetPricesFromProductAtBusiness, sendPrice } from '../../../common/functions/API';
+import {GetProductsFromBusiness, GetPricesFromProductAtBusiness, sendPrice } from '../../../common/functions/API';
 
 class List extends Component {
   constructor(props) {
@@ -26,8 +26,10 @@ class List extends Component {
   }
 
   RateProduct = (price, productId) => {
-    alert(sendPrice(this.props.barID, price, productId, this.props.userID).then((response) => {}));
-    this.ListProducts();
+    sendPrice(this.props.barID, price, productId, this.props.userID).then((response) => {
+      this.ListProducts();
+    });
+
   }
 
   componentDidMount(){
@@ -74,14 +76,14 @@ class List extends Component {
             <td>
               { 
                 product.verifiedPrice !== 0 ? 
-                product.verifiedPrice+"kr" :
+                product.verifiedPrice.toFixed(2)+"kr" :
                 <p class="TransparentSmallText">Uppgift Saknas</p>
               }
             </td>
             <td>
               { 
                 product.unverifiedPrice !== 0 ? 
-                product.unverifiedPrice+"kr" :
+                product.unverifiedPrice.toFixed(2)+"kr" :
                 <p class="TransparentSmallText">Uppgift Saknas</p>
               }
             </td>
