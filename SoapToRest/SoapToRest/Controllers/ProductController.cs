@@ -29,19 +29,21 @@ namespace SoapToRest.Controllers
 
         public ProductService.PriceReport GetLowestPrice(int productId)
         {
-
             ProductService.PriceReport[] priceReport = client.GetPricesFromProduct(productId);
             ProductService.PriceReport lowest = new ProductService.PriceReport();
-
-            lowest.price = 0;
-
+            if (priceReport.Length > 0)
+            {
+                lowest = priceReport[0];
+            }
 
             
             foreach (ProductService.PriceReport p in priceReport)
             {
-                    lowest.price += p.price;
+                if (lowest.price > p.price)
+                {
+                    lowest = p;
+                }
             }
-            lowest.price = lowest.price / priceReport.Length;
 
             return lowest;
         }
