@@ -2,6 +2,7 @@ import axios from 'axios';
 
 let serverUri = 'https://finditappapi.azurewebsites.net';
 
+
 //
 //  GET
 //
@@ -14,13 +15,47 @@ export const loginUser = (username, password) => {
   }
 };
 
-export const getBuisness = (id) => {
+export const getBusiness = (id) => {
   try {
     return axios.get(serverUri + '/Business/GetBusinessById/'+id);
   } catch (error) {
     console.error(error);
   }
 };
+
+export const getCities = () => {
+  try {
+    return axios.get(serverUri + '/Business/GetCities/');
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
+export const getAllProducts = () => {
+  try {
+    return axios.get(serverUri + '/Product/GetAllProducts/');
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getProductCategories = () => {
+  try {
+    return axios.get(serverUri + '/Product/GetProductCategories/');
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const getLowestPrice = (productId) => {
+  try {
+    return axios.get(serverUri + '/Product/GetLowestPrice?productId='+productId);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
 export const getReview = (establishmentID, UserId) => {
   try {
@@ -43,9 +78,10 @@ export const getAllEvents = () => {
   }
 };
 
-export const GetProductsFromBusiness = (businessId) => {
+
+export const getAllBusinesses = () => {
   try {
-    return axios.get(serverUri + '/Product/GetProductsAtBusiness?businessId='+businessId);
+    return axios.get(serverUri + '/Business/GetAll');
   } catch (error) {
     console.error(error);
   }
@@ -54,6 +90,15 @@ export const GetProductsFromBusiness = (businessId) => {
 export const GetPricesFromProductAtBusiness = (businessId, productId) => {
   try {
     return axios.get(serverUri + '/Product/GetPricesFromProductAtBusiness?productId='+productId+'&businessId='+businessId);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+
+export const getBusinessesByName = () => {
+  try {
+    return axios.get(serverUri + '/Business/GetAll');
   } catch (error) {
     console.error(error);
   }

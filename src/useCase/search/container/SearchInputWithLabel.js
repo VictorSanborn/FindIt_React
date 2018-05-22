@@ -7,7 +7,7 @@ class SearchInputWithLabel extends Component {
     return (
       <div>
         <SmallTitle text={this.props.label}/>
-        <SearchBox/>
+        <SearchBox dataField={this.props.dataField} onChange={this.props.onChange}/>
       </div>
     );
   }

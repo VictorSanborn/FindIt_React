@@ -1,14 +1,39 @@
 import React, { Component } from 'react'; 
+import {getBusiness} from '../../../common/functions/API';
 
 class ResultField extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            businessForProduct: ''
+        }
+      }; 
+
+
+
   render() {
     return (
-        <div className="col-sm-12 row">
-            <img class="OrganisationImage"></img>
+        <div className="row">
+            <div class="col-sm-12">
+                <img src={this.props.imgsrc} class="OrganisationImage"></img>
+                <h5 style={{margin: '10px'}} class="col-sm-6 text-left">{this.props.title}</h5>
+                <div style={{margin: '10px'}} class="col-sm-6 text-left">{this.props.description}</div>
+                {this.props.dataField == "Öl" ? 
+                    this.props.price !== 0 && this.props.businessForProduct ?
+                        <div style={{margin: '15px'}} class="col-sm-6 text-left">{this.props.price}kr hos <a href={'/Business/' + this.props.businessForProduct.id}>{this.props.businessForProduct.name}</a></div>
+                        :
+                        <div style={{margin: '15px', color: "#ff0000"}} class="col-sm-6 text-left">Inget pris rapporterat på den här produkten</div>
+                    
+                :
+                <div className="col-sm-3 float-right text-right">
+                    <div className="align-middle">
+                        <a className="btn btn-outline-warning align-middle" style={{margin: '5px'}} href={'/Business/' + this.props.itemId}>Till bar</a>
+                    </div>
+                </div>
+                }
+  
 
-            <div class="row">
-                <h5 style={{margin: '10px'}} class="col-sm-12 text-left">{this.props.title}</h5>
-                <div style={{margin: '10px'}} class="col-sm-12 text-left">{this.props.description}</div>
             </div>
         </div>
     );
