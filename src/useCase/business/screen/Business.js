@@ -22,7 +22,6 @@ class Business extends Component {
   }; 
 
   componentDidMount(){
-    
     getBuisness(this.props.match.params.barId).then((response) => {
       this.setState({
         ...this.state,
