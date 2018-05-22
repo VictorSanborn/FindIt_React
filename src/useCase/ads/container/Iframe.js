@@ -10,11 +10,6 @@ class iFrame extends Component {
     }
   }; 
 
-  componentWillMount(){
-    console.log("Ad")
-    console.log(getAd())
-  }
-
   render() {
     return (
       <div className="App">
