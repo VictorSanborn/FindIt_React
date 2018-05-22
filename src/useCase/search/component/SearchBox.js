@@ -5,7 +5,7 @@ class SearchBox extends Component {
     return (
       <div>
         <div class={'text-left ' + 'input-group ' + this.props.borderOption}>
-            <input type="text" class="InputItem form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
+            <input dataField={this.props.dataField} onChange={this.props.onChange} type="text" class="InputItem form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default"/>
         </div>
       </div>
     );
