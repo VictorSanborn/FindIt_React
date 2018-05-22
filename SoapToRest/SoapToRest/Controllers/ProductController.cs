@@ -95,6 +95,20 @@ namespace SoapToRest.Controllers
             return HttpStatusCode.OK;
         }
 
+        public ProductService.Attribute[] GetAllAttributes()
+        {
+            ProductService.Attribute[] attr = new ProductService.Attribute[] { };
+            try
+            {
+                attr=  client.GetAllAttributes();
+            }
+            catch
+            {
+            }
+
+            return attr;
+        }
+
         public ProductService.Group[] GetProductGroups(ProductService.PriceReport priceReport)
         {
 
