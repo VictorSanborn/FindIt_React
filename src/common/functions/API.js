@@ -56,6 +56,14 @@ export const getLowestPrice = (productId) => {
   }
 };
 
+export const getAd = () => {
+  try {
+    return axios.get(serverUri + '/Advertising/ReadAnnons');
+  } catch (error) {
+    console.error(error);
+  }
+};
+
 
 export const getReview = (establishmentID, UserId) => {
   try {
