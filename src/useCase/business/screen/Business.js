@@ -5,6 +5,7 @@ import Image from '../component/Image';
 import Rating from '../../rating/screen/Rating';
 import { getBusiness } from '../../../common/functions/API';
 import Products from '../../products/screen/Products';
+import Discounts from '../../discounts/screen/Discounts';
 
 
 class Business extends Component {  
@@ -70,6 +71,7 @@ class Business extends Component {
         </div>
         <div class="row col">
           <Products barID={this.props.match.params.barId} userID={this.props.userID}/>  
+          <Discounts barID={this.props.match.params.barId} userID={this.props.userID}/>  
         </div>
       </div>
     );
