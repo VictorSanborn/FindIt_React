@@ -30,29 +30,31 @@ class List extends Component {
   render() {
     return (
       <div className="App">
-      <h1>{this.state.newPrice} {this.state.newProductId}</h1>
-      <table class="table table-bordered table-fit">
-        <thead>
-          <tr>
-            <th scope="col">Namn</th>
-            <th scope="col">Rabattyp</th>
-            <th scope="col">Krav</th>
-            <th scope="col">Giltlighet (Från - Till)</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.discounts.map((product) => {
-            return (
+        <h1>{this.state.newPrice} {this.state.newProductId}</h1>
+        <div class="table-responsive">
+          <table class="table table-bordered table-fit">
+            <thead>
               <tr>
-                <td>{product.Name}</td>
-                <td>{product.DiscountType}</td>
-                <td>{product.TermsAndConditions}</td>
-                <td>{product.StartDate.split('T')[0] + ' - ' + product.ExpiryDate.split('T')[0]}</td>
+                <th scope="col">Namn</th>
+                <th scope="col">Rabattyp</th>
+                <th scope="col">Krav</th>
+                <th scope="col">Giltlighet (Från - Till)</th>
               </tr>
-            )
-          })}          
-        </tbody>
-      </table>
+            </thead>
+            <tbody>
+              {this.state.discounts.map((product) => {
+                return (
+                  <tr>
+                    <td>{product.Name}</td>
+                    <td>{product.DiscountType}</td>
+                    <td>{product.TermsAndConditions}</td>
+                    <td>{product.StartDate.split('T')[0] + ' - ' + product.ExpiryDate.split('T')[0]}</td>
+                  </tr>
+                )
+              })}          
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
