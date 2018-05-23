@@ -120,6 +120,13 @@ export const getBusinessesByName = () => {
   }
 };
 
+export const getDiscountsByBusiness = (organisationID) => {
+  try {
+    return axios.get(serverUri + '/Discount/GetOrganisationDiscounts?organisationID='+organisationID);
+  } catch (error) {
+    console.error(error);
+  }
+};
 
 //
 //  POST
