@@ -12,6 +12,17 @@
  
 }
 
+.ListItemClickable
+{
+    color:black;
+
+}
+.ListItemClickable:hover
+{
+    color:black;
+    text-decoration: none;
+    
+}
 
 .BorderLeft {
     border-left: 1px solid #E9C458;

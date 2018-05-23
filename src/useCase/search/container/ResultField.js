@@ -15,7 +15,7 @@ class ResultField extends Component {
   render() {
     console.log(this.props.price + this.props.businessForProduct) 
     return (
-        <div className="row">
+        <a className="row ListItemClickable" href={this.props.dataField === "Verksamhet"? '/Business/' + this.props.itemId : undefined}>
             <div class="col-sm-12">
                 {this.props.dataField == "Verksamhet"? <img src={this.props.imgsrc} class="OrganisationImage"></img> : ""}
                 <h5 style={{margin: '10px'}} class="col-sm-6 text-left">{this.props.title}</h5>
@@ -28,15 +28,10 @@ class ResultField extends Component {
                     
                 :
                 <div className="col-sm-3 float-right text-right">
-                    <div className="align-middle">
-                        <a className="btn btn-outline-warning align-middle" style={{margin: '5px'}} href={'/Business/' + this.props.itemId}>Till bar</a>
-                    </div>
                 </div>
                 }
-  
-
             </div>
-        </div>
+        </a>
     );
   }
 }
