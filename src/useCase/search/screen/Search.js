@@ -10,7 +10,7 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      targetOptions: [{text: "Verksamhet"}, {text: "Öl"}],
+      targetOptions: [{text: "Verksamhet"}, {text: "Dryck"}],
       searchTarget: 'Verksamhet',
       productCategories: [],
       searchAlternatives: [{label: "Namn", type:"input", value: ''}, {label: "Verifierad", type:"dropdown", value: 'Alla', options: [{text:"Alla"}, {text:"Endast Verifierade"}]}, {label: "Plats", type:"dropdown", value: 'Alla', options: []}],

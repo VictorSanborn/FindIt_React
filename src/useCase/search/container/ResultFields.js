@@ -40,7 +40,7 @@ class ResultFields extends Component {
             return true;
           }
         }
-        else if (this.props.searchTarget === "Öl"){ // om den ska filtrera produkt
+        else if (this.props.searchTarget === "Dryck"){ // om den ska filtrera produkt
         // Product kategori
           if(this.props.searchValues[i].label === "Kategori" && this.props.searchValues[i].value != "Alla" && this.props.searchValues[i].value !== filterItem.category)
           {
@@ -144,7 +144,7 @@ class ResultFields extends Component {
                 j++;
               return (
                 <div class="col-sm-12 SearchResultListObject">
-                    <ResultField dataField="Öl" imgsrc={value.imageLink} title={value.name} description={value.category} itemId={value.id} businessForProduct={value.businessForProduct} price={value.priceReported}/>
+                    <ResultField dataField="Dryck" imgsrc={value.imageLink} title={value.name} description={value.category} itemId={value.id} businessForProduct={value.businessForProduct} price={value.priceReported}/>
                 </div>
               )
             }
