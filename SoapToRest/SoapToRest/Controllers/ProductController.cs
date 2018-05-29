@@ -39,6 +39,15 @@ namespace SoapToRest.Controllers
             return priceReport;
         }
 
+        public ProductService.Product GetProduct(int id)
+        {
+
+            ProductService.Product p = client.GetProductDetails(id);
+
+            return p;
+
+        }
+
         public ProductService.PriceReport GetLowestPrice(int productId)
         {
             ProductService.PriceReport[] priceReport = client.GetPricesFromProduct(productId);

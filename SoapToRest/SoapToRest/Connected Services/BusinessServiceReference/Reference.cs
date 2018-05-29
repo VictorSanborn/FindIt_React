@@ -561,6 +561,9 @@ namespace SoapToRest.BusinessServiceReference {
         private int businessIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string userNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -585,6 +588,19 @@ namespace SoapToRest.BusinessServiceReference {
                 if ((this.businessIdField.Equals(value) != true)) {
                     this.businessIdField = value;
                     this.RaisePropertyChanged("businessId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
                 }
             }
         }
@@ -682,6 +698,48 @@ namespace SoapToRest.BusinessServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBusinessUser", ReplyAction="http://tempuri.org/IService1/GetBusinessUserResponse")]
         System.Threading.Tasks.Task<SoapToRest.BusinessServiceReference.BusinessUser1> GetBusinessUserAsync(string userName);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBusinessUserById", ReplyAction="http://tempuri.org/IService1/GetBusinessUserByIdResponse")]
+        SoapToRest.BusinessServiceReference.BusinessUser1 GetBusinessUserById(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBusinessUserById", ReplyAction="http://tempuri.org/IService1/GetBusinessUserByIdResponse")]
+        System.Threading.Tasks.Task<SoapToRest.BusinessServiceReference.BusinessUser1> GetBusinessUserByIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DoILive", ReplyAction="http://tempuri.org/IService1/DoILiveResponse")]
+        string DoILive();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DoILive", ReplyAction="http://tempuri.org/IService1/DoILiveResponse")]
+        System.Threading.Tasks.Task<string> DoILiveAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBusinessUserByBusinessId", ReplyAction="http://tempuri.org/IService1/GetBusinessUserByBusinessIdResponse")]
+        SoapToRest.BusinessServiceReference.BusinessUser1 GetBusinessUserByBusinessId(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetBusinessUserByBusinessId", ReplyAction="http://tempuri.org/IService1/GetBusinessUserByBusinessIdResponse")]
+        System.Threading.Tasks.Task<SoapToRest.BusinessServiceReference.BusinessUser1> GetBusinessUserByBusinessIdAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateBusinessUser", ReplyAction="http://tempuri.org/IService1/UpdateBusinessUserResponse")]
+        void UpdateBusinessUser(SoapToRest.BusinessServiceReference.BusinessUser businessUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/UpdateBusinessUser", ReplyAction="http://tempuri.org/IService1/UpdateBusinessUserResponse")]
+        System.Threading.Tasks.Task UpdateBusinessUserAsync(SoapToRest.BusinessServiceReference.BusinessUser businessUser);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllBusinessUsers", ReplyAction="http://tempuri.org/IService1/GetAllBusinessUsersResponse")]
+        SoapToRest.BusinessServiceReference.BusinessUser1[] GetAllBusinessUsers();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetAllBusinessUsers", ReplyAction="http://tempuri.org/IService1/GetAllBusinessUsersResponse")]
+        System.Threading.Tasks.Task<SoapToRest.BusinessServiceReference.BusinessUser1[]> GetAllBusinessUsersAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerifyBusiness", ReplyAction="http://tempuri.org/IService1/VerifyBusinessResponse")]
+        void VerifyBusiness(SoapToRest.BusinessServiceReference.Business1 business);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/VerifyBusiness", ReplyAction="http://tempuri.org/IService1/VerifyBusinessResponse")]
+        System.Threading.Tasks.Task VerifyBusinessAsync(SoapToRest.BusinessServiceReference.Business1 business);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteBusinessUser", ReplyAction="http://tempuri.org/IService1/DeleteBusinessUserResponse")]
+        void DeleteBusinessUser(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DeleteBusinessUser", ReplyAction="http://tempuri.org/IService1/DeleteBusinessUserResponse")]
+        System.Threading.Tasks.Task DeleteBusinessUserAsync(int id);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -781,6 +839,62 @@ namespace SoapToRest.BusinessServiceReference {
         
         public System.Threading.Tasks.Task<SoapToRest.BusinessServiceReference.BusinessUser1> GetBusinessUserAsync(string userName) {
             return base.Channel.GetBusinessUserAsync(userName);
+        }
+        
+        public SoapToRest.BusinessServiceReference.BusinessUser1 GetBusinessUserById(int id) {
+            return base.Channel.GetBusinessUserById(id);
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.BusinessServiceReference.BusinessUser1> GetBusinessUserByIdAsync(int id) {
+            return base.Channel.GetBusinessUserByIdAsync(id);
+        }
+        
+        public string DoILive() {
+            return base.Channel.DoILive();
+        }
+        
+        public System.Threading.Tasks.Task<string> DoILiveAsync() {
+            return base.Channel.DoILiveAsync();
+        }
+        
+        public SoapToRest.BusinessServiceReference.BusinessUser1 GetBusinessUserByBusinessId(int id) {
+            return base.Channel.GetBusinessUserByBusinessId(id);
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.BusinessServiceReference.BusinessUser1> GetBusinessUserByBusinessIdAsync(int id) {
+            return base.Channel.GetBusinessUserByBusinessIdAsync(id);
+        }
+        
+        public void UpdateBusinessUser(SoapToRest.BusinessServiceReference.BusinessUser businessUser) {
+            base.Channel.UpdateBusinessUser(businessUser);
+        }
+        
+        public System.Threading.Tasks.Task UpdateBusinessUserAsync(SoapToRest.BusinessServiceReference.BusinessUser businessUser) {
+            return base.Channel.UpdateBusinessUserAsync(businessUser);
+        }
+        
+        public SoapToRest.BusinessServiceReference.BusinessUser1[] GetAllBusinessUsers() {
+            return base.Channel.GetAllBusinessUsers();
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.BusinessServiceReference.BusinessUser1[]> GetAllBusinessUsersAsync() {
+            return base.Channel.GetAllBusinessUsersAsync();
+        }
+        
+        public void VerifyBusiness(SoapToRest.BusinessServiceReference.Business1 business) {
+            base.Channel.VerifyBusiness(business);
+        }
+        
+        public System.Threading.Tasks.Task VerifyBusinessAsync(SoapToRest.BusinessServiceReference.Business1 business) {
+            return base.Channel.VerifyBusinessAsync(business);
+        }
+        
+        public void DeleteBusinessUser(int id) {
+            base.Channel.DeleteBusinessUser(id);
+        }
+        
+        public System.Threading.Tasks.Task DeleteBusinessUserAsync(int id) {
+            return base.Channel.DeleteBusinessUserAsync(id);
         }
     }
 }
