@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -17,7 +18,17 @@ namespace SoapToRest.Controllers
         // GET: /ProductService/GetAllProducts?showDiscounted=false
         public ProductService.Product[] GetAllProducts()
         {
-            ProductService.Product[] products = client.GetAllProducts();
+            ProductService.Product[] products = new ProductService.Product[] { };
+            try
+            {
+
+                products = client.GetAllProducts();
+
+            }
+            catch (Exception e)
+            {
+                Trace.TraceError(e.Message);
+            }
             return products;
         }
 

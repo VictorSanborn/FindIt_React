@@ -61,6 +61,30 @@
   <wsdl:message name="IProductService_ReportPrice_OutputMessage">
     <wsdl:part name="parameters" element="tns:ReportPriceResponse" />
   </wsdl:message>
+  <wsdl:message name="IProductService_ReportPriceReturnObject_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReportPriceReturnObject" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_ReportPriceReturnObject_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReportPriceReturnObjectResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetPriceReportDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPriceReportDetails" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_GetPriceReportDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPriceReportDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdatePriceReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePriceReport" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_UpdatePriceReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdatePriceReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeletePriceReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePriceReport" />
+  </wsdl:message>
+  <wsdl:message name="IProductService_DeletePriceReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePriceReportResponse" />
+  </wsdl:message>
   <wsdl:message name="IProductService_CreateProduct_InputMessage">
     <wsdl:part name="parameters" element="tns:CreateProduct" />
   </wsdl:message>
@@ -254,6 +278,22 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/ReportPrice" message="tns:IProductService_ReportPrice_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/ReportPriceResponse" message="tns:IProductService_ReportPrice_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="ReportPriceReturnObject">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/ReportPriceReturnObject" message="tns:IProductService_ReportPriceReturnObject_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/ReportPriceReturnObjectResponse" message="tns:IProductService_ReportPriceReturnObject_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceReportDetails">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/GetPriceReportDetails" message="tns:IProductService_GetPriceReportDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/GetPriceReportDetailsResponse" message="tns:IProductService_GetPriceReportDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePriceReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/UpdatePriceReport" message="tns:IProductService_UpdatePriceReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/UpdatePriceReportResponse" message="tns:IProductService_UpdatePriceReport_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePriceReport">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProductService/DeletePriceReport" message="tns:IProductService_DeletePriceReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProductService/DeletePriceReportResponse" message="tns:IProductService_DeletePriceReport_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="CreateProduct">
       <wsdl:input wsaw:Action="http://tempuri.org/IProductService/CreateProduct" message="tns:IProductService_CreateProduct_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IProductService/CreateProductResponse" message="tns:IProductService_CreateProduct_OutputMessage" />
@@ -435,6 +475,42 @@
     </wsdl:operation>
     <wsdl:operation name="ReportPrice">
       <soap:operation soapAction="http://tempuri.org/IProductService/ReportPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ReportPriceReturnObject">
+      <soap:operation soapAction="http://tempuri.org/IProductService/ReportPriceReturnObject" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPriceReportDetails">
+      <soap:operation soapAction="http://tempuri.org/IProductService/GetPriceReportDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePriceReport">
+      <soap:operation soapAction="http://tempuri.org/IProductService/UpdatePriceReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePriceReport">
+      <soap:operation soapAction="http://tempuri.org/IProductService/DeletePriceReport" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

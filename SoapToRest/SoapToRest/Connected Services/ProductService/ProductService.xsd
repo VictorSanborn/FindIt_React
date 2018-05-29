@@ -120,10 +120,66 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="ReportPriceReturnObject">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="priceReport" nillable="true" type="q10:PriceReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReportPriceReturnObjectResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="ReportPriceReturnObjectResult" nillable="true" type="q11:PriceReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPriceReportDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reportId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetPriceReportDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetPriceReportDetailsResult" nillable="true" type="q12:PriceReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePriceReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="priceReport" nillable="true" type="q13:PriceReport" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdatePriceReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdatePriceReportResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePriceReport">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="reportId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeletePriceReportResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeletePriceReportResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="CreateProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="product" nillable="true" type="q10:Product" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="product" nillable="true" type="q14:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -135,7 +191,7 @@
   <xs:element name="UpdateProduct">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="product" nillable="true" type="q11:Product" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="product" nillable="true" type="q15:Product" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -164,21 +220,21 @@
   <xs:element name="GetAllGroupsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAllGroupsResult" nillable="true" type="q12:ArrayOfGroup" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAllGroupsResult" nillable="true" type="q16:ArrayOfGroup" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateGroup">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="group" nillable="true" type="q13:Group" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="group" nillable="true" type="q17:Group" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateGroupResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="CreateGroupResult" nillable="true" type="q14:Group" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="CreateGroupResult" nillable="true" type="q18:Group" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -192,14 +248,14 @@
   <xs:element name="GetGroupDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetGroupDetailsResult" nillable="true" type="q15:Group" />
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetGroupDetailsResult" nillable="true" type="q19:Group" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateGroup">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="group" nillable="true" type="q16:Group" />
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="group" nillable="true" type="q20:Group" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -232,21 +288,21 @@
   <xs:element name="GetAllCategoriesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAllCategoriesResult" nillable="true" type="q17:ArrayOfCategory" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAllCategoriesResult" nillable="true" type="q21:ArrayOfCategory" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateCategory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="category" nillable="true" type="q18:Category" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="category" nillable="true" type="q22:Category" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateCategoryResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="CreateCategoryResult" nillable="true" type="q19:Category" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="CreateCategoryResult" nillable="true" type="q23:Category" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -260,14 +316,14 @@
   <xs:element name="GetCategoryDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetCategoryDetailsResult" nillable="true" type="q20:Category" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetCategoryDetailsResult" nillable="true" type="q24:Category" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateCategory">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="category" nillable="true" type="q21:Category" />
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="category" nillable="true" type="q25:Category" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -300,21 +356,21 @@
   <xs:element name="GetAllTypesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAllTypesResult" nillable="true" type="q22:ArrayOfType" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAllTypesResult" nillable="true" type="q26:ArrayOfType" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateType">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="type" nillable="true" type="q23:Type" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="type" nillable="true" type="q27:Type" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateTypeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="CreateTypeResult" nillable="true" type="q24:Type" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="CreateTypeResult" nillable="true" type="q28:Type" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -328,14 +384,14 @@
   <xs:element name="GetTypeDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetTypeDetailsResult" nillable="true" type="q25:Type" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetTypeDetailsResult" nillable="true" type="q29:Type" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateType">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="type" nillable="true" type="q26:Type" />
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="type" nillable="true" type="q30:Type" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -368,7 +424,7 @@
   <xs:element name="GetAllAttributesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAllAttributesResult" nillable="true" type="q27:ArrayOfAttribute" />
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAllAttributesResult" nillable="true" type="q31:ArrayOfAttribute" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -396,14 +452,14 @@
   <xs:element name="GetAttributeDetailsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAttributeDetailsResult" nillable="true" type="q28:Attribute" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAttributeDetailsResult" nillable="true" type="q32:Attribute" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="UpdateAttribute">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="attribute" nillable="true" type="q29:Attribute" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="attribute" nillable="true" type="q33:Attribute" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -431,14 +487,14 @@
   <xs:element name="CreateAttribute">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="attribute" nillable="true" type="q30:Attribute" />
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="attribute" nillable="true" type="q34:Attribute" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="CreateAttributeResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="CreateAttributeResult" nillable="true" type="q31:Attribute" />
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="CreateAttributeResult" nillable="true" type="q35:Attribute" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -450,7 +506,7 @@
   <xs:element name="GetAllPricesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAllPricesResult" nillable="true" type="q32:ArrayOfPriceReport" />
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/WcfProduct.Data" minOccurs="0" name="GetAllPricesResult" nillable="true" type="q36:ArrayOfPriceReport" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

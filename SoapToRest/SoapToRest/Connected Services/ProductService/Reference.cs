@@ -959,6 +959,30 @@ namespace SoapToRest.ProductService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/ReportPrice", ReplyAction="http://tempuri.org/IProductService/ReportPriceResponse")]
         System.Threading.Tasks.Task<bool> ReportPriceAsync(SoapToRest.ProductService.PriceReport priceReport);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/ReportPriceReturnObject", ReplyAction="http://tempuri.org/IProductService/ReportPriceReturnObjectResponse")]
+        SoapToRest.ProductService.PriceReport ReportPriceReturnObject(SoapToRest.ProductService.PriceReport priceReport);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/ReportPriceReturnObject", ReplyAction="http://tempuri.org/IProductService/ReportPriceReturnObjectResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.PriceReport> ReportPriceReturnObjectAsync(SoapToRest.ProductService.PriceReport priceReport);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetPriceReportDetails", ReplyAction="http://tempuri.org/IProductService/GetPriceReportDetailsResponse")]
+        SoapToRest.ProductService.PriceReport GetPriceReportDetails(int reportId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/GetPriceReportDetails", ReplyAction="http://tempuri.org/IProductService/GetPriceReportDetailsResponse")]
+        System.Threading.Tasks.Task<SoapToRest.ProductService.PriceReport> GetPriceReportDetailsAsync(int reportId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdatePriceReport", ReplyAction="http://tempuri.org/IProductService/UpdatePriceReportResponse")]
+        bool UpdatePriceReport(SoapToRest.ProductService.PriceReport priceReport);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/UpdatePriceReport", ReplyAction="http://tempuri.org/IProductService/UpdatePriceReportResponse")]
+        System.Threading.Tasks.Task<bool> UpdatePriceReportAsync(SoapToRest.ProductService.PriceReport priceReport);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeletePriceReport", ReplyAction="http://tempuri.org/IProductService/DeletePriceReportResponse")]
+        bool DeletePriceReport(int reportId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/DeletePriceReport", ReplyAction="http://tempuri.org/IProductService/DeletePriceReportResponse")]
+        System.Threading.Tasks.Task<bool> DeletePriceReportAsync(int reportId);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IProductService/CreateProduct", ReplyAction="http://tempuri.org/IProductService/CreateProductResponse")]
         void CreateProduct(SoapToRest.ProductService.Product product);
         
@@ -1213,6 +1237,38 @@ namespace SoapToRest.ProductService {
         
         public System.Threading.Tasks.Task<bool> ReportPriceAsync(SoapToRest.ProductService.PriceReport priceReport) {
             return base.Channel.ReportPriceAsync(priceReport);
+        }
+        
+        public SoapToRest.ProductService.PriceReport ReportPriceReturnObject(SoapToRest.ProductService.PriceReport priceReport) {
+            return base.Channel.ReportPriceReturnObject(priceReport);
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.PriceReport> ReportPriceReturnObjectAsync(SoapToRest.ProductService.PriceReport priceReport) {
+            return base.Channel.ReportPriceReturnObjectAsync(priceReport);
+        }
+        
+        public SoapToRest.ProductService.PriceReport GetPriceReportDetails(int reportId) {
+            return base.Channel.GetPriceReportDetails(reportId);
+        }
+        
+        public System.Threading.Tasks.Task<SoapToRest.ProductService.PriceReport> GetPriceReportDetailsAsync(int reportId) {
+            return base.Channel.GetPriceReportDetailsAsync(reportId);
+        }
+        
+        public bool UpdatePriceReport(SoapToRest.ProductService.PriceReport priceReport) {
+            return base.Channel.UpdatePriceReport(priceReport);
+        }
+        
+        public System.Threading.Tasks.Task<bool> UpdatePriceReportAsync(SoapToRest.ProductService.PriceReport priceReport) {
+            return base.Channel.UpdatePriceReportAsync(priceReport);
+        }
+        
+        public bool DeletePriceReport(int reportId) {
+            return base.Channel.DeletePriceReport(reportId);
+        }
+        
+        public System.Threading.Tasks.Task<bool> DeletePriceReportAsync(int reportId) {
+            return base.Channel.DeletePriceReportAsync(reportId);
         }
         
         public void CreateProduct(SoapToRest.ProductService.Product product) {
