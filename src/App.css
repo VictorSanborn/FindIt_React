@@ -27,6 +27,12 @@
   font-size: large;
 }
 
+.adsBox{
+  color: black;
+  background:white;
+  width:450px;
+  height:125px;
+}
 
 .backgroundColor {
   background-color: #E8D2A0;
