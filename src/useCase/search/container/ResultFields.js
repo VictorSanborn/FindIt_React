@@ -8,6 +8,7 @@ class ResultFields extends Component {
     this.state = {
       businesses : [],
       products : [],
+      update: "",
     }
   }; 
 
@@ -63,7 +64,11 @@ class ResultFields extends Component {
     this.GetValuesProducts();
   }
   
-
+  componentDidUpdate = (prevProps, prevState) => {
+    if (this.state.products === prevState.products){
+      console.log("test!");
+    }
+}
   GetValuesBusinesses = () => {
     getAllBusinesses().then((response) =>
     {
@@ -102,8 +107,16 @@ class ResultFields extends Component {
               getBusiness(response.data[i].businessReported).then((CityResponse) => {
                 console.log(CityResponse);
                 response.data[i].businessForProduct = CityResponse.data;
+                this.setState({
+                  ...this.state,
+                  update: CityResponse.data +i,
+                })
             })
             }
+            this.setState({
+              ...this.state,
+              update: priceResponse.data.businessId +i,
+            })
           })
         }
         this.setState({

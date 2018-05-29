@@ -42,12 +42,12 @@ class ModalLogIn extends Component {
         if (response.status == 200 &&  response.data.userID !== '0')
         {
           this.props.dispatch(actionCreators.setUserID(response.data.userID));
-          this.props.dispatch(actionCreators.setUsername(this.props.usernameInput));
+          this.props.dispatch(actionCreators.setUsername(this.state.usernameInput));
           this.setState({
             ...this.state,
             Success: true,
             Error: false,
-           SubmitMessage: 'Login Sucessful!',
+            SubmitMessage: 'Login Sucessful!',
             usernameInput: '',
             passwordInput: '',
 
