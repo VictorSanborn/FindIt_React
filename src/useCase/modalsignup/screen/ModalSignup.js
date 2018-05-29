@@ -99,8 +99,8 @@ class ModalSignup extends Component {
             </div>
             : this.state.Error ?
             <div class="col-xs-12 alert alert-danger" style={{margin: 0}} role="alert">
-              {this.state.SubmitMessage}
-            </div>
+            {this.state.SubmitMessage}
+          </div>
             :
             <div class="col-xs-12"></div>
             }

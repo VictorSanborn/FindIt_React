@@ -20,7 +20,7 @@ class ModalFooter extends Component {
     return (
       <div class="modal-footer">
         <ModalCloseButton />
-        <LogInButton onLogin={this.onLogin} name="Logga In" styleText="btn btn-primary"/>
+        <LogInButton onLogin={this.props.OnLogin} name="Logga In" styleText="btn btn-primary"/>
         <button name="closer" hidden data-dismiss="modal"/>
       </div>   
     );
