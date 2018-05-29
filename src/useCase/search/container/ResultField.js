@@ -20,7 +20,7 @@ class ResultField extends Component {
                 {this.props.dataField == "Verksamhet"? <img src={this.props.imgsrc} class="OrganisationImage"></img> : ""}
                 <h5 style={{margin: '10px'}} class="col-sm-6 text-left">{this.props.title}</h5>
                 <div style={{margin: '10px'}} class="col-sm-6 text-left">{this.props.description}</div>
-                {this.props.dataField == "Öl" ?
+                {this.props.dataField == "Dryck" ?
                     this.props.price != null && this.props.businessForProduct ?
                         <div style={{margin: '10px'}} class="col-sm-6 text-left">{this.props.price}kr hos <a href={'/Business/' + this.props.businessForProduct.id}>{this.props.businessForProduct.name}</a></div>
                         :
