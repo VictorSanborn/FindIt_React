@@ -16,6 +16,7 @@ namespace SoapToRest.Controllers
         
         
         // GET: /ProductService/GetAllProducts?showDiscounted=false
+        [HttpGet]
         public ProductService.Product[] GetAllProducts()
         {
             ProductService.Product[] products = new ProductService.Product[] { };

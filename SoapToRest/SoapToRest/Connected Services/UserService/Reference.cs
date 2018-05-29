@@ -358,6 +358,12 @@ namespace SoapToRest.UserService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/GetUsername", ReplyAction="http://tempuri.org/IService1/GetUsernameResponse")]
         System.Threading.Tasks.Task<string> GetUsernameAsync(int userID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DoILive", ReplyAction="http://tempuri.org/IService1/DoILiveResponse")]
+        string DoILive();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService1/DoILive", ReplyAction="http://tempuri.org/IService1/DoILiveResponse")]
+        System.Threading.Tasks.Task<string> DoILiveAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -465,6 +471,14 @@ namespace SoapToRest.UserService {
         
         public System.Threading.Tasks.Task<string> GetUsernameAsync(int userID) {
             return base.Channel.GetUsernameAsync(userID);
+        }
+        
+        public string DoILive() {
+            return base.Channel.DoILive();
+        }
+        
+        public System.Threading.Tasks.Task<string> DoILiveAsync() {
+            return base.Channel.DoILiveAsync();
         }
     }
 }

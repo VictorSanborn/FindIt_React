@@ -47,6 +47,7 @@ namespace SoapToRest.Controllers
             UserID user = new UserID();
             try
             {
+                bool a = client.LoginUser(username, password);
                 user.userID = client.GetUserID(username, password).ToString();
             }
             catch (Exception e)
